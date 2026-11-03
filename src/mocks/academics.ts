@@ -1,0 +1,165 @@
+export const earlyYearsAges = [
+  {
+    title: "Kindergarten 1",
+    age: "Ages 2 - 3",
+    text: "Gentle settling in, first friendships and plenty of play.",
+    tint: "bg-primary-50",
+    tagTint: "bg-background-50 text-primary-700",
+  },
+  {
+    title: "Kindergarten 2",
+    age: "Ages 3 - 4",
+    text: "Growing independence, spoken language and early mark-making.",
+    tint: "bg-secondary-100",
+    tagTint: "bg-background-50 text-secondary-800",
+  },
+  {
+    title: "Reception",
+    age: "Ages 4 - 5",
+    text: "Confident learners ready for the step into Year 1.",
+    tint: "bg-accent-50",
+    tagTint: "bg-background-50 text-accent-700",
+  },
+];
+
+export const earlyYearsSubjects = [
+  {
+    icon: "ri-heart-3-line",
+    title: "Personal, Social and Emotional Development",
+    text: "Building relationships, managing feelings and good habits.",
+  },
+  {
+    icon: "ri-chat-3-line",
+    title: "Communication and Language",
+    text: "Growing confident speakers and listeners.",
+  },
+  {
+    icon: "ri-run-line",
+    title: "Physical Development",
+    text: "Gross and fine motor skills, hand-eye coordination and spatial awareness.",
+  },
+  {
+    icon: "ri-calculator-line",
+    title: "Mathematics",
+    text: "Exploring numbers, shapes, space and measurement.",
+  },
+  {
+    icon: "ri-book-open-line",
+    title: "Literacy",
+    text: "Pre-reading and pre-writing that prepare children for formal reading and writing.",
+  },
+  {
+    icon: "ri-earth-line",
+    title: "Understanding the World",
+    text: "People, places, technology and living things around them.",
+  },
+  {
+    icon: "ri-palette-line",
+    title: "Expressive Arts and Design",
+    text: "Singing, art, dance, drama and music.",
+  },
+];
+
+export const primarySubjects = [
+  {
+    icon: "ri-book-read-line",
+    title: "Literacy",
+    text: "Reading and writing with confidence.",
+    tint: "bg-primary-50",
+    iconTint: "bg-background-50 text-primary-600",
+  },
+  {
+    icon: "ri-calculator-line",
+    title: "Numeracy",
+    text: "Understanding and working with numbers.",
+    tint: "bg-secondary-100",
+    iconTint: "bg-background-50 text-secondary-700",
+  },
+  {
+    icon: "ri-flask-line",
+    title: "Science",
+    text: "Physics, chemistry and biology through the natural world.",
+    tint: "bg-accent-50",
+    iconTint: "bg-background-50 text-accent-600",
+  },
+  {
+    icon: "ri-global-line",
+    title: "Humanities",
+    text: "History, geography and Christian Religious Education.",
+    tint: "bg-background-200",
+    iconTint: "bg-background-50 text-primary-600",
+  },
+  {
+    icon: "ri-heart-2-line",
+    title: "PSHE",
+    text: "Personal, social, health and emotional development.",
+    tint: "bg-primary-50",
+    iconTint: "bg-background-50 text-primary-600",
+  },
+  {
+    icon: "ri-tools-line",
+    title: "Design and Technology",
+    text: "Solving real problems and making things that work.",
+    tint: "bg-secondary-100",
+    iconTint: "bg-background-50 text-secondary-700",
+  },
+  {
+    icon: "ri-brush-line",
+    title: "Art and Craft",
+    text: "Creativity and self-expression.",
+    tint: "bg-accent-50",
+    iconTint: "bg-background-50 text-accent-600",
+  },
+  {
+    icon: "ri-computer-line",
+    title: "ICT",
+    text: "Using technology to find, create and share information.",
+    tint: "bg-background-200",
+    iconTint: "bg-background-50 text-primary-600",
+  },
+  {
+    icon: "ri-translate-2",
+    title: "French",
+    text: "Speaking more than one international language.",
+    tint: "bg-primary-50",
+    iconTint: "bg-background-50 text-primary-600",
+  },
+  {
+    icon: "ri-music-2-line",
+    title: "Music",
+    text: "Playing instruments and reading music.",
+    tint: "bg-secondary-100",
+    iconTint: "bg-background-50 text-secondary-700",
+  },
+];
+
+export const beyondCards = [
+  {
+    title: "Science Week",
+    text: "Experiments, visitors and curious questions all week long.",
+    icon: "ri-flask-line",
+    image:
+      "https://readdy.ai/api/search-image?query=Primary%20school%20pupils%20in%20safety%20goggles%20watching%20a%20simple%20science%20demonstration%20with%20beakers%20and%20coloured%20water%20on%20a%20light%20wooden%20table%2C%20curious%20excited%20faces%2C%20bright%20cream%20classroom%2C%20warm%20natural%20light%2C%20editorial%20education%20photography&width=700&height=520&seq=shekinah-academics-beyond-01&orientation=landscape",
+  },
+  {
+    title: "Sports and Swimming",
+    text: "Sport, swimming and active play that build teamwork and confidence.",
+    icon: "ri-drop-line",
+    image:
+      "https://readdy.ai/api/search-image?query=Children%20in%20green%20and%20cream%20sports%20kit%20enjoying%20a%20swimming%20lesson%20in%20a%20clean%20outdoor%20school%20pool%20with%20an%20instructor%20at%20the%20edge%2C%20sparkling%20blue%20water%2C%20bright%20tropical%20daylight%2C%20joyful%20movement%2C%20editorial%20school%20sports%20photography&width=700&height=520&seq=shekinah-academics-beyond-02&orientation=landscape",
+  },
+  {
+    title: "Creative Arts",
+    text: "Music, drama and art that help every child express themselves.",
+    icon: "ri-palette-line",
+    image:
+      "https://readdy.ai/api/search-image?query=Young%20pupils%20painting%20at%20a%20long%20table%20with%20brushes%20and%20bright%20paint%20pots%2C%20aprons%20on%2C%20focused%20happy%20expressions%2C%20cream%20classroom%20with%20artwork%20pinned%20on%20a%20sage%20green%20board%2C%20soft%20daylight%2C%20editorial%20art%20class%20photography&width=700&height=520&seq=shekinah-academics-beyond-03&orientation=landscape",
+  },
+  {
+    title: "Trips and Projects",
+    text: "Learning out in the world, then making something of it back in class.",
+    icon: "ri-route-line",
+    image:
+      "https://readdy.ai/api/search-image?query=A%20small%20group%20of%20primary%20pupils%20with%20a%20teacher%20on%20an%20educational%20walk%20near%20Lake%20Victoria%20in%20Uganda%2C%20pointing%20at%20birds%20and%20plants%2C%20sunlight%20through%20trees%2C%20curious%20happy%20expressions%2C%20documentary%20school%20trip%20photography%2C%20warm%20tones&width=700&height=520&seq=shekinah-academics-beyond-04&orientation=landscape",
+  },
+];
