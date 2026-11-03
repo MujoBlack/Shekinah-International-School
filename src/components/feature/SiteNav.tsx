@@ -78,7 +78,7 @@ export default function SiteNav() {
           <div className="ml-auto flex items-center gap-3 lg:ml-0">
             <Link
               to="/contact"
-              className="hidden cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full bg-coral-500 px-6 py-3 text-[14px] font-semibold text-white shadow-[0_4px_0_0_#A8331F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-400 sm:inline-flex"
+              className="hidden cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full bg-coral-500 px-6 py-3 text-[14px] font-semibold text-white shadow-[0_4px_0_0_#9E1218] transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-400 sm:inline-flex"
             >
               Book a School Visit
             </Link>
@@ -114,7 +114,7 @@ export default function SiteNav() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`mb-2 flex cursor-pointer items-center justify-between rounded-[22px] px-5 py-4 font-heading text-[26px] text-foreground-950 ${["bg-mint-100","bg-sun-100","bg-sky-100","bg-coral-100","bg-lilac-100","bg-mint-100"][index]}`}
+                className={`mb-2 flex cursor-pointer items-center justify-between rounded-[22px] px-5 py-4 font-heading text-[26px] text-foreground-950 ${["bg-mint-100","bg-sun-100","bg-leaf-100","bg-coral-100","bg-blush-100","bg-mint-100"][index]}`}
               >
                 <span>{link.label}</span>
                 <i className="ri-arrow-right-up-line text-xl text-primary-700" />
@@ -122,7 +122,7 @@ export default function SiteNav() {
             ))}
             <Link
               to="/contact"
-              className="mt-6 inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-full bg-coral-500 px-6 py-4 text-[16px] font-semibold text-white shadow-[0_5px_0_0_#A8331F]"
+              className="mt-6 inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-full bg-coral-500 px-6 py-4 text-[16px] font-semibold text-white shadow-[0_5px_0_0_#9E1218]"
             >
               Book a School Visit
             </Link>

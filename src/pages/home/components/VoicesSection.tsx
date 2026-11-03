@@ -10,8 +10,8 @@ export default function VoicesSection() {
   return (
     <section className="relative bg-primary-800 text-white">
       <WaveEdge color="oklch(0.31 0.062 156)" className="-mt-[47px]" />
-      <Star className="bob absolute left-[8%] top-16 h-8 w-8" color="#FFD155" />
-      <Star className="bob-slow absolute right-[10%] top-28 h-6 w-6" color="#FF9E8A" />
+      <Star className="bob absolute left-[8%] top-16 h-8 w-8" color="#FFD465" />
+      <Star className="bob-slow absolute right-[10%] top-28 h-6 w-6" color="#F58A8E" />
       <div className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow tone="cream">Parent Voices</Eyebrow>

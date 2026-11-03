@@ -1,20 +1,21 @@
 import Button from "@/components/base/Button";
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { WaveEdge, Sun, Cloud } from "@/components/base/Doodles";
+import { WaveEdge } from "@/components/base/Doodles";
 import { journeyCards } from "@/mocks/home";
+import Illo from "@/components/base/Illo";
 
 const tones = [
   { bg: "bg-sun-100", tag: "bg-sun-300 text-primary-950", ring: "border-sun-200", rot: "-rotate-3" },
-  { bg: "bg-sky-100", tag: "bg-sky-400 text-white", ring: "border-sky-200", rot: "rotate-3" },
+  { bg: "bg-leaf-100", tag: "bg-leaf-400 text-white", ring: "border-leaf-200", rot: "rotate-3" },
 ];
 
 export default function JourneySection() {
   return (
     <section className="relative bg-mint-100">
       <WaveEdge color="#DFF3E4" className="-mt-[47px]" />
-      <Cloud className="absolute left-[6%] top-16 hidden h-12 w-24 opacity-90 md:block" />
-      <Sun className="spin-slow absolute right-[6%] top-10 hidden h-20 w-20 md:block" />
+      <Illo name="hat" className="bob absolute left-[5%] top-16 hidden h-20 w-auto md:block" />
+      <Illo name="price-kid-pink" className="absolute bottom-24 right-[3%] hidden h-48 w-auto xl:block" />
       <div className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow tone="mint" className="bg-white">

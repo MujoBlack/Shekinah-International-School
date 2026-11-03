@@ -14,9 +14,9 @@ interface ButtonProps {
 }
 
 const shell: Record<Variant, string> = {
-  primary: "bg-primary-700 text-background-50 shadow-[0_5px_0_0_oklch(var(--primary-950))] hover:bg-primary-600",
-  red: "bg-coral-500 text-white shadow-[0_5px_0_0_#A8331F] hover:bg-coral-400",
-  sun: "bg-sun-300 text-primary-950 shadow-[0_5px_0_0_#9A6A00] hover:bg-sun-200",
+  primary: "bg-brand-green text-white shadow-[0_5px_0_0_#0A3D1F] hover:bg-mint-500",
+  red: "bg-brand-red text-white shadow-[0_5px_0_0_#9E1218] hover:bg-coral-400",
+  sun: "bg-sun-300 text-primary-950 shadow-[0_5px_0_0_#946500] hover:bg-sun-200",
   outline:
     "border-2 border-primary-950 bg-white text-primary-950 shadow-[0_5px_0_0_oklch(var(--primary-950))] hover:bg-mint-100",
   cream: "bg-white text-primary-950 shadow-[0_5px_0_0_rgba(0,0,0,0.25)] hover:bg-sun-100",

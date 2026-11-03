@@ -1,13 +1,14 @@
 import Button from "@/components/base/Button";
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { Dots, Pencil, Star } from "@/components/base/Doodles";
+import { Dots } from "@/components/base/Doodles";
 import { img } from "@/lib/img";
+import Illo from "@/components/base/Illo";
 
 const points = [
   { icon: "ri-book-open-line", text: "National Curriculum of England", tone: "bg-mint-100 text-mint-700" },
   { icon: "ri-heart-3-line", text: "Christian values, lived gently", tone: "bg-coral-100 text-coral-700" },
-  { icon: "ri-group-line", text: "Small classes, known by name", tone: "bg-sky-100 text-sky-700" },
+  { icon: "ri-group-line", text: "Small classes, known by name", tone: "bg-leaf-100 text-leaf-700" },
 ];
 
 export default function MeetSection() {
@@ -31,7 +32,7 @@ export default function MeetSection() {
                 className="aspect-[4/3] h-full w-full object-cover"
               />
             </div>
-            <Pencil className="bob absolute -right-6 -top-8 h-20 w-20 [--r:10deg]" />
+            <Illo name="red-book" className="bob absolute -right-6 -top-10 h-20 w-20 [--r:10deg]" />
             <div className="absolute -left-4 bottom-16 -rotate-3 rounded-[20px] bg-sun-300 px-4 py-3 shadow-soft">
               <span className="block font-heading text-[22px] leading-none text-primary-950">Est. 2014</span>
               <span className="mt-1 block text-[13px] font-medium text-primary-900">Bugonga, Entebbe</span>
@@ -42,8 +43,8 @@ export default function MeetSection() {
         <Reveal delay={120}>
           <Eyebrow tone="butter">Meet Shekinah</Eyebrow>
           <h2 className="relative mt-5 font-heading text-[36px] leading-[1.06] text-primary-950 md:text-[54px]">
-            More than a school. A <span className="mark-sky">community</span> for growing minds.
-            <Star className="bob absolute -top-6 right-6 hidden h-8 w-8 md:block" color="#FF7A62" />
+            More than a school. A <span className="mark-leaf">community</span> for growing minds.
+            <Illo name="star" className="bob absolute -top-8 right-4 hidden h-12 w-12 md:block" />
           </h2>
           <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-foreground-700">
             <p>

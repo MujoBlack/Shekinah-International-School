@@ -5,7 +5,7 @@ interface DoodleProps {
   color?: string;
 }
 
-export function Sun({ className = "", color = "#FFC233" }: DoodleProps) {
+export function Sun({ className = "", color = "#FFC845" }: DoodleProps) {
   return (
     <svg viewBox="0 0 120 120" className={className} aria-hidden="true" fill="none">
       <circle cx="60" cy="60" r="24" fill={color} />
@@ -28,7 +28,7 @@ export function Sun({ className = "", color = "#FFC233" }: DoodleProps) {
   );
 }
 
-export function Star({ className = "", color = "#FF7A62" }: DoodleProps) {
+export function Star({ className = "", color = "#EB2229" }: DoodleProps) {
   return (
     <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
       <path
@@ -42,7 +42,7 @@ export function Star({ className = "", color = "#FF7A62" }: DoodleProps) {
   );
 }
 
-export function Squiggle({ className = "", color = "#2E9A52" }: DoodleProps) {
+export function Squiggle({ className = "", color = "#126735" }: DoodleProps) {
   return (
     <svg viewBox="0 0 160 40" preserveAspectRatio="none" className={className} aria-hidden="true" fill="none">
       <path
@@ -55,7 +55,7 @@ export function Squiggle({ className = "", color = "#2E9A52" }: DoodleProps) {
   );
 }
 
-export function Heart({ className = "", color = "#EF5B41" }: DoodleProps) {
+export function Heart({ className = "", color = "#EB2229" }: DoodleProps) {
   return (
     <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
       <path
@@ -66,7 +66,7 @@ export function Heart({ className = "", color = "#EF5B41" }: DoodleProps) {
   );
 }
 
-export function Loop({ className = "", color = "#4FAEE6" }: DoodleProps) {
+export function Loop({ className = "", color = "#2E9B5B" }: DoodleProps) {
   return (
     <svg viewBox="0 0 200 90" className={className} aria-hidden="true" fill="none">
       <path
@@ -84,9 +84,9 @@ export function Loop({ className = "", color = "#4FAEE6" }: DoodleProps) {
 export function Rainbow({ className = "" }: DoodleProps) {
   return (
     <svg viewBox="0 0 140 76" className={className} aria-hidden="true" fill="none">
-      <path d="M10 70a60 60 0 0 1 120 0" stroke="#EF5B41" strokeWidth="11" strokeLinecap="round" />
-      <path d="M28 70a42 42 0 0 1 84 0" stroke="#FFC233" strokeWidth="11" strokeLinecap="round" />
-      <path d="M46 70a24 24 0 0 1 48 0" stroke="#2E9A52" strokeWidth="11" strokeLinecap="round" />
+      <path d="M10 70a60 60 0 0 1 120 0" stroke="#EB2229" strokeWidth="11" strokeLinecap="round" />
+      <path d="M28 70a42 42 0 0 1 84 0" stroke="#FFC845" strokeWidth="11" strokeLinecap="round" />
+      <path d="M46 70a24 24 0 0 1 48 0" stroke="#126735" strokeWidth="11" strokeLinecap="round" />
     </svg>
   );
 }
@@ -116,8 +116,8 @@ export function Pencil({ className = "" }: DoodleProps) {
   return (
     <svg viewBox="0 0 120 120" className={className} aria-hidden="true">
       <g transform="rotate(-35 60 60)">
-        <rect x="20" y="48" width="64" height="24" rx="4" fill="#FFC233" />
-        <rect x="14" y="48" width="12" height="24" rx="4" fill="#FF9E8A" />
+        <rect x="20" y="48" width="64" height="24" rx="4" fill="#FFC845" />
+        <rect x="14" y="48" width="12" height="24" rx="4" fill="#F58A8E" />
         <rect x="24" y="48" width="6" height="24" fill="#C8CCD0" />
         <path d="M84 48l24 12-24 12z" fill="#F6D9B4" />
         <path d="M100 56l8 4-8 4z" fill="#0B3D22" />
