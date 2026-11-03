@@ -81,6 +81,7 @@
   }
 
   body {
+    overflow-x: clip;
     background-color: oklch(var(--background-100));
     color: oklch(var(--foreground-900));
     font-family: var(--font-body);
