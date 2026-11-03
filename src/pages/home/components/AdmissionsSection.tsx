@@ -1,81 +1,63 @@
-import { useEffect, useRef, useState } from "react";
 import Button from "@/components/base/Button";
 import Eyebrow from "@/components/base/Eyebrow";
-import Illo from "@/components/base/Illo";
+import Reveal from "@/components/base/Reveal";
 import { admissionSteps } from "@/mocks/home";
-import { img } from "@/lib/img";
 
-/* Ivy Kids "Your Path" style: a timeline whose steps slide in one after another. */
-const stepImages = [
-  "school-life-parents-community",
-  "contact-hero-campus",
-  "academics-primary-2",
-  "admission-assessment-step",
-  "home-hero-alt",
+const stepTones = [
+  "bg-sun-300 text-primary-950",
+  "bg-coral-400 text-white",
+  "bg-sky-400 text-white",
+  "bg-lilac-400 text-white",
+  "bg-mint-400 text-white",
 ];
-const dotTones = ["bg-brand-red", "bg-brand-green", "bg-sun-400", "bg-brand-red", "bg-brand-green"];
 
 export default function AdmissionsSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return undefined;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.25 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
-      <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <Eyebrow tone="coral">Joining Shekinah</Eyebrow>
-            <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
-              Your path to <span className="mark-coral">Shekinah</span>
-            </h2>
-          </div>
-          <Illo name="kid-flag" className="hidden h-28 w-auto md:block" />
-        </div>
+    <section className="mx-auto w-full max-w-[1360px] px-5 py-24 md:px-10 md:py-28">
+      <Reveal className="mx-auto max-w-2xl text-center">
+        <Eyebrow tone="coral">Admissions</Eyebrow>
+        <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
+          Your path to <span className="mark-coral">Shekinah</span>
+        </h2>
+        <p className="mx-auto mt-5 max-w-lg text-[17px] leading-relaxed text-foreground-600">
+          Five simple steps, with a real person guiding you through each one.
+        </p>
+      </Reveal>
 
-        <div ref={ref} className={`path-timeline relative mt-14 ${shown ? "is-in" : ""}`}>
-          {/* the line the dots sit on */}
-          <span className="path-line absolute left-0 right-0 top-[215px] hidden h-[2px] bg-primary-950/15 lg:block" aria-hidden="true" />
+      <Reveal delay={100}>
+        <ol className="relative mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <svg
+            className="pointer-events-none absolute left-[8%] right-[8%] top-9 hidden h-8 w-[84%] lg:block"
+            viewBox="0 0 1000 30"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M0 15 Q125 -5 250 15 T500 15 T750 15 T1000 15" fill="none" stroke="#0B3D22" strokeOpacity="0.25" strokeWidth="3" strokeDasharray="4 10" strokeLinecap="round" />
+          </svg>
+          {admissionSteps.map((step, index) => (
+            <li key={step.number} className="relative flex flex-col items-center rounded-[28px] bg-white px-5 pb-7 pt-5 text-center shadow-card">
+              <span
+                className={`flex h-[72px] w-[72px] items-center justify-center rounded-full font-heading text-[28px] shadow-card ${stepTones[index % stepTones.length]} ${index % 2 ? "rotate-6" : "-rotate-6"}`}
+              >
+                {index + 1}
+              </span>
+              <span className="mt-5 block font-heading text-[22px] text-primary-950">{step.title}</span>
+              <span className="mt-2 block text-[15px] leading-relaxed text-foreground-600">{step.text}</span>
+            </li>
+          ))}
+        </ol>
+      </Reveal>
 
-          <ol className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-            {admissionSteps.map((step, index) => (
-              <li key={step.number} className="path-step" style={{ transitionDelay: `${index * 220}ms` }}>
-                <div className="h-[120px] w-[120px] overflow-hidden rounded-[24px] shadow-card">
-                  <img src={img(stepImages[index])} alt="" className="h-full w-full object-cover" />
-                </div>
-                <p className="mt-6 font-heading text-[40px] leading-none text-primary-950">Step {index + 1}</p>
-                <span className={`relative z-10 mt-6 block h-3.5 w-3.5 rounded-full ring-4 ring-background-100 ${dotTones[index]}`} aria-hidden="true" />
-                <h3 className="mt-6 font-heading text-[22px] leading-snug text-primary-950">{step.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-foreground-600">{step.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button to="/contact" variant="red">
-            Begin Your Journey
-          </Button>
-          <Button to="/admission" variant="outline">
+      <Reveal delay={160}>
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button to="/admission" variant="primary">
             Admissions Process
           </Button>
+          <Button to="/contact" variant="outline">
+            Enquire Now
+          </Button>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

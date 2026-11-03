@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type Tone = "mint" | "butter" | "cream" | "leaf" | "coral" | "blush";
+type Tone = "mint" | "butter" | "cream" | "sky" | "coral" | "lilac";
 
 interface EyebrowProps {
   children: ReactNode;
@@ -11,9 +11,9 @@ interface EyebrowProps {
 const tones: Record<Tone, string> = {
   mint: "bg-mint-100 text-mint-700",
   butter: "bg-sun-100 text-sun-700",
-  leaf: "bg-leaf-100 text-leaf-700",
+  sky: "bg-sky-100 text-sky-700",
   coral: "bg-coral-100 text-coral-700",
-  blush: "bg-blush-100 text-blush-700",
+  lilac: "bg-lilac-100 text-lilac-700",
   cream: "bg-background-50/15 text-background-50 ring-1 ring-background-50/30",
 };
 

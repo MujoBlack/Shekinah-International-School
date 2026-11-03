@@ -18,10 +18,10 @@ export default function Logo({ variant = "dark", size = "sm" }: LogoProps) {
       aria-label="Shekinah International School home"
     >
       <img
-        src={`${__BASE_PATH__.replace(/\/$/, "")}/images/shekinah-logo.svg`}
+        src={`${__BASE_PATH__.replace(/\/$/, "")}/images/shekinah-logo.png`}
         alt="Shekinah International School"
-        width={1233}
-        height={932}
+        width={208}
+        height={168}
         className={`w-auto transition-transform duration-300 group-hover:-rotate-2 ${
           large ? "h-[84px] md:h-[96px]" : "h-[56px] md:h-[68px]"
         }`}

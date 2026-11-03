@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "@/components/feature/Logo";
-import { WaveEdge } from "@/components/base/Doodles";
-import Illo from "@/components/base/Illo";
+import { WaveEdge, Star } from "@/components/base/Doodles";
 
 const exploreLinks = [
   { label: "Home", to: "/" },
@@ -23,7 +22,7 @@ export default function SiteFooter() {
   return (
     <footer className="relative mt-12 bg-primary-800 text-white">
       <WaveEdge color="oklch(0.31 0.062 156)" className="-mt-[47px]" />
-      <Illo name="footer-icon-1" className="absolute right-[5%] top-6 hidden h-32 w-auto brightness-150 md:block" />
+      <Star className="bob absolute right-[8%] top-12 h-8 w-8" color="#FFD155" />
       <div className="mx-auto w-full max-w-[1360px] px-5 pb-8 pt-10 md:px-10 md:pb-10 md:pt-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.35fr_0.8fr_1.15fr] lg:gap-0 lg:divide-x lg:divide-white/15">
           <div className="lg:pr-12">
@@ -103,7 +102,7 @@ export default function SiteFooter() {
 
             <Link
               to="/contact"
-              className="mt-7 inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-full bg-coral-500 px-6 py-3 text-[15px] font-semibold text-white shadow-[0_4px_0_0_#9E1218] transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-400"
+              className="mt-7 inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-full bg-coral-500 px-6 py-3 text-[15px] font-semibold text-white shadow-[0_4px_0_0_#A8331F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-400"
             >
               Book a School Visit
             </Link>

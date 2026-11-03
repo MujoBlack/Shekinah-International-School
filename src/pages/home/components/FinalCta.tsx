@@ -1,16 +1,15 @@
 import Button from "@/components/base/Button";
 import Reveal from "@/components/base/Reveal";
-import { Heart } from "@/components/base/Doodles";
+import { Sun, Star, Heart } from "@/components/base/Doodles";
 import { img } from "@/lib/img";
-import Illo from "@/components/base/Illo";
 
 export default function FinalCta() {
   return (
     <section className="mx-auto w-full max-w-[1360px] px-5 pb-24 md:px-10 md:pb-28">
       <Reveal>
         <div className="relative grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[40px] bg-sun-300 px-7 py-12 md:px-14 md:py-16 lg:grid-cols-[1.1fr_1fr]">
-          <Illo name="kid-flag" className="bob absolute bottom-6 left-[44%] hidden h-24 w-auto lg:block" />
-          
+          <Sun className="spin-slow absolute -right-10 -top-10 h-40 w-40 opacity-60" color="#FFFFFF" />
+          <Star className="bob absolute bottom-8 left-[46%] hidden h-8 w-8 lg:block" color="#EF5B41" />
 
           <div className="relative">
             <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-coral-700">

@@ -1,6 +1,5 @@
 import Button from "@/components/base/Button";
-import { Loop, Heart, Squiggle } from "@/components/base/Doodles";
-import Illo from "@/components/base/Illo";
+import { Sun, Star, Loop, Heart, Squiggle } from "@/components/base/Doodles";
 import { img } from "@/lib/img";
 
 export default function Hero() {
@@ -8,7 +7,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-background-100">
       {/* soft colour washes */}
       <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-sun-100/80 blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-[460px] w-[460px] rounded-full bg-mint-100/80 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-[460px] w-[460px] rounded-full bg-sky-100/80 blur-3xl" />
 
       <div className="relative mx-auto grid w-full max-w-[1360px] grid-cols-1 items-center gap-12 px-5 pb-24 pt-10 md:px-10 md:pb-32 md:pt-14 lg:grid-cols-[1.02fr_1fr] lg:gap-10">
         <div className="relative z-10">
@@ -21,9 +20,9 @@ export default function Hero() {
 
           <h1 className="mt-7 font-heading text-[44px] leading-[1.02] text-primary-950 sm:text-[60px] md:text-[78px]">
             A Place to <span className="mark-sun">Learn</span>, Grow and{" "}
-            <span className="wonk relative inline-block text-brand-red">
+            <span className="wonk relative inline-block text-coral-500">
               Belong
-              <Squiggle className="absolute -bottom-3 left-0 h-4 w-full" color="#FFC845" />
+              <Squiggle className="absolute -bottom-3 left-0 h-4 w-full" color="#FFC233" />
             </span>
           </h1>
 
@@ -47,10 +46,9 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[600px]">
-          <Illo name="sun" className="bob absolute -left-10 -top-12 z-20 h-28 w-28 md:h-36 md:w-36" />
-          <Illo name="star" className="bob-slow absolute -right-4 top-4 z-20 h-14 w-14 [--r:12deg]" />
-          <Illo name="rocket" className="absolute -right-10 -bottom-6 z-20 hidden h-28 w-28 rotate-12 xl:block" />
-          <Loop className="absolute -bottom-10 -left-14 z-20 hidden h-16 w-40 md:block" color="#126735" />
+          <Sun className="spin-slow absolute -left-8 -top-10 z-0 h-28 w-28 md:h-36 md:w-36" />
+          <Star className="bob absolute -right-2 top-6 z-20 h-10 w-10" color="#4FAEE6" />
+          <Loop className="absolute -bottom-10 -left-14 z-20 hidden h-16 w-40 md:block" color="#2E9A52" />
 
           <div className="relative z-10 aspect-[1/1] w-full overflow-hidden blob-a border-[10px] border-white shadow-soft">
             <img
