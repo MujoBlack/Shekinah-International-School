@@ -1,30 +1,28 @@
 import { facts } from "@/mocks/home";
 
+const chips = [
+  "bg-sun-100 text-sun-700",
+  "bg-mint-100 text-mint-700",
+  "bg-sky-100 text-sky-700",
+  "bg-coral-100 text-coral-700",
+];
+
 export default function FactsBar() {
   return (
-    <section className="border-b border-primary-950/20 bg-background-100">
-      <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-primary-950/20">
-          {facts.map((fact, index) => (
-            <li
-              key={fact.title}
-              className={`flex items-start gap-4 border-b border-primary-950/20 py-7 last:border-b-0 md:py-9 lg:border-b-0 lg:px-8 ${
-                index === 0 ? "lg:pl-0" : ""
-              } ${index === facts.length - 1 ? "lg:pr-0" : ""}`}
-            >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-primary-950/20 text-primary-800">
-                <i className={`${fact.icon} text-[18px] leading-none`} />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-[14px] font-medium leading-snug text-foreground-950 md:text-[15px]">
-                  {fact.title}
-                </span>
-                <span className="mt-1.5 block text-[12px] leading-relaxed text-foreground-500">{fact.caption}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className="relative z-20 -mt-14 px-5 md:-mt-20 md:px-10">
+      <ul className="mx-auto grid max-w-[1260px] grid-cols-1 gap-2 rounded-[32px] bg-white p-3 shadow-soft sm:grid-cols-2 lg:grid-cols-4">
+        {facts.map((fact, index) => (
+          <li key={fact.title} className="flex items-center gap-4 rounded-[24px] px-4 py-4 transition-colors hover:bg-background-100 md:px-5 md:py-5">
+            <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-[18px] ${chips[index % chips.length]} ${index % 2 ? "rotate-3" : "-rotate-3"}`}>
+              <i className={`${fact.icon} text-[24px] leading-none`} />
+            </span>
+            <span className="min-w-0">
+              <span className="block font-heading text-[17px] leading-snug text-primary-950">{fact.title}</span>
+              <span className="mt-0.5 block text-[13px] leading-snug text-foreground-600">{fact.caption}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

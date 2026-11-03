@@ -3,6 +3,7 @@ import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
 import Doodle from "@/components/base/Doodle";
 import { primarySubjects } from "@/mocks/academics";
+import { img } from "@/lib/img";
 
 export default function PrimarySection() {
   return (
@@ -12,7 +13,7 @@ export default function PrimarySection() {
           <Reveal>
             <div className="h-[260px] w-full overflow-hidden rounded-[24px] md:h-[420px]">
               <img
-                src="https://readdy.ai/api/search-image?query=Primary%20school%20children%20aged%20eight%20to%20eleven%20in%20cream%20and%20green%20uniforms%20working%20in%20pairs%20at%20wooden%20desks%20with%20exercise%20books%20and%20a%20globe%2C%20focused%20and%20smiling%2C%20bright%20classroom%20with%20cream%20walls%20and%20sage%20green%20boards%2C%20warm%20natural%20light%2C%20editorial%20education%20photography&width=900&height=1000&seq=shekinah-academics-primary-04&orientation=portrait"
+                src={img("academics-primary-1")}
                 alt="Primary pupils working together in class at Shekinah International School"
                 title="Primary classes at Shekinah International School Entebbe"
                 className="h-full w-full object-cover object-top"

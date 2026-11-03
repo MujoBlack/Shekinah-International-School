@@ -1,3 +1,4 @@
+import "remixicon/fonts/remixicon.css";
 import { StrictMode } from 'react'
 import './i18n'
 import { createRoot } from 'react-dom/client'

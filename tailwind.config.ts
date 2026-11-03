@@ -72,6 +72,11 @@ export default {
           900: "oklch(var(--foreground-900) / <alpha-value>)",
           950: "oklch(var(--foreground-950) / <alpha-value>)",
         },
+        sun: { 50: "#FFF9E6", 100: "#FFF0BF", 200: "#FFE08A", 300: "#FFD155", 400: "#FFC233", 500: "#F5AE0B", 700: "#9A6A00" },
+        sky: { 50: "#EEF7FD", 100: "#DCEFFC", 200: "#B9DFF8", 300: "#86C8F1", 400: "#4FAEE6", 500: "#2391D4", 700: "#155E8C" },
+        coral: { 50: "#FFF1EE", 100: "#FFE1DB", 200: "#FFC4B8", 300: "#FF9E8A", 400: "#FF7A62", 500: "#EF5B41", 700: "#A8331F" },
+        lilac: { 50: "#F5F2FF", 100: "#ECE6FF", 200: "#D9CEFF", 300: "#BBA8F7", 400: "#9C84EC", 500: "#7C62D6", 700: "#4F3A9A" },
+        mint: { 50: "#F0FAF2", 100: "#DFF3E4", 200: "#BFE6C9", 300: "#8FD2A2", 400: "#57B874", 500: "#2E9A52", 700: "#17602F" },
       },
       fontFamily: {
         sans: ["var(--font-body)"],
@@ -83,10 +88,13 @@ export default {
       },
       borderRadius: {
         "4xl": "32px",
+        "5xl": "40px",
       },
       boxShadow: {
         float: "0 18px 50px -20px rgba(11, 61, 34, 0.28)",
         card: "0 12px 36px -18px rgba(11, 61, 34, 0.22)",
+        pop: "0 6px 0 0 rgba(11, 61, 34, 0.9)",
+        soft: "0 24px 60px -28px rgba(11, 61, 34, 0.35)",
       },
     },
   },

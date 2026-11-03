@@ -1,42 +1,39 @@
 import Button from "@/components/base/Button";
 import Reveal from "@/components/base/Reveal";
+import { Sun, Star, Heart } from "@/components/base/Doodles";
+import { img } from "@/lib/img";
 
 export default function FinalCta() {
   return (
-    <section className="mx-auto w-full max-w-[1320px] px-4 pt-20 md:px-8 md:pt-28">
+    <section className="mx-auto w-full max-w-[1360px] px-5 pb-24 md:px-10 md:pb-28">
       <Reveal>
-        <div className="relative overflow-hidden rounded-[28px] bg-primary-500 px-6 py-12 md:rounded-[36px] md:px-14 md:py-16">
-          <span className="pointer-events-none absolute -right-6 -top-8 flex h-32 w-32 items-center justify-center text-background-50/15 md:h-48 md:w-48">
-            <i className="ri-sun-line text-[120px] leading-none md:text-[190px]" />
-          </span>
-          <span className="pointer-events-none absolute bottom-6 right-10 hidden text-background-50/25 md:block">
-            <i className="ri-leaf-line text-4xl leading-none" />
-          </span>
-          <span className="pointer-events-none absolute bottom-10 left-1/2 hidden text-accent-300/60 md:block">
-            <i className="ri-star-line text-2xl leading-none" />
-          </span>
+        <div className="relative grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[40px] bg-sun-300 px-7 py-12 md:px-14 md:py-16 lg:grid-cols-[1.1fr_1fr]">
+          <Sun className="spin-slow absolute -right-10 -top-10 h-40 w-40 opacity-60" color="#FFFFFF" />
+          <Star className="bob absolute bottom-8 left-[46%] hidden h-8 w-8 lg:block" color="#EF5B41" />
 
-          <div className="relative flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-background-50/15 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-background-50 md:text-[12px]">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
-                Come and see for yourself
-              </span>
-              <h2 className="mt-5 font-heading text-[30px] font-normal leading-[1.12] text-background-50 md:text-[46px]">
-                Come and experience Shekinah.
-              </h2>
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-background-50/80 md:text-[17px]">
-                Walk the campus, meet a teacher and see a class in session. We would love to show you around.
-              </p>
-            </div>
-
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
-              <Button to="/contact" variant="cream">
+          <div className="relative">
+            <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-coral-700">
+              <Heart className="h-4 w-4" /> Come and see for yourself
+            </span>
+            <h2 className="mt-6 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[58px]">
+              Come and experience Shekinah.
+            </h2>
+            <p className="mt-5 max-w-md text-[17px] leading-relaxed text-primary-950/80">
+              Walk the campus, meet a teacher and see a class in session. We would love to show you around.
+            </p>
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+              <Button to="/contact" variant="red">
                 Book a School Visit
               </Button>
-              <Button to="/contact" variant="outlineLight">
+              <Button to="/contact" variant="cream">
                 Contact Us
               </Button>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-[460px]">
+            <div className="aspect-square overflow-hidden blob-b border-[8px] border-white shadow-soft">
+              <img src={img("home-hero-alt")} alt="Smiling Shekinah pupils on the school grounds" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>

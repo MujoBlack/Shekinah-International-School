@@ -1,11 +1,12 @@
 import Doodle from "@/components/base/Doodle";
+import { img } from "@/lib/img";
 
 export default function AcademicsHero() {
   return (
     <section className="relative flex h-[62svh] max-h-[620px] min-h-[470px] w-full items-end overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=Bright%20airy%20primary%20school%20classroom%20in%20Uganda%20with%20cream%20walls%2C%20sage%20green%20display%20boards%20of%20childrens%20work%2C%20wooden%20desks%20in%20neat%20rows%2C%20tall%20windows%20letting%20in%20warm%20morning%20light%2C%20a%20globe%20and%20books%20on%20a%20shelf%2C%20calm%20premium%20editorial%20interior%20photography%2C%20no%20people&width=1920&height=1100&seq=shekinah-academics-hero-01&orientation=landscape"
+          src={img("academics-hero")}
           alt="A bright classroom at Shekinah International School"
           title="Classrooms at Shekinah International School Entebbe"
           className="h-full w-full object-cover object-top"

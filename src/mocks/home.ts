@@ -1,3 +1,5 @@
+import { img } from "@/lib/img";
+
 export const facts = [
   {
     icon: "ri-history-line",
@@ -59,8 +61,7 @@ export const journeyCards = [
     stages: "KG1  ·  KG2  ·  Reception",
     description:
       "Warm, play-rich classrooms where our youngest children learn to listen, share, speak up and wonder. Carefully guided play builds the confidence and early skills they carry into Primary.",
-    image:
-      "https://readdy.ai/api/search-image?query=A%20warm%20young%20teacher%20kneeling%20beside%20nursery%20children%20aged%20three%20to%20five%20playing%20with%20wooden%20blocks%20on%20a%20soft%20rug%2C%20calm%20cream%20and%20sage%20green%20classroom%2C%20soft%20morning%20window%20light%2C%20gentle%20smiles%2C%20editorial%20early%20years%20school%20photography%2C%20warm%20film%20tones&width=900&height=700&seq=shekinah-early-years-01&orientation=landscape",
+    image: img("home-learning-journey-early-years"),
     href: "/academics",
   },
   {
@@ -69,8 +70,7 @@ export const journeyCards = [
     stages: "Year 1  -  Year 6",
     description:
       "A structured, enquiry-led programme following the National Curriculum of England. Children read widely, reason confidently and take on responsibility as they move up through the school.",
-    image:
-      "https://readdy.ai/api/search-image?query=Primary%20school%20children%20aged%20eight%20to%20ten%20in%20green%20uniforms%20writing%20in%20exercise%20books%20at%20wooden%20desks%2C%20focused%20and%20smiling%2C%20bright%20classroom%20with%20cream%20walls%20and%20a%20deep%20green%20chalkboard%2C%20warm%20natural%20light%2C%20editorial%20education%20photography&width=900&height=700&seq=shekinah-primary-02&orientation=landscape",
+    image: img("home-learning-journey-primary"),
     href: "/academics",
   },
 ];
@@ -79,78 +79,34 @@ export const whyCards = [
   {
     title: "A supportive environment",
     text: "Teachers know every child personally. Kindness, patience and clear expectations shape the whole day.",
-    image:
-      "https://readdy.ai/api/search-image?query=A%20kind%20female%20teacher%20in%20a%20green%20cardigan%20sitting%20on%20the%20floor%20beside%20a%20young%20pupil%2C%20both%20smiling%20warmly%2C%20bright%20cream%20classroom%20with%20soft%20cushions%20and%20books%2C%20gentle%20natural%20light%2C%20reassuring%20editorial%20school%20photography&width=700&height=520&seq=shekinah-why-support-03&orientation=landscape",
+    image: img("home-why-shekinah-supportive-environment"),
   },
   {
     title: "Learning and development",
     text: "A broad curriculum with real depth in literacy, numeracy and enquiry, tracked closely so no child drifts.",
-    image:
-      "https://readdy.ai/api/search-image?query=Close%20view%20of%20childrens%20hands%20building%20a%20science%20project%20with%20wooden%20blocks%20and%20coloured%20materials%20on%20a%20pale%20table%2C%20a%20teachers%20hands%20guiding%2C%20warm%20soft%20light%2C%20cream%20and%20sage%20green%20palette%2C%20editorial%20education%20photography&width=700&height=520&seq=shekinah-why-learning-04&orientation=landscape",
+    image: img("home-why-shekinah-learning-development"),
   },
   {
     title: "Activities beyond the classroom",
-    text: "Swimming, sport, music, clubs and trips that let children discover what they love outside a textbook.",
-    image:
-      "https://readdy.ai/api/search-image?query=Primary%20school%20children%20playing%20football%20on%20a%20green%20field%20with%20a%20coach%20watching%2C%20late%20afternoon%20golden%20light%2C%20joyful%20expressions%2C%20tropical%20trees%20around%20the%20pitch%2C%20editorial%20sports%20photography%2C%20warm%20tones&width=700&height=520&seq=shekinah-why-activities-05&orientation=landscape",
+    text: "Sport, music, art and hands-on projects that let children discover what they love outside a textbook.",
+    image: img("home-why-shekinah-beyond-classroom"),
   },
   {
     title: "A caring parent community",
     text: "Open doors, honest feedback and a parent body that genuinely looks out for one another.",
-    image:
-      "https://readdy.ai/api/search-image?query=Parents%20and%20children%20chatting%20at%20a%20school%20picnic%20on%20a%20lawn%2C%20adults%20holding%20cups%20of%20tea%2C%20cream%20tablecloths%20and%20green%20chairs%2C%20warm%20afternoon%20light%2C%20relaxed%20friendly%20atmosphere%2C%20editorial%20lifestyle%20photography&width=700&height=520&seq=shekinah-why-community-06&orientation=landscape",
+    image: img("home-why-shekinah-community"),
   },
 ];
 
 export const lifeImages = [
-  {
-    label: "Classroom learning",
-    className: "col-span-2 row-span-2",
-    image:
-      "https://readdy.ai/api/search-image?query=Children%20working%20together%20at%20a%20round%20table%20in%20a%20sunlit%20primary%20classroom%2C%20open%20exercise%20books%20and%20colourful%20pencils%2C%20cream%20walls%20with%20childrens%20artwork%2C%20sage%20green%20shelves%2C%20warm%20natural%20light%2C%20editorial%20school%20photography&width=1000&height=1000&seq=shekinah-life-classroom-07&orientation=squarish",
-  },
-  {
-    label: "Sports",
-    className: "col-span-1 row-span-1",
-    image:
-      "https://readdy.ai/api/search-image?query=Young%20primary%20school%20children%20in%20green%20sports%20kit%20running%20a%20relay%20race%20on%20a%20grass%20field%2C%20bright%20afternoon%20sun%2C%20motion%20and%20laughter%2C%20tropical%20trees%20in%20the%20background%2C%20editorial%20sports%20photography&width=700&height=700&seq=shekinah-life-sports-08&orientation=squarish",
-  },
-  {
-    label: "Swimming",
-    className: "col-span-1 row-span-2",
-    image:
-      "https://readdy.ai/api/search-image?query=Children%20learning%20to%20swim%20in%20a%20clean%20outdoor%20school%20pool%20with%20a%20swimming%20instructor%20at%20the%20edge%2C%20blue%20water%20sparkling%2C%20bright%20tropical%20daylight%2C%20warm%20friendly%20atmosphere%2C%20editorial%20school%20photography&width=700&height=1000&seq=shekinah-life-swimming-09&orientation=portrait",
-  },
-  {
-    label: "Play",
-    className: "col-span-1 row-span-1",
-    image:
-      "https://readdy.ai/api/search-image?query=Young%20children%20laughing%20on%20a%20shaded%20playground%20with%20wooden%20climbing%20frames%20and%20green%20grass%2C%20warm%20afternoon%20light%20through%20leaves%2C%20genuine%20joyful%20expressions%2C%20editorial%20school%20photography&width=700&height=700&seq=shekinah-life-play-10&orientation=squarish",
-  },
-  {
-    label: "Science",
-    className: "col-span-2 row-span-1",
-    image:
-      "https://readdy.ai/api/search-image?query=A%20small%20group%20of%20primary%20pupils%20in%20safety%20goggles%20doing%20a%20simple%20science%20experiment%20with%20beakers%20on%20a%20light%20wooden%20bench%2C%20curious%20faces%2C%20bright%20cream%20science%20room%2C%20warm%20natural%20light%2C%20editorial%20education%20photography&width=1000&height=700&seq=shekinah-life-science-11&orientation=landscape",
-  },
-  {
-    label: "Trips",
-    className: "col-span-1 row-span-1",
-    image:
-      "https://readdy.ai/api/search-image?query=Primary%20school%20children%20on%20an%20educational%20trip%20walking%20along%20a%20shaded%20path%20near%20Lake%20Victoria%20with%20a%20teacher%2C%20sunlight%20through%20trees%2C%20curious%20happy%20expressions%2C%20documentary%20school%20trip%20photography%2C%20warm%20tones&width=700&height=900&seq=shekinah-life-trips-12&orientation=portrait",
-  },
-  {
-    label: "Events",
-    className: "col-span-1 row-span-1",
-    image:
-      "https://readdy.ai/api/search-image?query=Children%20performing%20on%20a%20small%20school%20stage%20during%20a%20celebration%20assembly%2C%20cream%20drapes%20and%20green%20bunting%2C%20proud%20expressions%2C%20warm%20stage%20light%2C%20editorial%20school%20event%20photography&width=700&height=700&seq=shekinah-life-events-13&orientation=squarish",
-  },
-  {
-    label: "Community",
-    className: "col-span-2 md:col-span-4",
-    image:
-      "https://readdy.ai/api/search-image?query=Whole%20school%20community%20gathered%20on%20a%20green%20lawn%20for%20an%20assembly%2C%20children%20and%20parents%20standing%20together%2C%20warm%20late%20afternoon%20light%2C%20calm%20joyful%20atmosphere%2C%20editorial%20documentary%20photography%2C%20cream%20and%20green%20palette&width=1000&height=700&seq=shekinah-life-comm-14&orientation=landscape",
-  },
+  { label: "Classroom learning", className: "col-span-2 row-span-2", image: img("home-meet-shekinah") },
+  { label: "Sports", className: "col-span-1 row-span-1", image: img("home-life-grid-sports") },
+  { label: "Outdoor play", className: "col-span-1 row-span-2", image: img("school-life-gallery-outdoor") },
+  { label: "Play", className: "col-span-1 row-span-1", image: img("home-life-grid-play") },
+  { label: "Science", className: "col-span-2 row-span-1", image: img("academics-subject-science") },
+  { label: "Crafts", className: "col-span-1 row-span-1", image: img("home-life-grid-crafts") },
+  { label: "ICT", className: "col-span-1 row-span-1", image: img("home-life-grid-ict") },
+  { label: "School events", className: "col-span-2 md:col-span-4", image: img("school-life-events-cookery-day") },
 ];
 
 export const testimonials = [

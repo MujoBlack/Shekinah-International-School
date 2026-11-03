@@ -1,3 +1,5 @@
+import { img } from "@/lib/img";
+
 export const earlyYearsAges = [
   {
     title: "Kindergarten 1",
@@ -139,27 +141,27 @@ export const beyondCards = [
     text: "Experiments, visitors and curious questions all week long.",
     icon: "ri-flask-line",
     image:
-      "https://readdy.ai/api/search-image?query=Primary%20school%20pupils%20in%20safety%20goggles%20watching%20a%20simple%20science%20demonstration%20with%20beakers%20and%20coloured%20water%20on%20a%20light%20wooden%20table%2C%20curious%20excited%20faces%2C%20bright%20cream%20classroom%2C%20warm%20natural%20light%2C%20editorial%20education%20photography&width=700&height=520&seq=shekinah-academics-beyond-01&orientation=landscape",
+      img("academics-beyond-classroom"),
   },
   {
     title: "Sports and Swimming",
     text: "Sport, swimming and active play that build teamwork and confidence.",
     icon: "ri-drop-line",
     image:
-      "https://readdy.ai/api/search-image?query=Children%20in%20green%20and%20cream%20sports%20kit%20enjoying%20a%20swimming%20lesson%20in%20a%20clean%20outdoor%20school%20pool%20with%20an%20instructor%20at%20the%20edge%2C%20sparkling%20blue%20water%2C%20bright%20tropical%20daylight%2C%20joyful%20movement%2C%20editorial%20school%20sports%20photography&width=700&height=520&seq=shekinah-academics-beyond-02&orientation=landscape",
+      img("school-life-sports-2"),
   },
   {
     title: "Creative Arts",
     text: "Music, drama and art that help every child express themselves.",
     icon: "ri-palette-line",
     image:
-      "https://readdy.ai/api/search-image?query=Young%20pupils%20painting%20at%20a%20long%20table%20with%20brushes%20and%20bright%20paint%20pots%2C%20aprons%20on%2C%20focused%20happy%20expressions%2C%20cream%20classroom%20with%20artwork%20pinned%20on%20a%20sage%20green%20board%2C%20soft%20daylight%2C%20editorial%20art%20class%20photography&width=700&height=520&seq=shekinah-academics-beyond-03&orientation=landscape",
+      img("about-setting-art-room"),
   },
   {
     title: "Trips and Projects",
     text: "Learning out in the world, then making something of it back in class.",
     icon: "ri-route-line",
     image:
-      "https://readdy.ai/api/search-image?query=A%20small%20group%20of%20primary%20pupils%20with%20a%20teacher%20on%20an%20educational%20walk%20near%20Lake%20Victoria%20in%20Uganda%2C%20pointing%20at%20birds%20and%20plants%2C%20sunlight%20through%20trees%2C%20curious%20happy%20expressions%2C%20documentary%20school%20trip%20photography%2C%20warm%20tones&width=700&height=520&seq=shekinah-academics-beyond-04&orientation=landscape",
+      img("academics-subject-design-technology"),
   },
 ];

@@ -14,13 +14,12 @@ export default function PrincipalSection() {
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
         <Reveal>
           <div className="relative">
-            <div className="h-[340px] w-full overflow-hidden rounded-[24px] md:h-[460px]">
-              <img
-                src="https://readdy.ai/api/search-image?query=Warm%20professional%20portrait%20of%20a%20confident%20African%20woman%20in%20her%20forties%2C%20school%20principal%2C%20wearing%20a%20deep%20green%20blazer%20over%20a%20light%20cream%20blouse%2C%20standing%20in%20a%20bright%20cream%20office%20with%20a%20bookshelf%20and%20a%20green%20plant%20softly%20blurred%20behind%20her%2C%20gentle%20welcoming%20smile%2C%20soft%20window%20light%2C%20editorial%20portrait%20photography&width=900&height=1100&seq=shekinah-about-principal-01&orientation=portrait"
-                alt="Ms. Jackie Lwande, Principal of Shekinah International School"
-                title="Ms. Jackie Lwande, Principal of Shekinah International School Entebbe"
-                className="h-full w-full object-cover object-top"
-              />
+            {/* TODO: replace with a real photo of the principal when the school sends one */}
+            <div className="flex h-[340px] w-full flex-col items-center justify-center gap-4 rounded-[36px] bg-sun-100 md:h-[460px]">
+              <span className="flex h-36 w-36 items-center justify-center rounded-full bg-white font-heading text-[56px] text-primary-700 shadow-soft">
+                JL
+              </span>
+              <span className="hand text-[26px] text-primary-700">Portrait coming soon</span>
             </div>
 
             <div className="absolute -bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-primary-500 px-4 py-3 shadow-card md:left-6 md:px-5 md:py-4">

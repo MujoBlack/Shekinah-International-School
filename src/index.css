@@ -9,7 +9,7 @@
 
   /* Warm cream page base */
   --background-50: 0.989 0.007 88;
-  --background-100: 0.976 0.01 87;
+  --background-100: 0.985 0.012 88;
   --background-200: 0.955 0.014 85;
   --background-300: 0.928 0.018 83;
   --background-400: 0.893 0.02 82;
@@ -94,9 +94,10 @@
   h4,
   h5 {
     font-family: var(--font-heading);
-    font-weight: 400;
+    font-weight: 500;
+    font-variation-settings: "SOFT" 100, "WONK" 0;
     color: oklch(var(--foreground-950));
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     line-height: 1.05;
   }
 
@@ -235,4 +236,84 @@
   .drift-track {
     animation: none;
   }
+}
+/* ---------- Playful layer (Ivy Kids / Tinyloom direction) ---------- */
+.font-heading {
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+
+.wonk {
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.hand {
+  font-family: "Caveat", cursive;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* Organic photo frames */
+.blob-a { border-radius: 58% 42% 46% 54% / 48% 56% 44% 52%; }
+.blob-b { border-radius: 42% 58% 60% 40% / 55% 45% 55% 45%; }
+.blob-c { border-radius: 64px 64px 64px 160px; }
+.blob-d { border-radius: 160px 64px 64px 64px; }
+
+/* Marker highlight behind a word */
+.mark-sun,
+.mark-mint,
+.mark-sky,
+.mark-coral {
+  position: relative;
+  white-space: nowrap;
+  z-index: 0;
+}
+.mark-sun::after,
+.mark-mint::after,
+.mark-sky::after,
+.mark-coral::after {
+  content: "";
+  position: absolute;
+  left: -0.08em;
+  right: -0.08em;
+  bottom: 0.06em;
+  height: 0.36em;
+  border-radius: 999px;
+  z-index: -1;
+  transform: rotate(-1.5deg);
+}
+.mark-sun::after { background: #ffd155; }
+.mark-mint::after { background: #8fd2a2; }
+.mark-sky::after { background: #86c8f1; }
+.mark-coral::after { background: #ffc4b8; }
+
+/* Gentle floating doodles */
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.bob { animation: bob 5s ease-in-out infinite; }
+.bob-slow { animation: bob 7s ease-in-out infinite; }
+.spin-slow { animation: spin-slow 28s linear infinite; }
+
+/* Springy hover for cards */
+.lift {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+.lift:hover {
+  transform: translateY(-6px) rotate(var(--hr, -0.6deg));
+}
+
+.wave-top {
+  display: block;
+  width: 100%;
+  height: 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bob, .bob-slow, .spin-slow { animation: none; }
+  .lift:hover { transform: none; }
 }

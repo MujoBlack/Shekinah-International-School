@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type Tone = "mint" | "butter" | "cream";
+type Tone = "mint" | "butter" | "cream" | "sky" | "coral" | "lilac";
 
 interface EyebrowProps {
   children: ReactNode;
@@ -8,15 +8,21 @@ interface EyebrowProps {
   className?: string;
 }
 
+const tones: Record<Tone, string> = {
+  mint: "bg-mint-100 text-mint-700",
+  butter: "bg-sun-100 text-sun-700",
+  sky: "bg-sky-100 text-sky-700",
+  coral: "bg-coral-100 text-coral-700",
+  lilac: "bg-lilac-100 text-lilac-700",
+  cream: "bg-background-50/15 text-background-50 ring-1 ring-background-50/30",
+};
+
 export default function Eyebrow({ children, tone = "mint", className = "" }: EyebrowProps) {
-  const onDark = tone === "cream";
   return (
     <span
-      className={`inline-flex items-center gap-3 font-label text-[11px] font-medium uppercase tracking-[0.28em] ${
-        onDark ? "text-background-50" : "text-primary-900"
-      } ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-label text-[12px] font-semibold uppercase tracking-[0.14em] ${tones[tone]} ${className}`}
     >
-      <span className={`block h-px w-6 ${onDark ? "bg-background-50/70" : "bg-primary-900/60"}`} aria-hidden="true" />
+      <span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true" />
       {children}
     </span>
   );

@@ -36,27 +36,37 @@ export default function SiteNav() {
 
   return (
     <>
+      <div className="hidden bg-primary-800 text-background-50 md:block">
+        <div className="mx-auto flex max-w-[1360px] items-center justify-between px-10 py-2 text-[13px]">
+          <span className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-sun-300" aria-hidden="true" />
+            Christian · Multicultural · National Curriculum of England
+          </span>
+          <span className="flex items-center gap-6">
+            <a href="tel:+256755469134" className="cursor-pointer hover:text-sun-200">0755 469134</a>
+            <a href="mailto:info@shekinahinternational.ac.ug" className="cursor-pointer hover:text-sun-200">
+              info@shekinahinternational.ac.ug
+            </a>
+          </span>
+        </div>
+      </div>
       <header
-        className={`sticky top-0 z-50 w-full border-b border-primary-950/20 bg-background-100/95 backdrop-blur-md transition-shadow duration-300 ${
-          scrolled ? "shadow-[0_12px_30px_-26px_rgba(11,61,34,0.65)]" : ""
+        className={`sticky top-0 z-50 w-full bg-background-100/95 backdrop-blur-md transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_14px_30px_-24px_rgba(11,61,34,0.55)]" : ""
         }`}
       >
-        <div className="flex w-full items-stretch">
-          <div className="flex items-center border-r border-primary-950/20 px-4 py-3 md:px-8 md:py-4">
-            <Logo />
-          </div>
+        <div className="mx-auto flex w-full max-w-[1360px] items-center gap-4 px-4 py-2.5 md:px-10 md:py-3">
+          <Logo />
 
-          <nav className="hidden flex-1 items-center justify-center gap-7 lg:flex" aria-label="Main">
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex" aria-label="Main">
             {links.map((link) => {
               const active = pathname === link.to;
               return (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`relative cursor-pointer whitespace-nowrap py-1 text-[13px] transition-colors duration-200 ${
-                    active
-                      ? "text-primary-950 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:bg-primary-950"
-                      : "text-foreground-600 hover:text-primary-950"
+                  className={`cursor-pointer whitespace-nowrap rounded-full px-4 py-2 text-[15px] font-medium transition-colors duration-200 ${
+                    active ? "bg-mint-100 text-primary-800" : "text-foreground-700 hover:bg-sun-100 hover:text-primary-900"
                   }`}
                 >
                   {link.label}
@@ -65,16 +75,10 @@ export default function SiteNav() {
             })}
           </nav>
 
-          <div className="ml-auto flex items-center gap-3 border-l border-primary-950/20 px-4 py-3 md:gap-6 md:px-8 md:py-4">
+          <div className="ml-auto flex items-center gap-3 lg:ml-0">
             <Link
               to="/contact"
-              className="hidden cursor-pointer whitespace-nowrap text-[13px] text-primary-950 underline decoration-primary-950/30 underline-offset-4 transition-colors hover:decoration-primary-950 md:inline-block"
-            >
-              Enquire
-            </Link>
-            <Link
-              to="/contact"
-              className="hidden cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-primary-950 bg-primary-950 px-6 py-2.5 text-[13px] font-medium text-background-50 transition-colors duration-300 hover:bg-transparent hover:text-primary-950 sm:inline-flex"
+              className="hidden cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full bg-coral-500 px-6 py-3 text-[14px] font-semibold text-white shadow-[0_4px_0_0_#A8331F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-400 sm:inline-flex"
             >
               Book a School Visit
             </Link>
@@ -83,7 +87,7 @@ export default function SiteNav() {
               type="button"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-[2px] border border-primary-950/30 text-primary-950 transition-colors hover:bg-primary-950 hover:text-background-50 lg:hidden"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-mint-100 text-primary-900 transition-colors hover:bg-mint-200 lg:hidden"
             >
               <i className="ri-menu-3-line text-lg leading-none" />
             </button>
@@ -93,13 +97,13 @@ export default function SiteNav() {
 
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-background-100 lg:hidden">
-          <div className="flex items-center justify-between border-b border-primary-950/20 px-4 py-3">
+          <div className="flex items-center justify-between px-4 py-3">
             <Logo />
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-[2px] border border-primary-950/30 text-primary-950"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-coral-100 text-coral-700"
             >
               <i className="ri-close-line text-lg leading-none" />
             </button>
@@ -110,15 +114,15 @@ export default function SiteNav() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="flex cursor-pointer items-baseline justify-between border-b border-primary-950/15 py-4 font-heading text-[28px] text-foreground-950"
+                className={`mb-2 flex cursor-pointer items-center justify-between rounded-[22px] px-5 py-4 font-heading text-[26px] text-foreground-950 ${["bg-mint-100","bg-sun-100","bg-sky-100","bg-coral-100","bg-lilac-100","bg-mint-100"][index]}`}
               >
                 <span>{link.label}</span>
-                <span className="text-[11px] tracking-[0.2em] text-primary-700">0{index + 1}</span>
+                <i className="ri-arrow-right-up-line text-xl text-primary-700" />
               </Link>
             ))}
             <Link
               to="/contact"
-              className="mt-8 inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-primary-950 bg-primary-950 px-6 py-3.5 text-[15px] font-medium text-background-50"
+              className="mt-6 inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-full bg-coral-500 px-6 py-4 text-[16px] font-semibold text-white shadow-[0_5px_0_0_#A8331F]"
             >
               Book a School Visit
             </Link>

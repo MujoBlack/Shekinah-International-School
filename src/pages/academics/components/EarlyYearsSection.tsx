@@ -3,6 +3,7 @@ import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
 import Doodle from "@/components/base/Doodle";
 import { earlyYearsAges, earlyYearsSubjects } from "@/mocks/academics";
+import { img } from "@/lib/img";
 
 export default function EarlyYearsSection() {
   return (
@@ -33,7 +34,7 @@ export default function EarlyYearsSection() {
           <div className="relative">
             <div className="h-[300px] w-full overflow-hidden rounded-[24px] md:h-[420px]">
               <img
-                src="https://readdy.ai/api/search-image?query=Warm%20early%20years%20classroom%20with%20three%20and%20four%20year%20olds%20playing%20with%20wooden%20blocks%20and%20colourful%20soft%20toys%20on%20a%20woven%20rug%2C%20a%20teacher%20kneeling%20beside%20them%2C%20cream%20walls%20and%20sage%20green%20shelves%2C%20big%20windows%20with%20soft%20morning%20light%2C%20gentle%20joyful%20atmosphere%2C%20editorial%20school%20photography&width=900&height=900&seq=shekinah-academics-early-02&orientation=squarish"
+                src={img("academics-early-years-1")}
                 alt="Young children playing and learning in an Early Years classroom at Shekinah"
                 title="Early Years classroom at Shekinah International School"
                 className="h-full w-full object-cover object-top"
@@ -88,7 +89,7 @@ export default function EarlyYearsSection() {
         <Reveal delay={140}>
           <figure className="relative h-full min-h-[160px] overflow-hidden rounded-[20px] lg:col-span-2">
             <img
-              src="https://readdy.ai/api/search-image?query=Close%20view%20of%20small%20childrens%20hands%20sorting%20colourful%20wooden%20shapes%20and%20counting%20beads%20on%20a%20pale%20wooden%20table%20in%20a%20calm%20nursery%20classroom%2C%20soft%20natural%20window%20light%2C%20cream%20and%20sage%20green%20palette%2C%20warm%20editorial%20education%20photography&width=700&height=520&seq=shekinah-academics-early-03&orientation=landscape"
+              src={img("academics-early-years-2")}
               alt="Children exploring shapes and counting beads in the Early Years classroom"
               title="Hands-on learning in Early Years at Shekinah International School"
               className="h-full w-full object-cover object-top"

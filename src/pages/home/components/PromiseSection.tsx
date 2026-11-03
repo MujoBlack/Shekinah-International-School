@@ -1,47 +1,45 @@
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
+import { Star, Rainbow } from "@/components/base/Doodles";
 import { promiseCards } from "@/mocks/home";
+
+const cardTones = [
+  { card: "bg-mint-100", icon: "bg-white text-mint-700", tilt: "md:-rotate-2", hr: "[--hr:1deg]" },
+  { card: "bg-sun-100", icon: "bg-white text-sun-700", tilt: "md:rotate-1 md:translate-y-6", hr: "[--hr:-1deg]" },
+  { card: "bg-sky-100", icon: "bg-white text-sky-700", tilt: "md:-rotate-1", hr: "[--hr:1deg]" },
+  { card: "bg-coral-100", icon: "bg-white text-coral-700", tilt: "md:rotate-2 md:translate-y-6", hr: "[--hr:-1deg]" },
+];
 
 export default function PromiseSection() {
   return (
-    <section className="mx-auto w-full max-w-[1360px] px-5 py-24 md:px-10 md:py-[140px]">
-      <Reveal className="max-w-3xl">
-        <Eyebrow>Our Promise</Eyebrow>
-        <h2 className="mt-6 font-heading text-[36px] leading-[1.02] text-foreground-950 md:text-[64px]">
-          A school built around the child
+    <section className="relative mx-auto w-full max-w-[1360px] px-5 py-24 md:px-10 md:py-32">
+      <Reveal className="relative mx-auto max-w-3xl text-center">
+        <Rainbow className="mx-auto mb-4 h-10 w-20" />
+        <Eyebrow tone="coral">Our Promise</Eyebrow>
+        <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
+          A school built around <span className="mark-mint">the child</span>
         </h2>
-        <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-foreground-600 md:text-[17px]">
+        <p className="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-foreground-600">
           Four commitments shape everything we do, from the way we plan a lesson to the way we greet a child at the gate.
         </p>
+        <Star className="bob absolute -right-4 top-10 hidden h-9 w-9 md:block" color="#FFC233" />
       </Reveal>
 
-      <Reveal delay={80}>
-        <span className="mt-10 block h-[3px] w-16 bg-accent-500" aria-hidden="true" />
-      </Reveal>
-
-      <div className="mt-10 grid grid-cols-1 border border-primary-950/20 sm:grid-cols-2 lg:grid-cols-4">
-        {promiseCards.map((card, index) => (
-          <Reveal key={card.title} delay={index * 70}>
-            <article
-              className={`flex h-full flex-col border-primary-950/20 p-7 md:p-8 ${
-                index % 2 === 1 ? "sm:border-l" : ""
-              } ${index > 0 ? "border-t sm:border-t-0" : ""} ${index === 1 ? "bg-secondary-100" : "bg-background-50"} ${
-                index === 2 ? "sm:border-l-0 lg:border-l" : ""
-              } ${index > 1 ? "sm:border-t lg:border-t-0" : ""}`}
-            >
-              <div className="flex items-start justify-between">
-                <span className="text-primary-800">
-                  <i className={`${card.icon} text-[24px] leading-none`} />
+      <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {promiseCards.map((card, index) => {
+          const tone = cardTones[index % cardTones.length];
+          return (
+            <Reveal key={card.title} delay={index * 80}>
+              <article className={`lift flex h-full flex-col rounded-[32px] p-7 md:p-8 ${tone.card} ${tone.tilt} ${tone.hr}`}>
+                <span className={`flex h-14 w-14 items-center justify-center rounded-full shadow-card ${tone.icon}`}>
+                  <i className={`${card.icon} text-[26px] leading-none`} />
                 </span>
-                <span className="font-label text-[11px] tracking-[0.2em] text-foreground-400">
-                  0{index + 1}
-                </span>
-              </div>
-              <h3 className="mt-10 font-heading text-[22px] leading-tight text-foreground-950">{card.title}</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-foreground-600">{card.text}</p>
-            </article>
-          </Reveal>
-        ))}
+                <h3 className="mt-8 font-heading text-[26px] leading-tight text-primary-950">{card.title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-foreground-700">{card.text}</p>
+              </article>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );

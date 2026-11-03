@@ -1,8 +1,10 @@
+import { img } from "@/lib/img";
+
 export const admissionHeroImage =
-  "https://readdy.ai/api/search-image?query=Warm%20welcoming%20entrance%20of%20a%20small%20cream%20primary%20school%20in%20Entebbe%20Uganda%20with%20a%20deep%20green%20gate%2C%20tropical%20palm%20trees%20and%20bougainvillea%2C%20two%20parents%20holding%20hands%20with%20a%20young%20child%20in%20green%20uniform%20walking%20towards%20the%20gate%2C%20absolutely%20no%20signage%20or%20lettering%20on%20any%20wall%20or%20gate%2C%20soft%20golden%20morning%20light%2C%20editorial%20school%20photography%2C%20calm%20premium%20atmosphere&width=1920&height=1100&seq=adm-hero-c1&orientation=landscape";
+  img("admission-hero");
 
 export const admissionWhyImage =
-  "https://readdy.ai/api/search-image?query=A%20friendly%20teacher%20kneeling%20beside%20a%20smiling%20young%20pupil%20in%20a%20bright%20cream%20classroom%2C%20pointing%20at%20a%20picture%20book%20together%2C%20plain%20sage%20green%20display%20boards%20behind%20with%20no%20lettering%2C%20warm%20daylight%20through%20tall%20windows%2C%20genuine%20caring%20moment%2C%20editorial%20education%20photography%2C%20shallow%20depth%20of%20field&width=900&height=1100&seq=adm-why-c2&orientation=portrait";
+  img("admission-why-shekinah");
 
 export const whyPoints = [
   {

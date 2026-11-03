@@ -1,48 +1,76 @@
 import Button from "@/components/base/Button";
+import { Sun, Star, Loop, Heart, Squiggle } from "@/components/base/Doodles";
+import { img } from "@/lib/img";
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[min(100vh,760px)] min-h-[560px] w-full items-end overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src="https://readdy.ai/api/search-image?query=Warm%20sunlit%20school%20courtyard%20in%20Entebbe%20Uganda%2C%20group%20of%20primary%20school%20children%20aged%20five%20to%20eleven%20of%20African%20and%20international%20backgrounds%20smiling%20together%20in%20cream%20and%20green%20uniforms%2C%20palm%20trees%20and%20low%20cream%20school%20buildings%20behind%20with%20no%20signage%20or%20lettering%20anywhere%2C%20soft%20golden%20afternoon%20light%2C%20editorial%20school%20photography%2C%20calm%20premium%20atmosphere%2C%20shallow%20depth%20of%20field&width=1920&height=1200&seq=home-hero-e1&orientation=landscape"
-          alt="Children smiling together in the courtyard of Shekinah International School in Entebbe"
-          title="Shekinah International School Entebbe primary school community"
-          className="h-full w-full object-cover object-top"
-        />
-        <div className="absolute inset-0 hero-veil" />
-      </div>
+    <section className="relative overflow-hidden bg-background-100">
+      {/* soft colour washes */}
+      <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-sun-100/80 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-[460px] w-[460px] rounded-full bg-sky-100/80 blur-3xl" />
 
-      <div className="relative mx-auto w-full max-w-[1360px] px-5 pb-16 md:px-10 md:pb-24">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2.5 rounded-full bg-primary-950/50 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-background-50">
-            <span className="h-1.5 w-1.5 rounded-full bg-background-50" aria-hidden="true" />
+      <div className="relative mx-auto grid w-full max-w-[1360px] grid-cols-1 items-center gap-12 px-5 pb-24 pt-10 md:px-10 md:pb-32 md:pt-14 lg:grid-cols-[1.02fr_1fr] lg:gap-10">
+        <div className="relative z-10">
+          <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-primary-800 shadow-card">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-mint-100 text-primary-700">
+              <i className="ri-sparkling-2-fill text-[13px] leading-none" />
+            </span>
             Christian international school in Entebbe
           </span>
 
-          <h1 className="mt-7 font-heading text-[40px] leading-[1.02] text-background-50 sm:text-[56px] md:text-[76px]">
-            A Place to Learn,
-            <br className="hidden sm:block" /> Grow and Belong
+          <h1 className="mt-7 font-heading text-[44px] leading-[1.02] text-primary-950 sm:text-[60px] md:text-[78px]">
+            A Place to <span className="mark-sun">Learn</span>, Grow and{" "}
+            <span className="wonk relative inline-block text-coral-500">
+              Belong
+              <Squiggle className="absolute -bottom-3 left-0 h-4 w-full" color="#FFC233" />
+            </span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-background-50 md:text-[18px]">
+          <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-foreground-700 md:text-[19px]">
             Creating a friendly and safe environment where every child can learn, develop and thrive.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button to="/about" variant="cream">
-              Explore Our School
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Button to="/contact" variant="red">
+              Book a School Visit
             </Button>
-            <Button to="/admission" variant="outlineLight">
-              Enquire About Admissions
+            <Button to="/about" variant="outline">
+              Explore Our School
             </Button>
           </div>
 
-          <div className="mt-9 inline-flex items-center gap-3 rounded-full bg-primary-950/50 px-4 py-2">
-            <span className="h-px w-5 bg-background-50" aria-hidden="true" />
-            <span className="text-[11px] uppercase tracking-[0.24em] text-background-50">
-              Equipping Today. Shaping Tomorrow.
+          <p className="hand mt-8 flex items-center gap-2 text-[24px] text-primary-700">
+            <Heart className="h-5 w-5" />
+            Equipping Today. Shaping Tomorrow.
+          </p>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[600px]">
+          <Sun className="spin-slow absolute -left-8 -top-10 z-0 h-28 w-28 md:h-36 md:w-36" />
+          <Star className="bob absolute -right-2 top-6 z-20 h-10 w-10" color="#4FAEE6" />
+          <Loop className="absolute -bottom-10 -left-14 z-20 hidden h-16 w-40 md:block" color="#2E9A52" />
+
+          <div className="relative z-10 aspect-[1/1] w-full overflow-hidden blob-a border-[10px] border-white shadow-soft">
+            <img
+              src={img("home-hero")}
+              alt="Shekinah pupils running and laughing together on the school lawn"
+              className="h-full w-full object-cover object-center"
+              fetchPriority="high"
+            />
+          </div>
+
+          <div className="bob-slow absolute -left-4 bottom-10 z-20 flex items-center gap-3 rounded-[22px] bg-white px-4 py-3 shadow-soft [--r:-3deg] md:-left-10">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sun-300 text-primary-950">
+              <i className="ri-earth-line text-xl leading-none" />
             </span>
+            <span className="leading-tight">
+              <span className="block font-heading text-[20px] text-primary-950">15 nationalities</span>
+              <span className="block text-[13px] text-foreground-600">learning side by side</span>
+            </span>
+          </div>
+
+          <div className="absolute -right-2 bottom-24 z-20 rotate-6 rounded-full bg-coral-500 px-4 py-2 text-[14px] font-bold text-white shadow-soft md:-right-6">
+            Since 2014
           </div>
         </div>
       </div>
