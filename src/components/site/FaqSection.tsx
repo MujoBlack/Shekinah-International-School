@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { img } from "@/lib/img";
 import { faqs } from "./Path";
@@ -5,7 +6,17 @@ import { SunBuddy } from "./Critters";
 import { Btn, CONTACT, Faq, Label, SITE, tel, vi } from "./ui";
 
 /* Questions: heading and a friendly "ask us" card on the left, numbered accordion on the right. */
-export default function FaqSection({ n, className = "sec" }: { n: string; className?: string }) {
+export default function FaqSection({
+  n,
+  className = "sec",
+  items = faqs,
+  intro = "Straight answers to the things parents ask us most.",
+}: {
+  n: string;
+  className?: string;
+  items?: { q: string; a: ReactNode }[];
+  intro?: string;
+}) {
   return (
     <section className={`${className} faq-sec`}>
       <div className="wrap faq-grid">
@@ -17,7 +28,7 @@ export default function FaqSection({ n, className = "sec" }: { n: string; classN
             No surprises.
           </h2>
           <p className="rv s-muted" style={{ ...vi(2), marginTop: 16 }}>
-            Straight answers to the things parents ask us most.
+            {intro}
           </p>
           <div className="ask-card rv rv-scale" style={vi(3)}>
             <div className="ask-ph">
@@ -39,7 +50,7 @@ export default function FaqSection({ n, className = "sec" }: { n: string; classN
             <SunBuddy />
           </div>
         </div>
-        <Faq items={faqs} />
+        <Faq items={items} />
       </div>
     </section>
   );

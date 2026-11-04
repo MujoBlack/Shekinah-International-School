@@ -4,6 +4,7 @@ import { Rise } from "./ui";
 
 interface Props {
   crumb: string;
+  parent?: { label: string; to: string };
   title: string;
   text?: string;
   image: string;
@@ -11,14 +12,20 @@ interface Props {
   children?: ReactNode;
 }
 
-export default function PageHero({ crumb, title, text, image, position = "center 45%", children }: Props) {
+export default function PageHero({ crumb, parent, title, text, image, position = "center 45%", children }: Props) {
   return (
     <header className="phero">
       <img src={image} alt="" style={{ objectPosition: position }} fetchPriority="high" />
       <div className="in">
         <div className="wrap">
           <span className="crumbs fade-up" style={{ ["--d" as string]: "0.1s" }}>
-            <Link to="/">Home</Link> <i className="ri-arrow-right-s-line" aria-hidden="true" /> {crumb}
+            <Link to="/">Home</Link> <i className="ri-arrow-right-s-line" aria-hidden="true" />{" "}
+            {parent && (
+              <>
+                <Link to={parent.to}>{parent.label}</Link> <i className="ri-arrow-right-s-line" aria-hidden="true" />{" "}
+              </>
+            )}
+            {crumb}
           </span>
           <h1 className="s-h1">
             <Rise text={title} />
