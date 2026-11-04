@@ -1,7 +1,7 @@
 import { useEffect, useState, type CSSProperties } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Btn, VISIT } from "./ui";
-import { MenuBuddy } from "./Critters";
+import Buddy, { type BuddyProp } from "./Buddy";
 
 const logo = `${__BASE_PATH__.replace(/\/$/, "")}/images/shekinah-logo.svg`;
 
@@ -21,15 +21,15 @@ export const academicsMenu = [
 ];
 
 /* Desktop mega menu, laid out in columns like the Ivy Kids programmes menu. */
-const megaMenu = [
-  { label: "All of Academics", to: "/academics", text: "See every stage" },
-  { label: "Our Curriculum", to: "/academics/curriculum", text: "National Curriculum of England" },
-  { label: "Early Years", to: "/academics/early-years", text: "Ages 2 – 5" },
-  { label: "Kindergarten 1", to: "/academics/early-years#kg1", text: "Ages 2 – 3" },
-  { label: "Kindergarten 2", to: "/academics/early-years#kg2", text: "Ages 3 – 4" },
-  { label: "Reception", to: "/academics/early-years#reception", text: "Ages 4 – 5" },
-  { label: "Primary", to: "/academics/primary", text: "Year 1 onward" },
-  { label: "Beyond the classroom", to: "/school-life", text: "Sport, music and learning weeks" },
+const megaMenu: { label: string; to: string; text: string; say: string; prop: BuddyProp }[] = [
+  { label: "All of Academics", to: "/academics", text: "See every stage", say: "Let's explore every stage!", prop: null },
+  { label: "Our Curriculum", to: "/academics/curriculum", text: "National Curriculum of England", say: "The English curriculum, the Shekinah way.", prop: "book" },
+  { label: "Early Years", to: "/academics/early-years", text: "Ages 2 – 5", say: "Paint, play and first friends!", prop: "sprout" },
+  { label: "Kindergarten 1", to: "/academics/early-years#kg1", text: "Ages 2 – 3", say: "Hello, little explorer!", prop: "sprout" },
+  { label: "Kindergarten 2", to: "/academics/early-years#kg2", text: "Ages 3 – 4", say: "Stories, songs and big questions!", prop: "sprout" },
+  { label: "Reception", to: "/academics/early-years#reception", text: "Ages 4 – 5", say: "Getting ready for Year 1!", prop: "sprout" },
+  { label: "Primary", to: "/academics/primary", text: "Year 1 onward", say: "Big school, here we come!", prop: "pencil" },
+  { label: "Beyond the classroom", to: "/school-life", text: "Sport, music and learning weeks", say: "Ready, set, play!", prop: null },
 ];
 
 const isOn = (pathname: string, to: string) => (to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(to + "/"));
@@ -39,6 +39,10 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  // Academics menu + buddy state
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [hot, setHot] = useState<{ el: HTMLElement; i: number } | null>(null);
+  const [cheer, setCheer] = useState(0);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -72,7 +76,14 @@ export default function Nav() {
         </Link>
         <ul>
           {links.map((l) => (
-            <li key={l.to} className={l.sub ? "has-sub" : undefined}>
+            <li
+              key={l.to}
+              className={l.sub ? "has-sub" : undefined}
+              onMouseEnter={l.sub ? () => setMenuOpen(true) : undefined}
+              onMouseLeave={l.sub ? () => { setMenuOpen(false); setHot(null); } : undefined}
+              onFocus={l.sub ? () => setMenuOpen(true) : undefined}
+              onBlur={l.sub ? (e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) { setMenuOpen(false); setHot(null); } } : undefined}
+            >
               <Link to={l.to} className={isOn(pathname, l.to) ? "on" : ""} aria-haspopup={l.sub ? "true" : undefined}>
                 {l.label}
                 {l.sub && <i className="ri-arrow-down-s-line caret" aria-hidden="true" />}
@@ -82,13 +93,29 @@ export default function Nav() {
                   <div className="sub-in">
                     <div className="mega">
                       {megaMenu.map((m, k) => (
-                        <Link key={m.to + m.label} to={m.to} className={pathname + (window.location.hash || "") === m.to ? "here" : ""} style={{ "--i": k } as CSSProperties}>
+                        <Link
+                          key={m.to + m.label}
+                          to={m.to}
+                          className={pathname + (window.location.hash || "") === m.to ? "here" : ""}
+                          style={{ "--i": k } as CSSProperties}
+                          onMouseEnter={(e) => setHot({ el: e.currentTarget, i: k })}
+                          onMouseLeave={() => setHot(null)}
+                          onFocus={(e) => setHot({ el: e.currentTarget, i: k })}
+                          onClick={() => setCheer((c) => c + 1)}
+                        >
                           <b>{m.label}</b>
                           <small>{m.text}</small>
                         </Link>
                       ))}
                     </div>
-                    <MenuBuddy />
+                    <Buddy
+                      className="buddy-menu"
+                      open={menuOpen}
+                      target={hot?.el ?? null}
+                      say={hot ? megaMenu[hot.i].say : "Hi! Where shall we go?"}
+                      prop={hot ? megaMenu[hot.i].prop : null}
+                      cheer={cheer}
+                    />
                   </div>
                 </div>
               )}
