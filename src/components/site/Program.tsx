@@ -2,7 +2,8 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Btn, Label, VISIT, vi } from "./ui";
 
-/* Building blocks for the programme pages (Early Years, Primary) and the curriculum page.
+/* `note` and `confirm` props record facts the school still has to confirm (TODO before launch). Calvin asked for them not to show on the page.
+   Building blocks for the programme pages (Early Years, Primary) and the curriculum page.
    Section order follows the Ivy Kids programme template Calvin chose. */
 
 const tintCls = ["t-mint", "t-butter", "t-blush", "t-sage"];
@@ -50,7 +51,6 @@ export function DetailsIntro({ id, title, children, ages, details }: { id?: stri
                 <dt>{d.k}</dt>
                 <dd>
                   {d.v}
-                  {d.confirm && <span className="note-flag" style={{ marginTop: 6 }}><i className="ri-information-line" /> to confirm</span>}
                 </dd>
               </div>
             ))}
@@ -202,11 +202,6 @@ export function Moments({ id, n, label = "A day in the life", title, text, items
         </article>
         <button type="button" className="icon-btn pg-arrow r" aria-label="Next" onClick={() => go(1)}><i className="ri-arrow-right-line" /></button>
       </div>
-      {note && (
-        <p className="center" style={{ marginTop: 22 }}>
-          <span className="note-flag"><i className="ri-information-line" /> {note}</span>
-        </p>
-      )}
     </section>
   );
 }
@@ -218,7 +213,6 @@ export function SafetySplit({ id, title, children, image, alt, note, cta }: { id
         <div>
           <h2 className="s-h2 rv">{title}</h2>
           <div className="pg-copy rv" style={vi(1)}>{children}</div>
-          {note && <p className="note-flag rv"><i className="ri-information-line" /> {note}</p>}
           {cta && (
             <div className="rv" style={{ ...vi(2), marginTop: 26 }}>
               <Btn to={cta.to} variant="red" arrow>{cta.label}</Btn>
@@ -251,11 +245,6 @@ export function Partners({ id, n, title, text, cards, quote, label = "Partners i
             </div>
           ))}
         </div>
-        {note && (
-          <p className="center" style={{ marginTop: 18 }}>
-            <span className="note-flag"><i className="ri-information-line" /> {note}</span>
-          </p>
-        )}
         <figure className="pg-quote rv rv-scale">
           <img src={quote.img} alt={quote.alt} loading="lazy" />
           <blockquote>

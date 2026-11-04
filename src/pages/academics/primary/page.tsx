@@ -50,7 +50,6 @@ export default function Primary() {
           { k: "Year groups", v: "From Year 1", confirm: true },
           { k: "Curriculum", v: "Key Stages 1 and 2 of the National Curriculum of England" },
           { k: "Subjects", v: "Ten subjects, including science, French, ICT and music" },
-          { k: "Days and hours", v: "Monday to Friday", confirm: true },
         ]}
       >
         <p>Primary at Shekinah builds on everything children gained in Early Years. Lessons happen in small classes, where teachers know every child and can support and stretch them at the right moment.</p>
@@ -108,9 +107,6 @@ export default function Primary() {
           { icon: "ri-user-star-line", t: "Taking responsibility", p: "From following routines to organising their own learning and helping others." },
         ]}
       >
-        <p style={{ marginTop: 14 }}>
-          <span className="note-flag"><i className="ri-information-line" /> Year groups currently offered: to confirm with the school</span>
-        </p>
       </NextStep>
 
       <Enrichment

@@ -49,7 +49,6 @@ export default function EarlyYears() {
           { k: "Year groups", v: "Kindergarten 1, Kindergarten 2 and Reception" },
           { k: "Curriculum", v: "Early Years stage of the National Curriculum of England" },
           { k: "Classes", v: "Small classes, so every child is known", confirm: true },
-          { k: "Days and hours", v: "Monday to Friday", confirm: true },
         ]}
       >
         <p>At Shekinah, our youngest learners are met with the right blend of care and challenge. They explore, express themselves and build independence at their own pace.</p>
