@@ -5,14 +5,14 @@ import { Star } from "@/components/base/Doodles";
 import { lifeImages } from "@/mocks/home";
 
 const ribbonText = ["Equipping Today", "Shaping Tomorrow", "Equipping Today", "Shaping Tomorrow"];
-const labelTones = ["bg-sun-300", "bg-mint-200", "bg-sky-200", "bg-coral-200", "bg-lilac-200"];
+const labelTones = ["bg-sun-300", "bg-mint-200", "bg-gold-200", "bg-coral-200", "bg-blush-200"];
 
 export default function LifeSection() {
   return (
     <section className="relative overflow-hidden bg-background-100 pb-20 pt-24 md:pb-24 md:pt-32">
       <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <Eyebrow tone="sky">Life at Shekinah</Eyebrow>
+          <Eyebrow tone="gold">Life at Shekinah</Eyebrow>
           <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
             Every day has something to <span className="mark-sun">look forward to</span>
           </h2>

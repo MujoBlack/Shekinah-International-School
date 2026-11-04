@@ -7,7 +7,7 @@ import { img } from "@/lib/img";
 const points = [
   { icon: "ri-book-open-line", text: "National Curriculum of England", tone: "bg-mint-100 text-mint-700" },
   { icon: "ri-heart-3-line", text: "Christian values, lived gently", tone: "bg-coral-100 text-coral-700" },
-  { icon: "ri-group-line", text: "Small classes, known by name", tone: "bg-sky-100 text-sky-700" },
+  { icon: "ri-group-line", text: "Small classes, known by name", tone: "bg-gold-100 text-gold-700" },
 ];
 
 export default function MeetSection() {
@@ -42,7 +42,7 @@ export default function MeetSection() {
         <Reveal delay={120}>
           <Eyebrow tone="butter">Meet Shekinah</Eyebrow>
           <h2 className="relative mt-5 font-heading text-[36px] leading-[1.06] text-primary-950 md:text-[54px]">
-            More than a school. A <span className="mark-sky">community</span> for growing minds.
+            More than a school. A <span className="mark-gold">community</span> for growing minds.
             <Star className="bob absolute -top-6 right-6 hidden h-8 w-8 md:block" color="#FF7A62" />
           </h2>
           <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-foreground-700">

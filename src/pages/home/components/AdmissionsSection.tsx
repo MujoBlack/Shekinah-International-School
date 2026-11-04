@@ -6,8 +6,8 @@ import { admissionSteps } from "@/mocks/home";
 const stepTones = [
   "bg-sun-300 text-primary-950",
   "bg-coral-400 text-white",
-  "bg-sky-400 text-white",
-  "bg-lilac-400 text-white",
+  "bg-gold-400 text-white",
+  "bg-blush-400 text-white",
   "bg-mint-400 text-white",
 ];
 

@@ -263,7 +263,7 @@
 /* Marker highlight behind a word */
 .mark-sun,
 .mark-mint,
-.mark-sky,
+.mark-gold,
 .mark-coral {
   position: relative;
   white-space: nowrap;
@@ -271,7 +271,7 @@
 }
 .mark-sun::after,
 .mark-mint::after,
-.mark-sky::after,
+.mark-gold::after,
 .mark-coral::after {
   content: "";
   position: absolute;
@@ -285,7 +285,7 @@
 }
 .mark-sun::after { background: #ffd155; }
 .mark-mint::after { background: #8fd2a2; }
-.mark-sky::after { background: #86c8f1; }
+.mark-gold::after { background: #ebd69a; }
 .mark-coral::after { background: #ffc4b8; }
 
 /* Gentle floating doodles */

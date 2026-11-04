@@ -3,8 +3,8 @@ import Reveal from "@/components/base/Reveal";
 import { Squiggle } from "@/components/base/Doodles";
 import { whyCards } from "@/mocks/home";
 
-const tones = ["bg-coral-100", "bg-sun-100", "bg-lilac-100", "bg-sky-100"];
-const badge = ["bg-coral-500", "bg-sun-400", "bg-lilac-500", "bg-sky-500"];
+const tones = ["bg-coral-100", "bg-sun-100", "bg-blush-100", "bg-gold-100"];
+const badge = ["bg-coral-500", "bg-sun-400", "bg-blush-500", "bg-gold-500"];
 
 export default function WhySection() {
   return (
@@ -12,7 +12,7 @@ export default function WhySection() {
       <div className="mx-auto w-full max-w-[1360px] px-5 pb-24 pt-16 md:px-10 md:pb-32 md:pt-20">
         <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <Eyebrow tone="lilac">Why Shekinah</Eyebrow>
+            <Eyebrow tone="blush">Why Shekinah</Eyebrow>
             <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
               Why families <span className="relative inline-block">choose us<Squiggle className="absolute -bottom-2 left-0 h-3.5 w-full" color="#FF7A62" /></span>
             </h2>

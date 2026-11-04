@@ -3,7 +3,7 @@ import { facts } from "@/mocks/home";
 const chips = [
   "bg-sun-100 text-sun-700",
   "bg-mint-100 text-mint-700",
-  "bg-sky-100 text-sky-700",
+  "bg-gold-100 text-gold-700",
   "bg-coral-100 text-coral-700",
 ];
 

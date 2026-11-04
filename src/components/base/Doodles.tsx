@@ -66,7 +66,7 @@ export function Heart({ className = "", color = "#EF5B41" }: DoodleProps) {
   );
 }
 
-export function Loop({ className = "", color = "#4FAEE6" }: DoodleProps) {
+export function Loop({ className = "", color = "#57B874" }: DoodleProps) {
   return (
     <svg viewBox="0 0 200 90" className={className} aria-hidden="true" fill="none">
       <path

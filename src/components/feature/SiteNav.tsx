@@ -114,7 +114,7 @@ export default function SiteNav() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`mb-2 flex cursor-pointer items-center justify-between rounded-[22px] px-5 py-4 font-heading text-[26px] text-foreground-950 ${["bg-mint-100","bg-sun-100","bg-sky-100","bg-coral-100","bg-lilac-100","bg-mint-100"][index]}`}
+                className={`mb-2 flex cursor-pointer items-center justify-between rounded-[22px] px-5 py-4 font-heading text-[26px] text-foreground-950 ${["bg-mint-100","bg-sun-100","bg-gold-100","bg-coral-100","bg-blush-100","bg-mint-100"][index]}`}
               >
                 <span>{link.label}</span>
                 <i className="ri-arrow-right-up-line text-xl text-primary-700" />

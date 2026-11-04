@@ -6,7 +6,7 @@ import { promiseCards } from "@/mocks/home";
 const cardTones = [
   { card: "bg-mint-100", icon: "bg-white text-mint-700", tilt: "md:-rotate-2", hr: "[--hr:1deg]" },
   { card: "bg-sun-100", icon: "bg-white text-sun-700", tilt: "md:rotate-1 md:translate-y-6", hr: "[--hr:-1deg]" },
-  { card: "bg-sky-100", icon: "bg-white text-sky-700", tilt: "md:-rotate-1", hr: "[--hr:1deg]" },
+  { card: "bg-gold-100", icon: "bg-white text-gold-700", tilt: "md:-rotate-1", hr: "[--hr:1deg]" },
   { card: "bg-coral-100", icon: "bg-white text-coral-700", tilt: "md:rotate-2 md:translate-y-6", hr: "[--hr:-1deg]" },
 ];
 

@@ -6,7 +6,7 @@ import { journeyCards } from "@/mocks/home";
 
 const tones = [
   { bg: "bg-sun-100", tag: "bg-sun-300 text-primary-950", ring: "border-sun-200", rot: "-rotate-3" },
-  { bg: "bg-sky-100", tag: "bg-sky-400 text-white", ring: "border-sky-200", rot: "rotate-3" },
+  { bg: "bg-gold-100", tag: "bg-gold-400 text-white", ring: "border-gold-200", rot: "rotate-3" },
 ];
 
 export default function JourneySection() {
