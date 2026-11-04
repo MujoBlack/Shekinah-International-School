@@ -25,7 +25,7 @@ export default function SchoolLife() {
   const shown = useMemo(() => galleryImages.filter((g) => filter === "All" || g.category === filter), [filter]);
 
   return (
-    <Layout footer={{ title: "Come and feel the buzz", text: "The best way to see school life is on a normal school day." }}>
+    <Layout footer={{ title: "Come and feel the buzz", text: "The best way to see school life is on a normal school day.", image: img("music-class-04") }}>
       <PageHero
         crumb="School Life"
         title="Each day is filled with small adventures"
@@ -69,43 +69,25 @@ export default function SchoolLife() {
               <h2 className="s-h2 rv" style={vi(1)}>Room to run, climb and cheer</h2>
             </div>
           </div>
-          <div className="bento">
-            <figure className="card photo span-2 rv" style={{ ...vi(0), minHeight: 380 }}>
-              <img src={sportsFeature.image} alt="Sports Day at Shekinah" loading="lazy" />
-              <figcaption>{sportsFeature.tag}</figcaption>
-            </figure>
-            <article className="card tint-butter rv" style={vi(1)}>
-              <span className="ic white"><i className="ri-trophy-line" /></span>
-              <h3 className="s-h3 t">Sports Day</h3>
-              <p className="body">{sportsFeature.text}</p>
-            </article>
-            <article className="card rv" style={vi(2)}>
-              <span className="ic"><i className="ri-football-line" /></span>
-              <h3 className="s-h3 t">Team games</h3>
-              <p className="body">Team games and sport that build fitness and team spirit.</p>
-            </article>
-            <article className="card tint-mint rv" style={vi(3)}>
-              <span className="ic white"><i className="ri-run-line" /></span>
-              <h3 className="s-h3 t">Playtime</h3>
-              <p className="body">Room to run, climb, dig and simply be a child between lessons.</p>
-              <SunBuddy />
-            </article>
-            <figure className="card photo rv" style={vi(4)}>
-              <img src={img("school-life-sports-1")} alt="Pupils playing sport" loading="lazy" />
-            </figure>
-            <figure className="card photo rv" style={{ ...vi(5), minHeight: 360 }}>
-              <img src={img("swimming-02")} alt="A pupil smiling with her swimming medal" loading="lazy" style={{ objectPosition: "center 25%" }} />
-              <figcaption>Swimming</figcaption>
-            </figure>
-            <article className="card tint-blush rv" style={vi(6)}>
-              <span className="ic white"><i className="ri-drop-line" /></span>
-              <h3 className="s-h3 t">Swimming</h3>
-              <p className="body">Time in the pool builds confidence in the water, and one of our swimmers has the medal to prove it.</p>
-            </article>
-            <figure className="card photo rv" style={vi(7)}>
-              <img src={img("compound-13")} alt="See-saws in the playground" loading="lazy" />
-              <figcaption>Playground</figcaption>
-            </figure>
+          <div className="play">
+            {[
+              { t: "Sports Day", p: sportsFeature.text, img: sportsFeature.image, alt: "Pupils racing on Sports Day", icon: "ri-trophy-line", tint: "t-butter" },
+              { t: "Team games", p: "Team games and sport that build fitness, friendship and team spirit.", img: img("school-life-sports-1"), alt: "Pupils playing sport", icon: "ri-football-line", tint: "t-mint" },
+              { t: "Swimming", p: "Time in the pool builds confidence in the water, and one of our swimmers has the medal to prove it.", img: img("swimming-02"), alt: "A pupil smiling with her swimming medal", icon: "ri-drop-line", tint: "t-blush", pos: "center 22%" },
+              { t: "Playtime", p: "Room to run, climb, see-saw and simply be a child between lessons.", img: img("compound-13"), alt: "See-saws in the playground", icon: "ri-run-line", tint: "t-sage" },
+            ].map((c, i) => (
+              <article className={`pcard rv ${c.tint}`} key={c.t} style={vi(i)}>
+                <div className="pph">
+                  <img src={c.img} alt={c.alt} loading="lazy" style={c.pos ? { objectPosition: c.pos } : undefined} />
+                </div>
+                <div className="pbody">
+                  <span className="pic" aria-hidden="true"><i className={c.icon} /></span>
+                  <h3 className="s-h3">{c.t}</h3>
+                  <p>{c.p}</p>
+                </div>
+                {i === 3 && <SunBuddy />}
+              </article>
+            ))}
           </div>
         </div>
       </section>

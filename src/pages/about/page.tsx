@@ -12,7 +12,7 @@ const tints = ["c-mint", "c-blush", "c-butter"];
 export default function About() {
   const [api, setApi] = useState<SliderApi | null>(null);
   return (
-    <Layout>
+    <Layout footer={{ title: "Come and see for yourself", text: "Walk the campus, meet a teacher and see why families feel at home here.", image: img("full-school-03") }}>
       <PageHero
         crumb="About Us"
         title="Rooted in faith, open to the world"

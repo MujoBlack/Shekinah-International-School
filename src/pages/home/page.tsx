@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/site/Layout";
-import Path, { faqs } from "@/components/site/Path";
+import Path from "@/components/site/Path";
+import FaqSection from "@/components/site/FaqSection";
 import { PencilBuddy, SproutBuddy, StarBuddy, SunBuddy } from "@/components/site/Critters";
-import { Arrows, Btn, CONTACT, Faq, Label, Marquee, Rise, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
+import { Arrows, Btn, CONTACT, Label, Marquee, Rise, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
 import { img } from "@/lib/img";
 import { FilmButton, LoopVideo } from "@/components/site/Video";
 
@@ -346,13 +347,13 @@ function Voices() {
         <div>
           <Label n="06" className="rv">Parent voices</Label>
           <h2 className="s-serif rv" style={vi(1)}>
-            From our <span className="hl">families</span> to yours
+            Why <span className="hl">families</span> choose Shekinah
           </h2>
         </div>
-        <div className="spin-badge rv rv-scale" style={vi(2)} aria-label="15 nationalities, one family">
+        <div className="spin-badge rv rv-scale" style={vi(2)} aria-label="Our values: faith, inclusion, curiosity">
           <svg viewBox="0 0 120 120" aria-hidden="true">
             <defs><path id="vb-c" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0" /></defs>
-            <text><textPath href="#vb-c" textLength="286" lengthAdjust="spacing">15 NATIONALITIES · ONE FAMILY · </textPath></text>
+            <text><textPath href="#vb-c" textLength="286" lengthAdjust="spacing">FAITH · INCLUSION · CURIOSITY · </textPath></text>
           </svg>
           <i className="ri-heart-3-fill" />
         </div>
@@ -365,7 +366,7 @@ function Voices() {
         {/* TODO before launch: these quotes are placeholders. Replace with real parent testimonials (with permission). */}
         <span />
         <Link to={VISIT} className="btn btn-white">
-          Meet our families on a visit
+          Book a School Visit
           <span className="dot" aria-hidden="true"><i className="ri-arrow-right-line" /><i className="ri-arrow-right-line" /></span>
         </Link>
       </div>
@@ -390,21 +391,6 @@ function Journey() {
   );
 }
 
-function Questions() {
-  return (
-    <section className="sec" style={{ paddingTop: 0 }}>
-      <div className="wrap center">
-        <Label n="08" className="rv">Questions</Label>
-        <h2 className="s-h2 rv" style={vi(1)}>No stress. No surprises.</h2>
-        <Faq items={faqs} />
-        <p className="rv s-muted" style={{ marginTop: 28 }}>
-          Still wondering about something? <Link to={CONTACT} className="tlink">Ask us a question</Link>
-        </p>
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
   return (
     <Layout>
@@ -418,7 +404,7 @@ export default function Home() {
       <Life />
       <Voices />
       <Journey />
-      <Questions />
+      <FaqSection n="08" className="sec sec-top0" />
     </Layout>
   );
 }

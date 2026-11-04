@@ -1,13 +1,14 @@
 import Layout from "@/components/site/Layout";
 import PageHero from "@/components/site/PageHero";
-import Path, { faqs } from "@/components/site/Path";
-import { Btn, CONTACT, Faq, Label, SITE, VISIT, tel, vi } from "@/components/site/ui";
+import Path from "@/components/site/Path";
+import FaqSection from "@/components/site/FaqSection";
+import { Btn, CONTACT, Label, SITE, VISIT, tel, vi } from "@/components/site/ui";
 import { admissionWhyImage, transportDetails, whyPoints } from "@/mocks/admission";
 import { img } from "@/lib/img";
 
 export default function Admission() {
   return (
-    <Layout footer={{ title: "Start with a visit", text: "Most families decide after walking the campus. Come and see for yourself." }}>
+    <Layout footer={{ title: "Start with a visit", text: "Most families decide after walking the campus. Come and see for yourself.", image: img("compound-03") }}>
       <PageHero
         crumb="Admission"
         title="Joining Shekinah is simple"
@@ -81,13 +82,7 @@ export default function Admission() {
         </div>
       </section>
 
-      <section className="sec">
-        <div className="wrap center">
-          <Label n="04" className="rv">Questions</Label>
-          <h2 className="s-h2 rv" style={vi(1)}>No stress. No surprises.</h2>
-          <Faq items={faqs} />
-        </div>
-      </section>
+      <FaqSection n="04" />
     </Layout>
   );
 }

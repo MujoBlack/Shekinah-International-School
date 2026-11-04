@@ -222,14 +222,18 @@ export function Faq({ items, firstOpen = true }: { items: { q: string; a: ReactN
       {items.map((it, i) => {
         const on = open === i;
         return (
-          <div key={it.q} className={`faq-item rv ${on ? "open" : ""}`} style={{ "--i": i } as CSSProperties}>
-            <button type="button" aria-expanded={on} onClick={() => setOpen(on ? null : i)}>
-              {it.q}
-              <span className="pm" aria-hidden="true" />
-            </button>
-            <div className="faq-body" role="region">
-              <div>
-                <p>{it.a}</p>
+          /* The reveal class sits on a wrapper React never re-renders, so opening an item can't wipe its "is-in" state. */
+          <div key={it.q} className="rv" style={{ "--i": i } as CSSProperties}>
+            <div className={`faq-item ${on ? "open" : ""}`}>
+              <button type="button" aria-expanded={on} onClick={() => setOpen(on ? null : i)}>
+                <span className="fn" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <span className="fq">{it.q}</span>
+                <span className="pm" aria-hidden="true" />
+              </button>
+              <div className="faq-body" role="region">
+                <div>
+                  <p>{it.a}</p>
+                </div>
               </div>
             </div>
           </div>

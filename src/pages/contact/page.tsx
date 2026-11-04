@@ -16,7 +16,7 @@ const cards = [
 
 export default function Contact() {
   return (
-    <Layout footer={{ title: "Ready to see it in person?", text: "Book a visit to walk the campus, meet a teacher and see a class in session." }}>
+    <Layout footer={{ title: "Ready to see it in person?", text: "Book a visit to walk the campus, meet a teacher and see a class in session.", image: img("home-hero-alt") }}>
       <PageHero
         crumb="Contact"
         title="We'd love to hear from you"

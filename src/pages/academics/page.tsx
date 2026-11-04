@@ -85,7 +85,7 @@ export default function Academics() {
                 <p>{s.text}</p>
               </div>
             ))}
-            <div className="ph rv" style={vi(7)}><img src={img("academics-early-years-2")} alt="" loading="lazy" /></div>
+            <div className="ph rv" style={vi(7)}><img src={img("about-our-story-1")} alt="A teacher reading to Early Years pupils on the carpet" loading="lazy" /></div>
           </div>
         </div>
       </section>
