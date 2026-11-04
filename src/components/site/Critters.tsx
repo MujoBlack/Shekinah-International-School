@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 /*
   PLACEHOLDER characters. Simple original doodles in the brand palette, drawn to sit
   where Calvin's final illustrations will go. Swap each one for the final artwork.
@@ -68,8 +69,44 @@ export function PencilBuddy({ edge = "edge-b" }: { edge?: Edge }) {
 
 /* Big round graduate buddy (butter, mortarboard) peeking up from the bottom of the Academics menu. The only critter in the menu with eyes. */
 export function MenuBuddy() {
+  const svg = useRef<SVGSVGElement>(null);
+  const pupils = useRef<SVGGElement>(null);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    let raf = 0;
+    let idle = 0;
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(idle);
+      // after 2s of stillness the eyes drift back to look straight out
+      idle = window.setTimeout(() => {
+        if (pupils.current) pupils.current.style.transform = "";
+      }, 2000);
+      raf = requestAnimationFrame(() => {
+        const el = svg.current;
+        const p = pupils.current;
+        if (!el || !p) return;
+        const r = el.getBoundingClientRect();
+        if (!r.width) return;
+        // eye centre in screen space (viewBox 300x200, eyes at x=150, y=132)
+        const ex = r.left + (150 / 300) * r.width;
+        const ey = r.top + (132 / 200) * r.height;
+        const dx = e.clientX - ex;
+        const dy = e.clientY - ey;
+        const d = Math.hypot(dx, dy) || 1;
+        const k = Math.min(8, d / 25) / d; // pupils travel up to 8 units inside the eye
+        p.style.transform = `translate(${(dx * k).toFixed(2)}px, ${(dy * k).toFixed(2)}px)`;
+      });
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(idle);
+      window.removeEventListener("mousemove", onMove);
+    };
+  }, []);
   return (
-    <svg className="menu-buddy" viewBox="0 0 300 200" aria-hidden="true" data-placeholder="critter">
+    <svg ref={svg} className="menu-buddy" viewBox="0 0 300 200" aria-hidden="true" data-placeholder="critter">
       {/* clouds, no faces */}
       <g fill="#fff" opacity="0.95">
         <ellipse cx="44" cy="70" rx="34" ry="14" />
@@ -104,10 +141,12 @@ export function MenuBuddy() {
         <g className="blink">
           <circle cx="124" cy="132" r="20" fill="#fff" stroke="#C2982E" strokeWidth="2" />
           <circle cx="174" cy="132" r="20" fill="#fff" stroke="#C2982E" strokeWidth="2" />
-          <circle cx="129" cy="135" r="9" fill="#0D3B22" />
-          <circle cx="179" cy="135" r="9" fill="#0D3B22" />
-          <circle cx="132" cy="131" r="3" fill="#fff" />
-          <circle cx="182" cy="131" r="3" fill="#fff" />
+          <g ref={pupils} className="mb-pupils">
+            <circle cx="124" cy="132" r="9" fill="#0D3B22" />
+            <circle cx="174" cy="132" r="9" fill="#0D3B22" />
+            <circle cx="127" cy="128" r="3" fill="#fff" />
+            <circle cx="177" cy="128" r="3" fill="#fff" />
+          </g>
         </g>
         <path d="M134 166 Q150 186 168 166 Z" fill="#0D3B22" />
         <path d="M142 174 Q151 182 160 174" fill="#EB2229" opacity="0.85" />
