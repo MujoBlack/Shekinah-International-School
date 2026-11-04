@@ -52,6 +52,7 @@ export default function Buddy({
   cheer = 0,
   sleepy = true,
   goggles = false,
+  quiet = false,
   className = "",
 }: {
   open?: boolean;
@@ -61,6 +62,7 @@ export default function Buddy({
   cheer?: number; // bump this number to trigger the happy bounce
   sleepy?: boolean;
   goggles?: boolean; // lab goggles over the eyes (science)
+  quiet?: boolean; // show the bubble with a closed-mouth smile (e.g. the resting greeting)
   className?: string;
 }) {
   const wrap = useRef<HTMLDivElement>(null);
@@ -144,7 +146,8 @@ export default function Buddy({
   };
 
   const talking = !!say && !asleep;
-  const mood = happy ? "happy" : asleep ? "asleep" : near ? "surprised" : talking ? "talking" : "idle";
+  const mouthOpen = talking && !quiet;
+  const mood = happy ? "happy" : asleep ? "asleep" : near ? "surprised" : mouthOpen ? "talking" : "idle";
 
   return (
     <div ref={wrap} className={`buddy ${open ? "is-open" : ""} mood-${mood} ${className}`} aria-hidden="true">
@@ -221,17 +224,16 @@ export default function Buddy({
             <path d="M160 136 Q174 118 188 136" />
           </g>
 
-          {/* mouths: one shows at a time */}
-          <g className="bd-mouth m-idle">
-            <path d="M134 166 Q150 186 168 166 Z" fill="#0D3B22" />
-            <path d="M142 174 Q151 182 160 174" fill="#EB2229" opacity="0.85" />
-          </g>
+          {/* mouths: one shows at a time, centred under the eyes (x=149) */}
+          <g transform="translate(-2 0)">
+          <path className="bd-mouth m-idle" d="M134 166 Q151 184 168 166" fill="none" stroke="#0D3B22" strokeWidth="5.5" strokeLinecap="round" />
           <g className="bd-mouth m-talk">
-            <path d="M128 162 Q150 198 174 162 Z" fill="#0D3B22" />
-            <path d="M138 176 Q151 190 164 176" fill="#EB2229" opacity="0.9" />
+            <path d="M133 164 Q151 166 169 164 Q167 190 151 191 Q135 190 133 164 Z" fill="#0D3B22" stroke="#0D3B22" strokeWidth="2" strokeLinejoin="round" />
+            <path d="M140 183 Q151 176 162 183 Q157 190 151 190 Q145 190 140 183 Z" fill="#EB2229" />
           </g>
-          <ellipse className="bd-mouth m-o" cx="151" cy="172" rx="8" ry="10" fill="#0D3B22" />
-          <path className="bd-mouth m-sleep" d="M140 172 Q151 178 162 172" fill="none" stroke="#0D3B22" strokeWidth="4" strokeLinecap="round" />
+          <ellipse className="bd-mouth m-o" cx="151" cy="174" rx="7" ry="9" fill="#0D3B22" />
+          <path className="bd-mouth m-sleep" d="M141 172 Q151 177 161 172" fill="none" stroke="#0D3B22" strokeWidth="4.5" strokeLinecap="round" />
+          </g>
 
           {/* seasonal wearables (worn), never replace the hat */}
           {wear === "bookpin" && (

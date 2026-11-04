@@ -23,13 +23,13 @@ export const academicsMenu = [
 /* Desktop mega menu, laid out in columns like the Ivy Kids programmes menu. */
 const megaMenu: { label: string; to: string; text: string; say: string; prop: BuddyProp }[] = [
   { label: "All of Academics", to: "/academics", text: "See every stage", say: "Let's explore every stage!", prop: null },
-  { label: "Our Curriculum", to: "/academics/curriculum", text: "National Curriculum of England", say: "The English curriculum, the Shekinah way.", prop: "book" },
+  { label: "Our Curriculum", to: "/academics/curriculum", text: "The English curriculum", say: "The English curriculum, the Shekinah way.", prop: "book" },
   { label: "Early Years", to: "/academics/early-years", text: "Ages 2 – 5", say: "Paint, play and first friends!", prop: "sprout" },
   { label: "Kindergarten 1", to: "/academics/early-years#kg1", text: "Ages 2 – 3", say: "Hello, little explorer!", prop: "sprout" },
   { label: "Kindergarten 2", to: "/academics/early-years#kg2", text: "Ages 3 – 4", say: "Stories, songs and big questions!", prop: "sprout" },
   { label: "Reception", to: "/academics/early-years#reception", text: "Ages 4 – 5", say: "Getting ready for Year 1!", prop: "sprout" },
   { label: "Primary", to: "/academics/primary", text: "Year 1 onward", say: "Big school, here we come!", prop: "pencil" },
-  { label: "Beyond the classroom", to: "/school-life", text: "Sport, music and learning weeks", say: "Ready, set, play!", prop: null },
+  { label: "Beyond the classroom", to: "/school-life", text: "Sport, music and more", say: "Ready, set, play!", prop: null },
 ];
 
 const isOn = (pathname: string, to: string) => (to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(to + "/"));
@@ -115,6 +115,7 @@ export default function Nav() {
                       say={hot ? megaMenu[hot.i].say : "Hi! Where shall we go?"}
                       prop={hot ? megaMenu[hot.i].prop : null}
                       cheer={cheer}
+                      quiet={!hot}
                       goggles={hot ? /primary|curriculum/.test(megaMenu[hot.i].to) : /^\/academics\/(primary|curriculum)/.test(pathname)}
                     />
                   </div>
