@@ -1,6 +1,7 @@
 import { useEffect, useState, type CSSProperties } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Btn, VISIT } from "./ui";
+import { MenuBuddy } from "./Critters";
 
 const logo = `${__BASE_PATH__.replace(/\/$/, "")}/images/shekinah-logo.svg`;
 
@@ -14,10 +15,21 @@ export const links = [
 ];
 
 export const academicsMenu = [
-  { label: "Overview", to: "/academics", text: "How learning works at Shekinah", icon: "ri-compass-3-line" },
-  { label: "Our Curriculum", to: "/academics/curriculum", text: "The National Curriculum of England", icon: "ri-book-open-line" },
-  { label: "Early Years", to: "/academics/early-years", text: "KG1, KG2 and Reception, ages 2 to 5", icon: "ri-seedling-line" },
-  { label: "Primary", to: "/academics/primary", text: "From Year 1, strong foundations", icon: "ri-pencil-ruler-2-line" },
+  { label: "Our Curriculum", to: "/academics/curriculum", text: "National Curriculum of England" },
+  { label: "Early Years", to: "/academics/early-years", text: "Ages 2 – 5" },
+  { label: "Primary", to: "/academics/primary", text: "Year 1 onward" },
+];
+
+/* Desktop mega menu, laid out in columns like the Ivy Kids programmes menu. */
+const megaMenu = [
+  { label: "All of Academics", to: "/academics", text: "See every stage" },
+  { label: "Our Curriculum", to: "/academics/curriculum", text: "National Curriculum of England" },
+  { label: "Early Years", to: "/academics/early-years", text: "Ages 2 – 5" },
+  { label: "Kindergarten 1", to: "/academics/early-years#kg1", text: "Ages 2 – 3" },
+  { label: "Kindergarten 2", to: "/academics/early-years#kg2", text: "Ages 3 – 4" },
+  { label: "Reception", to: "/academics/early-years#reception", text: "Ages 4 – 5" },
+  { label: "Primary", to: "/academics/primary", text: "Year 1 onward" },
+  { label: "Beyond the classroom", to: "/school-life", text: "Sport, music and learning weeks" },
 ];
 
 const isOn = (pathname: string, to: string) => (to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(to + "/"));
@@ -68,15 +80,15 @@ export default function Nav() {
               {l.sub && (
                 <div className="sub">
                   <div className="sub-in">
-                    {academicsMenu.map((m, k) => (
-                      <Link key={m.to} to={m.to} className={pathname === m.to ? "here" : ""} style={{ "--i": k } as CSSProperties}>
-                        <span className="si" aria-hidden="true"><i className={m.icon} /></span>
-                        <span>
+                    <div className="mega">
+                      {megaMenu.map((m, k) => (
+                        <Link key={m.to + m.label} to={m.to} className={pathname + (window.location.hash || "") === m.to ? "here" : ""} style={{ "--i": k } as CSSProperties}>
                           <b>{m.label}</b>
                           <small>{m.text}</small>
-                        </span>
-                      </Link>
-                    ))}
+                        </Link>
+                      ))}
+                    </div>
+                    <MenuBuddy />
                   </div>
                 </div>
               )}
@@ -110,7 +122,7 @@ export default function Nav() {
                 </Link>
                 {l.sub && (
                   <div className="mnav-sub" style={{ "--i": i } as CSSProperties}>
-                    {academicsMenu.slice(1).map((m) => (
+                    {academicsMenu.map((m) => (
                       <Link key={m.to} to={m.to} className={pathname === m.to ? "on" : ""}>
                         {m.label}
                       </Link>

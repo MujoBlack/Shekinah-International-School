@@ -65,3 +65,50 @@ export function PencilBuddy({ edge = "edge-b" }: { edge?: Edge }) {
     </svg>
   );
 }
+
+/* Big round "Owlie" peeking up from the bottom of the Academics menu. The only critter in the menu with eyes. */
+export function MenuBuddy() {
+  return (
+    <svg className="menu-buddy" viewBox="0 0 300 200" aria-hidden="true" data-placeholder="critter">
+      {/* clouds, no faces */}
+      <g fill="#fff" opacity="0.95">
+        <ellipse cx="44" cy="70" rx="34" ry="14" />
+        <circle cx="34" cy="60" r="14" />
+        <circle cx="56" cy="56" r="18" />
+        <ellipse cx="256" cy="40" rx="32" ry="13" />
+        <circle cx="250" cy="30" r="15" />
+        <circle cx="270" cy="33" r="11" />
+      </g>
+      {/* confetti dots */}
+      <circle cx="96" cy="30" r="3" fill="#C2982E" />
+      <circle cx="210" cy="78" r="3" fill="#EB2229" />
+      <circle cx="286" cy="88" r="2.5" fill="#126735" />
+      <circle cx="20" cy="140" r="2.5" fill="#126735" />
+      {/* pencil, no face */}
+      <g transform="rotate(28 250 120)">
+        <rect x="206" y="112" width="70" height="16" rx="3" fill="#FAE6B9" stroke="#C2982E" strokeWidth="2" />
+        <rect x="206" y="112" width="12" height="16" rx="3" fill="#FBE1DF" stroke="#EB2229" strokeWidth="2" />
+        <path d="M276 112 L294 120 L276 128 Z" fill="#F6F3EE" stroke="#C2982E" strokeWidth="2" />
+        <path d="M288 117 L294 120 L288 123 Z" fill="#231F20" />
+      </g>
+      {/* the buddy: a big green round with a sprout */}
+      <g className="mb-body">
+        <path d="M150 62 C150 46 160 38 170 36 C164 46 160 54 156 64" fill="#2E9B5A" />
+        <path d="M150 62 C146 48 134 42 122 44 C132 50 140 56 146 66" fill="#126735" />
+        <circle cx="150" cy="150" r="88" fill="#DDEBDF" stroke="#126735" strokeWidth="3" />
+        <g className="blink">
+          <circle cx="124" cy="128" r="20" fill="#fff" stroke="#126735" strokeWidth="2" />
+          <circle cx="174" cy="128" r="20" fill="#fff" stroke="#126735" strokeWidth="2" />
+          <circle cx="129" cy="131" r="9" fill="#0D3B22" />
+          <circle cx="179" cy="131" r="9" fill="#0D3B22" />
+          <circle cx="132" cy="127" r="3" fill="#fff" />
+          <circle cx="182" cy="127" r="3" fill="#fff" />
+        </g>
+        <path d="M134 162 Q150 182 168 162 Z" fill="#0D3B22" />
+        <path d="M142 170 Q151 178 160 170" fill="#EB2229" opacity="0.85" />
+        <circle cx="106" cy="156" r="8" fill="#FBE1DF" />
+        <circle cx="196" cy="156" r="8" fill="#FBE1DF" />
+      </g>
+    </svg>
+  );
+}

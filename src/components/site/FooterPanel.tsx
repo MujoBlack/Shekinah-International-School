@@ -8,18 +8,20 @@ interface Props {
   title?: string;
   text?: string;
   image?: string;
+  imagePos?: string;
 }
 
 export default function FooterPanel({
   title = "Come and see for yourself",
   text = "Walk the campus, meet a teacher and see a class in session.",
   image = img("school-life-gallery-outdoor"),
+  imagePos,
 }: Props) {
   const onVisit = useLocation().pathname === VISIT;
   return (
     <footer className="panel">
       <div className="cta">
-        <img src={image} alt="" loading="lazy" />
+        <img src={image} alt="" loading="lazy" style={imagePos ? { objectPosition: imagePos } : undefined} />
         <div className="in">
           <h2 className="s-h2">{title}</h2>
           <p style={{ marginTop: 12, opacity: 0.9 }}>{text}</p>
