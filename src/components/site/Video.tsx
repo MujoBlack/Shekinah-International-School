@@ -7,7 +7,7 @@ export const poster = (name: string) => `${base}/videos/${name}-poster.jpg`;
 const reduced = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* Short silent loop: plays only while on screen, stays on its poster for reduced-motion users. */
-export function LoopVideo({ name, className = "", fallback, label }: { name: string; className?: string; fallback?: string; label?: string }) {
+export function LoopVideo({ name, className = "", fallback, label, eager = false }: { name: string; className?: string; fallback?: string; label?: string; eager?: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const v = ref.current;
@@ -31,7 +31,8 @@ export function LoopVideo({ name, className = "", fallback, label }: { name: str
       muted
       loop
       playsInline
-      preload="metadata"
+      preload={eager ? "auto" : "metadata"}
+      autoPlay={eager && !reduced()}
       aria-label={label}
       aria-hidden={label ? undefined : true}
     />
