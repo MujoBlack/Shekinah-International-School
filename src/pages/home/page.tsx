@@ -8,6 +8,7 @@ import { PencilBuddy, SproutBuddy, StarBuddy, SunBuddy } from "@/components/site
 import { Arrows, Btn, CONTACT, Label, Marquee, Rise, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
 import { img } from "@/lib/img";
 import { FilmButton, LoopVideo } from "@/components/site/Video";
+import Buddy from "@/components/site/Buddy";
 
 function Hero() {
   return (
@@ -37,6 +38,7 @@ function Hero() {
         <img src={img("compound-06")} alt="" />
         FIND US
       </Link>
+      <Buddy variant="hero" say="Hi there!" sleepy={false} />
     </header>
   );
 }
@@ -141,6 +143,7 @@ function Why() {
               kindness and responsibility become habits.
             </p>
             <div className="push"><Link to="/about" className="tlink">Our values</Link></div>
+            <Buddy variant="still" pose="book" />
           </article>
           <figure className="wcard photo rv" style={vi(0)}>
             <img src={img("home-why-shekinah-supportive-environment")} alt="A Shekinah teacher helping two pupils at their table" loading="lazy" />

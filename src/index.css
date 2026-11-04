@@ -964,7 +964,7 @@ a.pcard { color: inherit; }
 @media (max-width: 760px) { .why.two { grid-template-columns: 1fr; } .why.two .wcard { padding-bottom: 64px; } .why.two .critter { width: 46px !important; } }
 .mb-pupils { transition: transform 0.18s ease-out; }
 
-/* ---------- Buddy (the Academics menu graduate, also on the 404 page) ---------- */
+/* ---------- Buddy (the clay graduate: Academics menu, hero walk-on, stills, 404) ---------- */
 .buddy { position: relative; width: 360px; pointer-events: none; }
 .buddy svg { display: block; width: 100%; height: auto; overflow: visible; }
 .buddy-menu { position: absolute; right: -10px; bottom: -8px; transform: translateY(60px); transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.06s; }
@@ -974,23 +974,79 @@ a.pcard { color: inherit; }
 .bd-hat.tossed { animation: hatToss 1.25s cubic-bezier(0.3, 0.7, 0.4, 1) !important; }
 @keyframes hatWobble { 0% { transform: rotate(0); } 30% { transform: rotate(-12deg); } 60% { transform: rotate(8deg); } 100% { transform: rotate(0); } }
 @keyframes hatToss { 0% { transform: none; } 45% { transform: translateY(-80px) rotate(320deg); } 80% { transform: translateY(6px) rotate(360deg); } 100% { transform: none; } }
-.bd-body { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.mood-happy .bd-body { animation: buddyHop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2; }
-@keyframes buddyHop { 0%, 100% { transform: none; } 40% { transform: translateY(-14px) scaleY(1.04); } 70% { transform: translateY(2px) scaleY(0.97); } }
+
+/* lean toward the pointer (set inline), hop, and the ground shadow that squashes with it */
+.bd-lean { transform-box: view-box; transform-origin: 150px 256px; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bd-hop { transform-box: view-box; transform-origin: 150px 256px; }
+.bd-shadow { transform-box: fill-box; transform-origin: center; }
+.mood-excited .bd-hop { animation: buddyHop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2; }
+.mood-excited .bd-shadow { animation: shadowHop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2; }
+.mood-proud .bd-hop { transform: translateY(-4px) scaleY(1.02); transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bd-hop { transition: transform 0.35s ease; }
+@keyframes buddyHop { 0%, 100% { transform: none; } 40% { transform: translateY(-16px) scaleY(1.04); } 70% { transform: translateY(2px) scaleY(0.96) scaleX(1.03); } }
+@keyframes shadowHop { 0%, 100% { transform: none; opacity: 1; } 40% { transform: scale(0.7); opacity: 0.6; } }
+
+/* arms: rotate around the shoulder; poses set the angle, waving swings the right arm */
+.bd-arm { transform-box: view-box; transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bd-arm.l { transform-origin: 82px 176px; transform: rotate(var(--al, 6deg)); }
+.bd-arm.r { transform-origin: 218px 176px; transform: rotate(var(--ar, -6deg)); }
+.pose-hold { --al: 26deg; }
+.pose-wave { --ar: -100deg; }
+.pose-proud { --ar: -104deg; --al: -8deg; }
+.pose-excited { --al: 108deg; --ar: -108deg; }
+.pose-shrug { --al: 72deg; --ar: -72deg; }
+.pose-curious { --ar: -96deg; }
+.pose-book { --al: 34deg; --ar: -34deg; }
+.bd-star { opacity: 0; transition: opacity 0.25s; }
+.pose-proud .bd-star { opacity: 1; }
+.is-waving .bd-arm.r { animation: buddyWave 0.38s ease-in-out 4 alternate; }
+@keyframes buddyWave { from { transform: rotate(-74deg); } to { transform: rotate(-112deg); } }
+.pose-excited .bd-arm.l { animation: armWiggleL 0.28s ease-in-out 4 alternate; }
+.pose-excited .bd-arm.r { animation: armWiggleR 0.28s ease-in-out 4 alternate; }
+@keyframes armWiggleL { from { transform: rotate(92deg); } to { transform: rotate(114deg); } }
+@keyframes armWiggleR { from { transform: rotate(-92deg); } to { transform: rotate(-114deg); } }
+
+/* legs: a little step cycle while walking */
+.bd-leg { transform-box: view-box; }
+.bd-leg.l { transform-origin: 126px 216px; }
+.bd-leg.r { transform-origin: 174px 216px; }
+.is-walking .bd-leg.l { animation: stepL 0.3s ease-in-out infinite alternate; }
+.is-walking .bd-leg.r { animation: stepL 0.3s ease-in-out infinite alternate-reverse; }
+.is-walking .bd-hop { animation: walkBob 0.3s ease-in-out infinite alternate; }
+.is-walking .bd-arm.l { animation: armSwing 0.3s ease-in-out infinite alternate; }
+.is-walking .bd-arm.r { animation: armSwing 0.3s ease-in-out infinite alternate-reverse; }
+@keyframes stepL { from { transform: rotate(-14deg) translateY(-3px); } to { transform: rotate(12deg); } }
+@keyframes walkBob { from { transform: translateY(0) rotate(-2deg); } to { transform: translateY(-5px) rotate(2deg); } }
+@keyframes armSwing { from { transform: rotate(-16deg); } to { transform: rotate(16deg); } }
+
+/* face */
 .mb-pupils { transition: transform 0.18s ease-out; }
-.bd-eyes { transform-origin: center; transform-box: fill-box; }
+.bd-eyes { transform-origin: center; transform-box: fill-box; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bd-face { transform-box: view-box; transform-origin: 150px 150px; transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .buddy .blink { animation: blink 4s infinite; }
-.bd-happy, .bd-lids, .bd-mouth { opacity: 0; transition: opacity 0.2s; }
-.mood-idle .m-idle, .mood-talking .m-talk, .mood-surprised .m-o, .mood-happy .m-talk, .mood-asleep .m-sleep { opacity: 1; }
-.mood-happy .bd-eyes { opacity: 0; }
-.mood-happy .bd-happy { opacity: 1; }
+.bd-happy, .bd-lids, .bd-mouth, .bd-brows { opacity: 0; transition: opacity 0.2s; }
+.bd-brows .br { transform-box: fill-box; transform-origin: center; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.mood-idle .m-idle, .mood-talking .m-talk, .mood-surprised .m-o, .mood-excited .m-talk, .mood-proud .m-idle, .mood-asleep .m-sleep, .mood-curious .m-curious { opacity: 1; }
+.mood-proud .bd-eyes, .mood-excited .bd-eyes { opacity: 0; }
+.mood-proud .bd-happy, .mood-excited .bd-happy { opacity: 1; }
 .mood-asleep .bd-lids { opacity: 1; }
 .mood-asleep .blink { animation: none; }
+.mood-surprised .bd-eyes { transform: scale(1.08); }
+.mood-surprised .bd-brows { opacity: 1; }
+.mood-surprised .bd-brows .br { transform: translateY(-6px); }
+.is-curious .bd-face { transform: rotate(-6deg); }
+.is-curious .bd-brows { opacity: 1; }
+.is-curious .bd-brows .br.r { transform: translateY(-6px) rotate(6deg); }
+.mood-proud .bd-face { transform: translateY(-3px); }
 .bd-cheek { transition: opacity 0.3s, transform 0.3s; transform-box: fill-box; transform-origin: center; opacity: 0.9; }
-.bd-body:hover .bd-cheek { fill: #F6A7A2; transform: scale(1.35); }
+.bd-body:hover .bd-cheek, .mood-proud .bd-cheek, .mood-excited .bd-cheek { transform: scale(1.3); opacity: 1; }
 .bd-prop { opacity: 0; transform: translate(20px, 30px) rotate(10deg); transform-box: view-box; transition: opacity 0.25s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .bd-prop.on { opacity: 1; transform: none; }
-.buddy-say { position: absolute; right: 290px; top: 150px; width: max-content; max-width: 200px; padding: 10px 14px; border-radius: 16px; background: #fff; border: 1px solid #8a8580; color: var(--pine); font-weight: 600; font-size: 14px; line-height: 1.3; box-shadow: 0 10px 24px -14px rgba(13, 59, 34, 0.5); opacity: 0; transform: translateX(10px) scale(0.92); transform-origin: 100% 50%; transition: opacity 0.2s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); white-space: normal; }
+.bd-q { animation: qBob 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes qBob { 0%, 100% { transform: translateY(0) rotate(8deg); } 50% { transform: translateY(-6px) rotate(-4deg); } }
+
+/* speech bubble, z's and confetti */
+.buddy-say { position: absolute; right: 290px; top: 150px; width: max-content; max-width: 200px; padding: 10px 14px; border-radius: 16px; background: #fff; border: 1px solid #8a8580; color: var(--pine); font-weight: 600; font-size: 14px; line-height: 1.3; box-shadow: 0 10px 24px -14px rgba(13, 59, 34, 0.5); opacity: 0; transform: translateX(10px) scale(0.92); transform-origin: 100% 50%; transition: opacity 0.2s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); white-space: normal; z-index: 2; }
 .buddy-say::after { content: ""; position: absolute; right: -8px; top: 50%; width: 14px; height: 14px; background: #fff; border-right: 1px solid #8a8580; border-top: 1px solid #8a8580; transform: translateY(-50%) rotate(45deg); }
 .buddy-say.on { opacity: 1; transform: none; }
 .buddy-z { position: absolute; right: 80px; top: 30px; z-index: 2; font-family: var(--serif); font-style: italic; color: var(--green); font-weight: 600; }
@@ -1002,14 +1058,39 @@ a.pcard { color: inherit; }
 .buddy-confetti { position: absolute; left: 50%; top: 40%; width: 0; height: 0; }
 .buddy-confetti i { position: absolute; width: 8px; height: 12px; border-radius: 2px; background: var(--c); animation: confetti 1.3s cubic-bezier(0.2, 0.6, 0.4, 1) var(--d) forwards; opacity: 0; }
 @keyframes confetti { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 60% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--x), -110px) rotate(var(--r)); } }
-.buddy-404 { margin: 0 auto 56px; width: 300px; }
-.buddy-404 .buddy-say { right: auto; left: 262px; top: 100px; transform-origin: 0 50%; }
-.buddy-404 .buddy-say::after { right: auto; left: -8px; transform: translateY(-50%) rotate(-135deg); }
-@media (max-width: 760px) { .buddy-404 { width: 220px; } .buddy-404 .buddy-say { left: 50%; top: -58px; transform: translateX(-50%); max-width: 240px; font-size: 13px; } .buddy-404 .buddy-say::after { left: 50%; top: auto; bottom: -8px; transform: translateX(-50%) rotate(135deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .buddy-menu, .bd-prop, .buddy-say { transition: opacity 0.2s; transform: none; }
-  .buddy .blink, .buddy.is-open .bd-hat, .mood-happy .bd-body, .buddy-z span { animation: none; }
-}
+
+/* goggles */
 .bd-goggles { opacity: 0; transform: translateY(-34px) scale(0.9); transform-box: fill-box; transform-origin: center; transition: opacity 0.25s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .bd-goggles.on { opacity: 1; transform: none; }
-.mood-happy .bd-goggles.on { opacity: 0.35; }
+.mood-proud .bd-goggles.on, .mood-excited .bd-goggles.on { opacity: 0.35; }
+
+/* hero walk-on: small, in the bottom-right corner beside "Find us", so the video stays the star */
+.buddy-hero { position: absolute; right: 166px; bottom: 18px; z-index: 3; width: 120px; transform: translateX(260px); opacity: 0; }
+.buddy-hero.go { animation: buddyWalkIn 2s cubic-bezier(0.3, 0.6, 0.4, 1) both; }
+@keyframes buddyWalkIn { 0% { transform: translateX(260px); opacity: 0; } 8% { opacity: 1; } 100% { transform: none; opacity: 1; } }
+.buddy-hero .bd-shadow { opacity: 0.9; }
+.buddy-hero .buddy-say { right: 104px; top: 34px; font-size: 13px; padding: 8px 12px; }
+.buddy.paused, .buddy.paused * { animation-play-state: paused !important; }
+@media (max-width: 1100px) { .buddy-hero { display: none; } }
+
+/* posed stills */
+.buddy-still { width: 130px; }
+.wcard .buddy-still { position: absolute; right: 18px; bottom: -4px; width: 118px; transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.wcard:hover .buddy-still { transform: translateY(-8px) rotate(-3deg); }
+.ask-card:has(.buddy-still) { margin-top: 112px; }
+.ask-card .buddy-still { position: absolute; right: 22px; top: -98px; width: 112px; }
+.ask-card:hover .buddy-still { transform: translateY(-4px); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@media (max-width: 760px) { .wcard .buddy-still { width: 92px; } .ask-card .buddy-still { width: 92px; top: -88px; } .ask-card:has(.buddy-still) { margin-top: 96px; } }
+
+/* 404 */
+.buddy-404 { margin: 0 auto 56px; width: 230px; }
+.buddy-404 .buddy-say { right: auto; left: 222px; top: 70px; transform-origin: 0 50%; }
+.buddy-404 .buddy-say::after { right: auto; left: -8px; transform: translateY(-50%) rotate(-135deg); }
+@media (max-width: 760px) { .buddy-404 { width: 180px; } .buddy-404 .buddy-say { left: 50%; top: -58px; transform: translateX(-50%); max-width: 240px; font-size: 13px; } .buddy-404 .buddy-say::after { left: 50%; top: auto; bottom: -8px; transform: translateX(-50%) rotate(135deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .buddy-menu, .bd-prop, .buddy-say, .bd-lean, .bd-arm, .bd-face { transition: opacity 0.2s; }
+  .buddy-menu { transform: none; }
+  .buddy .blink, .buddy.is-open .bd-hat, .bd-hop, .bd-shadow, .bd-arm, .bd-leg, .buddy-z span, .bd-q { animation: none !important; }
+  .buddy-hero { display: none; }
+}
