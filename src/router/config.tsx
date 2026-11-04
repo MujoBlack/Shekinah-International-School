@@ -6,6 +6,7 @@ import Academics from "../pages/academics/page";
 import Admission from "../pages/admission/page";
 import SchoolLife from "../pages/school-life/page";
 import Contact from "../pages/contact/page";
+import Visit from "../pages/visit/page";
 
 const routes: RouteObject[] = [
   {
@@ -31,6 +32,10 @@ const routes: RouteObject[] = [
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/visit",
+    element: <Visit />,
   },
   {
     path: "*",

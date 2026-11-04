@@ -157,14 +157,14 @@ export const galleryImages = [
       img("home-life-grid-sports"),
   },
   {
-    category: "Trips",
+    category: "School Life",
     label: "Outdoor learning",
     image:
       img("school-life-gallery-outdoor"),
   },
   {
     category: "Events",
-    label: "Performance",
+    label: "Together",
     image:
       img("home-why-shekinah-community"),
   },
@@ -188,7 +188,7 @@ export const galleryImages = [
   },
   {
     category: "Sports",
-    label: "Swimming lesson",
+    label: "Playtime",
     image:
       img("home-life-grid-play"),
   },
@@ -205,7 +205,7 @@ export const galleryImages = [
       img("school-life-events-cookery-day"),
   },
   {
-    category: "Trips",
+    category: "Learning",
     label: "Learning outdoors",
     image:
       img("about-hero"),
