@@ -19,11 +19,12 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 */
 
 export type BuddyProp = "sprout" | "pencil" | "book" | null;
-type Wear = "goggles" | "medal" | "holly" | "bookpin";
+type Wear = "medal" | "holly" | "bookpin";
 
 /* Seasonal wearables. Month is 1–12; days inclusive.
-   TODO before launch: set the real Science Week, Sports Day and Book Week dates with the school.
-   Preview any outfit by adding ?buddy=goggles | medal | holly | bookpin to the page address. */
+   TODO before launch: set the real Sports Day and Book Week dates with the school.
+   Preview any outfit by adding ?buddy=medal | holly | bookpin to the page address.
+   (Lab goggles are not seasonal: the buddy puts them on for Primary / Our Curriculum, see `goggles`.) */
 const SEASONS: { wear: Wear; month: number; from: number; to: number }[] = [
   { wear: "holly", month: 12, from: 1, to: 31 },
   { wear: "bookpin", month: 3, from: 1, to: 7 }, // World Book Day falls in early March
@@ -32,7 +33,7 @@ const SEASONS: { wear: Wear; month: number; from: number; to: number }[] = [
 function seasonalWear(): Wear | null {
   if (typeof window === "undefined") return null;
   const q = new URLSearchParams(window.location.search).get("buddy");
-  if (q === "goggles" || q === "medal" || q === "holly" || q === "bookpin") return q;
+  if (q === "medal" || q === "holly" || q === "bookpin") return q;
   const d = new Date();
   const hit = SEASONS.find((s) => s.month === d.getMonth() + 1 && d.getDate() >= s.from && d.getDate() <= s.to);
   return hit?.wear ?? null;
@@ -50,6 +51,7 @@ export default function Buddy({
   prop = null,
   cheer = 0,
   sleepy = true,
+  goggles = false,
   className = "",
 }: {
   open?: boolean;
@@ -58,6 +60,7 @@ export default function Buddy({
   prop?: BuddyProp;
   cheer?: number; // bump this number to trigger the happy bounce
   sleepy?: boolean;
+  goggles?: boolean; // lab goggles over the eyes (science)
   className?: string;
 }) {
   const wrap = useRef<HTMLDivElement>(null);
@@ -203,6 +206,15 @@ export default function Buddy({
               <path d="M154 132 A20 20 0 0 1 194 132 Z" fill="#FAE6B9" stroke="#C2982E" strokeWidth="2" />
             </g>
           </g>
+          {/* lab goggles, worn over the eyes for science */}
+          <g className={`bd-goggles ${goggles ? "on" : ""}`}>
+            <path d="M64 128 Q70 124 100 126 M198 126 Q230 124 236 128" stroke="#126735" strokeWidth="8" strokeLinecap="round" fill="none" />
+            <path d="M144 130 Q149 124 154 130" stroke="#126735" strokeWidth="6" fill="none" />
+            <circle cx="124" cy="132" r="25" fill="#bfe6f5" fillOpacity="0.35" stroke="#126735" strokeWidth="6" />
+            <circle cx="174" cy="132" r="25" fill="#bfe6f5" fillOpacity="0.35" stroke="#126735" strokeWidth="6" />
+            <path d="M110 120 Q116 113 124 112" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" fill="none" opacity="0.9" />
+            <path d="M160 120 Q166 113 174 112" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" fill="none" opacity="0.9" />
+          </g>
           {/* happy squint eyes */}
           <g className="bd-happy" fill="none" stroke="#0D3B22" strokeWidth="5" strokeLinecap="round">
             <path d="M110 136 Q124 118 138 136" />
@@ -229,6 +241,14 @@ export default function Buddy({
               <path d="M0 -1 L0 9" stroke="#EB2229" strokeWidth="1.5" />
             </g>
           )}
+          {wear === "holly" && (
+            <g transform="translate(84 108) scale(1.3)">
+              <path d="M0 0 q8 -10 18 -4 q-4 4 0 8 q-10 6 -18 -4z" fill="#126735" />
+              <path d="M2 2 q-10 -6 -16 4 q5 1 4 6 q10 0 12 -10z" fill="#2E9B5A" />
+              <circle cx="2" cy="3" r="4" fill="#EB2229" />
+              <circle cx="8" cy="6" r="3.5" fill="#EB2229" />
+            </g>
+          )}
           {wear === "medal" && (
             <g>
               <path d="M180 96 L206 150 M226 96 L206 150" stroke="#126735" strokeWidth="7" strokeLinecap="round" />
@@ -245,21 +265,6 @@ export default function Buddy({
             <path d="M122 72 L122 88 Q150 100 178 88 L178 72 L150 84 Z" fill="#0D3B22" />
             <path d="M150 62 L194 72 L194 96" fill="none" stroke="#EB2229" strokeWidth="3" strokeLinecap="round" />
             <circle cx="194" cy="100" r="5" fill="#EB2229" />
-            {wear === "goggles" && (
-              <g>
-                <rect x="120" y="76" width="60" height="9" rx="4" fill="#2E9B5A" />
-                <circle cx="136" cy="80" r="10" fill="#cfe9f5" stroke="#0D3B22" strokeWidth="2.5" />
-                <circle cx="164" cy="80" r="10" fill="#cfe9f5" stroke="#0D3B22" strokeWidth="2.5" />
-              </g>
-            )}
-            {wear === "holly" && (
-              <g transform="translate(108 70)">
-                <path d="M0 0 q8 -10 18 -4 q-4 4 0 8 q-10 6 -18 -4z" fill="#126735" />
-                <path d="M2 2 q-10 -6 -16 4 q5 1 4 6 q10 0 12 -10z" fill="#2E9B5A" />
-                <circle cx="2" cy="3" r="4" fill="#EB2229" />
-                <circle cx="8" cy="6" r="3.5" fill="#EB2229" />
-              </g>
-            )}
           </g>
         </g>
 

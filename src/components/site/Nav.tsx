@@ -115,6 +115,7 @@ export default function Nav() {
                       say={hot ? megaMenu[hot.i].say : "Hi! Where shall we go?"}
                       prop={hot ? megaMenu[hot.i].prop : null}
                       cheer={cheer}
+                      goggles={hot ? /primary|curriculum/.test(megaMenu[hot.i].to) : /^\/academics\/(primary|curriculum)/.test(pathname)}
                     />
                   </div>
                 </div>

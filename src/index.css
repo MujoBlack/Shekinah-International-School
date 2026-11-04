@@ -1008,3 +1008,6 @@ a.pcard { color: inherit; }
   .buddy-menu, .bd-prop, .buddy-say { transition: opacity 0.2s; transform: none; }
   .buddy .blink, .buddy.is-open .bd-hat, .mood-happy .bd-body, .buddy-z span { animation: none; }
 }
+.bd-goggles { opacity: 0; transform: translateY(-34px) scale(0.9); transform-box: fill-box; transform-origin: center; transition: opacity 0.25s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bd-goggles.on { opacity: 1; transform: none; }
+.mood-happy .bd-goggles.on { opacity: 0.35; }
