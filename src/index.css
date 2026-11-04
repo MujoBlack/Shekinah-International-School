@@ -996,7 +996,7 @@ a.pcard { color: inherit; }
 .pose-excited { --al: 108deg; --ar: -108deg; }
 .pose-shrug { --al: 72deg; --ar: -72deg; }
 .pose-curious { --ar: -96deg; }
-.pose-book { --al: 34deg; --ar: -34deg; }
+.pose-book .bd-arm { display: none; }
 .bd-star { opacity: 0; transition: opacity 0.25s; }
 .pose-proud .bd-star { opacity: 1; }
 .is-waving .bd-arm.r { animation: buddyWave 0.38s ease-in-out 4 alternate; }
