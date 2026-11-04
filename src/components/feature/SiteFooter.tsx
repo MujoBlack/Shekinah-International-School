@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "@/components/feature/Logo";
-import { WaveEdge, Star } from "@/components/base/Doodles";
+import { WaveEdge } from "@/components/base/Doodles";
 
 const exploreLinks = [
   { label: "Home", to: "/" },
@@ -22,12 +22,11 @@ export default function SiteFooter() {
   return (
     <footer className="relative mt-12 bg-primary-800 text-white">
       <WaveEdge color="oklch(0.31 0.062 156)" className="-mt-[47px]" />
-      <Star className="bob absolute right-[8%] top-12 h-8 w-8" color="#FFD155" />
       <div className="mx-auto w-full max-w-[1360px] px-5 pb-8 pt-10 md:px-10 md:pb-10 md:pt-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.35fr_0.8fr_1.15fr] lg:gap-0 lg:divide-x lg:divide-white/15">
           <div className="lg:pr-12">
             <Logo size="lg" variant="light" />
-            <p className="mt-6 max-w-sm hand text-[30px] leading-snug text-sun-300">
+            <p className="mt-6 max-w-sm font-heading text-[22px] leading-snug text-sun-300">
               Equipping Today. Shaping Tomorrow.
             </p>
             <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-white/80">

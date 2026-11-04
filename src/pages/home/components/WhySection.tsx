@@ -1,10 +1,9 @@
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { Squiggle } from "@/components/base/Doodles";
 import { whyCards } from "@/mocks/home";
 
-const tones = ["bg-coral-100", "bg-sun-100", "bg-blush-100", "bg-gold-100"];
-const badge = ["bg-coral-500", "bg-sun-400", "bg-blush-500", "bg-gold-500"];
+const tones = ["bg-white", "bg-white", "bg-white", "bg-white"];
+const badge = ["bg-primary-700", "bg-coral-500", "bg-primary-700", "bg-coral-500"];
 
 export default function WhySection() {
   return (
@@ -14,7 +13,7 @@ export default function WhySection() {
           <div className="max-w-2xl">
             <Eyebrow tone="blush">Why Shekinah</Eyebrow>
             <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
-              Why families <span className="relative inline-block">choose us<Squiggle className="absolute -bottom-2 left-0 h-3.5 w-full" color="#FF7A62" /></span>
+              Why families choose us
             </h2>
           </div>
           <p className="max-w-sm text-[17px] leading-relaxed text-foreground-600">
@@ -25,7 +24,7 @@ export default function WhySection() {
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {whyCards.map((card, index) => (
             <Reveal key={card.title} delay={index * 80}>
-              <article className={`lift group flex h-full flex-col rounded-[32px] p-3 ${tones[index % tones.length]}`}>
+              <article className={`lift group flex h-full flex-col rounded-[28px] border border-primary-950/10 p-3 shadow-card ${tones[index % tones.length]}`}>
                 <div className="relative h-[200px]">
                   <img
                     src={card.image}

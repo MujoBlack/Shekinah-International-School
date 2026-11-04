@@ -1,5 +1,5 @@
 import Button from "@/components/base/Button";
-import { Sun, Star, Loop, Heart, Squiggle } from "@/components/base/Doodles";
+import { Sun, Loop, Heart } from "@/components/base/Doodles";
 import { img } from "@/lib/img";
 
 export default function Hero() {
@@ -11,7 +11,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-[1360px] grid-cols-1 items-center gap-12 px-5 pb-24 pt-10 md:px-10 md:pb-32 md:pt-14 lg:grid-cols-[1.02fr_1fr] lg:gap-10">
         <div className="relative z-10">
-          <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-primary-800 shadow-card">
+          <span className="inline-flex  items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-primary-800 shadow-card">
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-mint-100 text-primary-700">
               <i className="ri-sparkling-2-fill text-[13px] leading-none" />
             </span>
@@ -19,10 +19,9 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-7 font-heading text-[44px] leading-[1.02] text-primary-950 sm:text-[60px] md:text-[78px]">
-            A Place to <span className="mark-sun">Learn</span>, Grow and{" "}
-            <span className="wonk relative inline-block text-coral-500">
+            A Place to Learn, Grow and{" "}
+            <span className="wonk text-coral-500">
               Belong
-              <Squiggle className="absolute -bottom-3 left-0 h-4 w-full" color="#FFC233" />
             </span>
           </h1>
 
@@ -47,7 +46,6 @@ export default function Hero() {
 
         <div className="relative mx-auto w-full max-w-[600px]">
           <Sun className="spin-slow absolute -left-8 -top-10 z-0 h-28 w-28 md:h-36 md:w-36" />
-          <Star className="bob absolute -right-2 top-6 z-20 h-10 w-10" color="#57B874" />
           <Loop className="absolute -bottom-10 -left-14 z-20 hidden h-16 w-40 md:block" color="#2E9A52" />
 
           <div className="relative z-10 aspect-[1/1] w-full overflow-hidden blob-a border-[10px] border-white shadow-soft">
@@ -59,7 +57,7 @@ export default function Hero() {
             />
           </div>
 
-          <div className="bob-slow absolute -left-4 bottom-10 z-20 flex items-center gap-3 rounded-[22px] bg-white px-4 py-3 shadow-soft [--r:-3deg] md:-left-10">
+          <div className="bob-slow absolute -left-4 bottom-10 z-20 flex items-center gap-3 rounded-[22px] bg-white px-4 py-3 shadow-soft  md:-left-10">
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sun-300 text-primary-950">
               <i className="ri-earth-line text-xl leading-none" />
             </span>
@@ -69,7 +67,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <div className="absolute -right-2 bottom-24 z-20 rotate-6 rounded-full bg-coral-500 px-4 py-2 text-[14px] font-bold text-white shadow-soft md:-right-6">
+          <div className="absolute -right-2 bottom-24 z-20  rounded-full bg-coral-500 px-4 py-2 text-[14px] font-bold text-white shadow-soft md:-right-6">
             Since 2014
           </div>
         </div>

@@ -1,27 +1,25 @@
 import Button from "@/components/base/Button";
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { WaveEdge, Sun, Cloud } from "@/components/base/Doodles";
+import { WaveEdge } from "@/components/base/Doodles";
 import { journeyCards } from "@/mocks/home";
 
 const tones = [
-  { bg: "bg-sun-100", tag: "bg-sun-300 text-primary-950", ring: "border-sun-200", rot: "-rotate-3" },
-  { bg: "bg-gold-100", tag: "bg-gold-400 text-white", ring: "border-gold-200", rot: "rotate-3" },
+  { bg: "bg-sun-100", tag: "bg-sun-300 text-primary-950", ring: "border-sun-200", rot: "" },
+  { bg: "bg-gold-100", tag: "bg-gold-400 text-white", ring: "border-gold-200", rot: "" },
 ];
 
 export default function JourneySection() {
   return (
     <section className="relative bg-mint-100">
       <WaveEdge color="#DFF3E4" className="-mt-[47px]" />
-      <Cloud className="absolute left-[6%] top-16 hidden h-12 w-24 opacity-90 md:block" />
-      <Sun className="spin-slow absolute right-[6%] top-10 hidden h-20 w-20 md:block" />
       <div className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow tone="mint" className="bg-white">
             Our Learning Journey
           </Eyebrow>
           <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
-            Two stages, one <span className="wonk text-primary-600">happy</span> journey
+            Two stages, one happy journey
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-[17px] leading-relaxed text-foreground-700">
             From first steps in Early Years to confident leadership in Primary, children grow within one familiar campus

@@ -1,7 +1,6 @@
 import Button from "@/components/base/Button";
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { Dots, Pencil, Star } from "@/components/base/Doodles";
 import { img } from "@/lib/img";
 
 const points = [
@@ -16,7 +15,6 @@ export default function MeetSection() {
       <div className="mx-auto grid w-full max-w-[1360px] grid-cols-1 items-center gap-14 px-5 md:px-10 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <div className="relative mx-auto max-w-[560px]">
-            <Dots className="absolute -left-6 -top-6 h-24 w-24 opacity-20" />
             <div className="relative aspect-[4/4.4] overflow-hidden blob-c bg-sun-100">
               <img
                 src={img("home-meet-shekinah")}
@@ -31,8 +29,7 @@ export default function MeetSection() {
                 className="aspect-[4/3] h-full w-full object-cover"
               />
             </div>
-            <Pencil className="bob absolute -right-6 -top-8 h-20 w-20 [--r:10deg]" />
-            <div className="absolute -left-4 bottom-16 -rotate-3 rounded-[20px] bg-sun-300 px-4 py-3 shadow-soft">
+            <div className="absolute -left-4 bottom-16  rounded-[20px] bg-sun-300 px-4 py-3 shadow-soft">
               <span className="block font-heading text-[22px] leading-none text-primary-950">Est. 2014</span>
               <span className="mt-1 block text-[13px] font-medium text-primary-900">Bugonga, Entebbe</span>
             </div>
@@ -42,8 +39,7 @@ export default function MeetSection() {
         <Reveal delay={120}>
           <Eyebrow tone="butter">Meet Shekinah</Eyebrow>
           <h2 className="relative mt-5 font-heading text-[36px] leading-[1.06] text-primary-950 md:text-[54px]">
-            More than a school. A <span className="mark-gold">community</span> for growing minds.
-            <Star className="bob absolute -top-6 right-6 hidden h-8 w-8 md:block" color="#FF7A62" />
+            More than a school. A community for growing minds.
           </h2>
           <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-foreground-700">
             <p>

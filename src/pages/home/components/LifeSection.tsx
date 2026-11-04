@@ -1,11 +1,10 @@
 import Button from "@/components/base/Button";
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { Star } from "@/components/base/Doodles";
 import { lifeImages } from "@/mocks/home";
 
 const ribbonText = ["Equipping Today", "Shaping Tomorrow", "Equipping Today", "Shaping Tomorrow"];
-const labelTones = ["bg-sun-300", "bg-mint-200", "bg-gold-200", "bg-coral-200", "bg-blush-200"];
+const labelTones = ["bg-white"];
 
 export default function LifeSection() {
   return (
@@ -14,7 +13,7 @@ export default function LifeSection() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow tone="gold">Life at Shekinah</Eyebrow>
           <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-primary-950 md:text-[60px]">
-            Every day has something to <span className="mark-sun">look forward to</span>
+            Every day has something to look forward to
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-[17px] leading-relaxed text-foreground-600">
             Classrooms, the sports court, the lawn and the wider community all play a part in a Shekinah childhood.
@@ -23,7 +22,6 @@ export default function LifeSection() {
 
         <Reveal delay={100}>
           <div className="relative mt-12 grid auto-rows-[120px] grid-cols-2 gap-3 sm:auto-rows-[160px] md:mt-14 md:auto-rows-[190px] md:grid-cols-4 md:gap-4">
-            <Star className="bob absolute -left-5 -top-5 z-10 h-10 w-10" color="#FFC233" />
             {lifeImages.map((item, index) => (
               <figure
                 key={item.label}
@@ -38,7 +36,7 @@ export default function LifeSection() {
                   <span
                     className={`inline-flex rounded-full px-3.5 py-1.5 text-[12px] font-bold text-primary-950 shadow-card md:text-[13px] ${
                       labelTones[index % labelTones.length]
-                    } ${index % 2 ? "rotate-2" : "-rotate-2"}`}
+                    } ${index % 2 ? "" : ""}`}
                   >
                     {item.label}
                   </span>
@@ -50,7 +48,7 @@ export default function LifeSection() {
       </div>
 
       <div className="relative mt-14 overflow-hidden">
-        <div className="-mx-2 -rotate-[1.5deg] bg-primary-700 py-4">
+        <div className="bg-primary-700 py-4">
           <div className="overflow-hidden">
             <div className="marquee-track items-center gap-8 whitespace-nowrap md:gap-12">
               {[0, 1].map((half) => (
@@ -60,7 +58,7 @@ export default function LifeSection() {
                       {ribbonText.map((text, i) => (
                         <span key={`${text}-${i}`} className="flex items-center gap-8 md:gap-12">
                           <span className="font-heading text-[22px] text-white md:text-[28px]">{text}</span>
-                          <Star className="h-6 w-6" color={i % 2 ? "#FF9E8A" : "#FFD155"} />
+                          <span className="h-2 w-2 rounded-full bg-sun-300" />
                         </span>
                       ))}
                     </span>

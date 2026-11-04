@@ -1,22 +1,20 @@
 import Eyebrow from "@/components/base/Eyebrow";
 import Reveal from "@/components/base/Reveal";
-import { Star, WaveEdge } from "@/components/base/Doodles";
+import { WaveEdge } from "@/components/base/Doodles";
 import { testimonials } from "@/mocks/home";
 
-const cardTones = ["bg-sun-100", "bg-white", "bg-mint-100"];
-const tilt = ["md:-rotate-1", "md:rotate-1 md:-translate-y-4", "md:-rotate-1"];
+const cardTones = ["bg-white", "bg-white", "bg-white"];
+const tilt = ["", " ", ""];
 
 export default function VoicesSection() {
   return (
     <section className="relative bg-primary-800 text-white">
       <WaveEdge color="oklch(0.31 0.062 156)" className="-mt-[47px]" />
-      <Star className="bob absolute left-[8%] top-16 h-8 w-8" color="#FFD155" />
-      <Star className="bob-slow absolute right-[10%] top-28 h-6 w-6" color="#FF9E8A" />
       <div className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow tone="cream">Parent Voices</Eyebrow>
           <h2 className="mt-5 font-heading text-[38px] leading-[1.04] text-white md:text-[60px]">
-            From our families <span className="wonk text-sun-300">to yours</span>
+            From our families <span className="text-sun-300">to yours</span>
           </h2>
         </Reveal>
 
