@@ -476,8 +476,8 @@ a { color: inherit; text-decoration: none; }
   .step .th { grid-column: 1; grid-row: 1 / span 3; }
   .step .d { grid-column: 2; grid-row: 1; margin: 16px 0 0 14px; position: relative; z-index: 1; }
   .step .n { grid-column: 3; grid-row: 1; margin-top: 0; }
-  .step .s-h4 { grid-column: 3; grid-row: 2; margin-top: 10px; }
-  .step p { grid-column: 3; grid-row: 3; }
+  .step .s-h4 { grid-column: 3; grid-row: 2; margin-top: 10px; font-family: var(--serif); font-weight: 400; font-size: 26px; letter-spacing: -0.01em; }
+  .step p { grid-column: 3; grid-row: 3; color: var(--ink); font-size: 16px; }
 }
 @media (max-width: 760px) {
   .wrap, .wrap-narrow { padding: 0 16px; }
@@ -530,8 +530,8 @@ a { color: inherit; text-decoration: none; }
   .step::before { left: 90.5px; }
   .step .th { width: 76px; height: 76px; border-radius: 16px; }
   .step .d { margin: 12px 0 0 9px; }
-  .step .n { font-size: 32px; }
-  .step .s-h4 { font-size: 18px; margin-top: 8px; }
+  .step .s-h4 { font-size: 22px; margin-top: 6px; }
+  .step .n { font-size: 30px; }
   .panel { margin: 24px 8px 8px; border-radius: 28px; padding: 10px; }
   .cta { height: 460px; }
   .cta .in { left: 22px; right: 22px; top: auto; bottom: 28px; transform: none; }
