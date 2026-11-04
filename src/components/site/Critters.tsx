@@ -66,7 +66,7 @@ export function PencilBuddy({ edge = "edge-b" }: { edge?: Edge }) {
   );
 }
 
-/* Big round "Owlie" peeking up from the bottom of the Academics menu. The only critter in the menu with eyes. */
+/* Big round graduate buddy (butter, mortarboard) peeking up from the bottom of the Academics menu. The only critter in the menu with eyes. */
 export function MenuBuddy() {
   return (
     <svg className="menu-buddy" viewBox="0 0 300 200" aria-hidden="true" data-placeholder="critter">
@@ -93,21 +93,26 @@ export function MenuBuddy() {
       </g>
       {/* the buddy: a big green round with a sprout */}
       <g className="mb-body">
-        <path d="M150 62 C150 46 160 38 170 36 C164 46 160 54 156 64" fill="#2E9B5A" />
-        <path d="M150 62 C146 48 134 42 122 44 C132 50 140 56 146 66" fill="#126735" />
-        <circle cx="150" cy="150" r="88" fill="#DDEBDF" stroke="#126735" strokeWidth="3" />
-        <g className="blink">
-          <circle cx="124" cy="128" r="20" fill="#fff" stroke="#126735" strokeWidth="2" />
-          <circle cx="174" cy="128" r="20" fill="#fff" stroke="#126735" strokeWidth="2" />
-          <circle cx="129" cy="131" r="9" fill="#0D3B22" />
-          <circle cx="179" cy="131" r="9" fill="#0D3B22" />
-          <circle cx="132" cy="127" r="3" fill="#fff" />
-          <circle cx="182" cy="127" r="3" fill="#fff" />
+        <circle cx="150" cy="150" r="88" fill="#FAE6B9" stroke="#C2982E" strokeWidth="3" />
+        {/* mortarboard */}
+        <g transform="rotate(-8 150 62)">
+          <path d="M96 62 L150 40 L204 62 L150 84 Z" fill="#126735" stroke="#0D3B22" strokeWidth="2" />
+          <path d="M122 72 L122 88 Q150 100 178 88 L178 72 L150 84 Z" fill="#0D3B22" />
+          <path d="M150 62 L194 72 L194 96" fill="none" stroke="#EB2229" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="194" cy="100" r="5" fill="#EB2229" />
         </g>
-        <path d="M134 162 Q150 182 168 162 Z" fill="#0D3B22" />
-        <path d="M142 170 Q151 178 160 170" fill="#EB2229" opacity="0.85" />
-        <circle cx="106" cy="156" r="8" fill="#FBE1DF" />
-        <circle cx="196" cy="156" r="8" fill="#FBE1DF" />
+        <g className="blink">
+          <circle cx="124" cy="132" r="20" fill="#fff" stroke="#C2982E" strokeWidth="2" />
+          <circle cx="174" cy="132" r="20" fill="#fff" stroke="#C2982E" strokeWidth="2" />
+          <circle cx="129" cy="135" r="9" fill="#0D3B22" />
+          <circle cx="179" cy="135" r="9" fill="#0D3B22" />
+          <circle cx="132" cy="131" r="3" fill="#fff" />
+          <circle cx="182" cy="131" r="3" fill="#fff" />
+        </g>
+        <path d="M134 166 Q150 186 168 166 Z" fill="#0D3B22" />
+        <path d="M142 174 Q151 182 160 174" fill="#EB2229" opacity="0.85" />
+        <circle cx="106" cy="160" r="8" fill="#FBE1DF" />
+        <circle cx="196" cy="160" r="8" fill="#FBE1DF" />
       </g>
     </svg>
   );

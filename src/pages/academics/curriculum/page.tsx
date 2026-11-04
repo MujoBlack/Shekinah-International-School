@@ -60,7 +60,7 @@ function Deck() {
 
 export default function Curriculum() {
   return (
-    <Layout footer={{ title: "See the curriculum in action", text: "Visit during the school day and watch a real lesson.", image: img("teachers-students-07"), imagePos: "center 22%" }}>
+    <Layout footer={{ title: "See the curriculum in action", text: "Visit during the school day and watch a real lesson.", image: img("music-class-05"), imagePos: "center 40%" }}>
       <header className="pghero cur-hero">
         <div className="wrap center">
           <span className="crumbs fade-up" style={{ ["--d" as string]: "0.1s" }}>

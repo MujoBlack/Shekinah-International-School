@@ -37,7 +37,7 @@ export default function Primary() {
         images={[
           { src: img("science-class-04"), alt: "A Primary pupil in a lab coat pouring liquid through a funnel" },
           { src: img("home-learning-journey-primary"), alt: "Primary pupils writing at their desks" },
-          { src: img("music-class-05"), alt: "Pupils playing recorders with their music teacher" },
+          { src: img("science-class-06"), alt: "Primary pupils in lab coats and goggles with their teacher" },
         ]}
       />
       <Jump items={jump} />
