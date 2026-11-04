@@ -4,6 +4,7 @@ import PageHero from "@/components/site/PageHero";
 import { VisitForm } from "@/components/site/forms";
 import { Label, SITE, tel, vi } from "@/components/site/ui";
 import { img } from "@/lib/img";
+import { FilmCard } from "@/components/site/Video";
 
 const expect = [
   { i: "ri-walk-line", t: "A tour of the campus", p: "Classrooms, library, science lab, ICT room and the outdoor spaces where children play." },
@@ -18,7 +19,8 @@ export default function Visit() {
         crumb="Book a School Visit"
         title="Come and see Shekinah for yourself"
         text="The best way to know if a school is right is to walk through the gate. Choose a day that suits you and we'll do the rest."
-        image={img("contact-hero-campus")}
+        image={img("compound-18")}
+        position="center 40%"
       />
 
       <section className="sec-tight">
@@ -35,6 +37,14 @@ export default function Visit() {
                 <p>{e.p}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sec-tight" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="rv rv-scale">
+            <FilmCard title="Take a peek inside" text="A morning in our science lab · 41 seconds" />
           </div>
         </div>
       </section>

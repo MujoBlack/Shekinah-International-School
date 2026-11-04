@@ -5,6 +5,7 @@ import Jump from "@/components/site/Jump";
 import { Arrows, Btn, Label, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
 import { earlyYearsSubjects, primarySubjects } from "@/mocks/academics";
 import { img } from "@/lib/img";
+import { FilmCard } from "@/components/site/Video";
 
 const jump = [
   { label: "Curriculum", id: "curriculum" },
@@ -20,7 +21,9 @@ const stages = [
 ];
 
 const beyond = [
-  { t: "Science Week", p: "Experiments, visitors and curious questions all week long.", image: img("academics-beyond-classroom"), label: "Every year" },
+  { t: "Science Week", p: "Experiments, visitors and curious questions all week long.", image: img("science-class-01"), label: "Every year" },
+  { t: "Music", p: "Recorders, singing and instruments in our own music room.", image: img("music-class-02"), label: "Every week" },
+  { t: "Swimming", p: "Time in the pool that builds confidence in the water.", image: img("swimming-01"), label: "Sport" },
   { t: "Sport and play", p: "Team games and active play that build teamwork and confidence.", image: img("school-life-sports-2"), label: "Every week" },
   { t: "Creative arts", p: "Music, drama and art that help every child express themselves.", image: img("about-setting-art-room"), label: "Every week" },
   { t: "Design and making", p: "Projects that solve real problems and make things that work.", image: img("academics-subject-design-technology"), label: "Projects" },
@@ -90,8 +93,8 @@ export default function Academics() {
       <section id="primary" className="band mint">
         <div className="wrap band-grid flip">
           <div className="collage rv rv-scale">
-            <div className="main"><img src={img("academics-primary-1")} alt="Primary pupils in class" loading="lazy" /></div>
-            <div className="pol"><img src={img("academics-subject-literacy")} alt="" loading="lazy" /><span>Reading together</span></div>
+            <div className="main"><img src={img("science-class-02")} alt="Pupils in goggles doing an experiment" loading="lazy" /></div>
+            <div className="pol"><img src={img("music-class-01")} alt="" loading="lazy" /><span>Recorder practice</span></div>
           </div>
           <div>
             <span className="chip rv">03 · Primary</span>
@@ -123,10 +126,25 @@ export default function Academics() {
         </div>
       </section>
 
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="head">
+            <div>
+              <Label n="05" className="rv">Science in action</Label>
+              <h2 className="s-h2 rv" style={vi(1)}>A morning in our science lab</h2>
+            </div>
+            <p className="rv" style={vi(2)}>Goggles on, lab coats buttoned. Our pupils learn science by doing it.</p>
+          </div>
+          <div className="rv rv-scale" style={{ marginTop: 40 }}>
+            <FilmCard title="Watch our science film" text="41 seconds · no sound" />
+          </div>
+        </div>
+      </section>
+
       <section id="beyond" className="sec-dark on-dark">
         <div className="wrap head">
           <div>
-            <Label n="05" className="rv">Beyond the classroom</Label>
+            <Label n="06" className="rv">Beyond the classroom</Label>
             <h2 className="s-h2 rv" style={vi(1)}>Learning that doesn't stop at the door</h2>
           </div>
           <Arrows api={api} />

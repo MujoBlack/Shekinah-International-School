@@ -3,7 +3,7 @@ import { vi } from "./ui";
 
 export const pathSteps = [
   { title: "Enquire", text: "Get in touch with our admissions office and tell us about your child.", image: img("school-life-parents-community") },
-  { title: "Visit", text: "Tour the school and meet the Principal to share your hopes and see what we offer.", image: img("contact-hero-campus") },
+  { title: "Visit", text: "Tour the school and meet the Principal to share your hopes and see what we offer.", image: img("compound-06") },
   { title: "Apply", text: "Fill in the application form and share previous school records.", image: img("academics-primary-2") },
   { title: "Assessment", text: "A friendly meeting with your child to understand their level and any special care needs.", image: img("admission-assessment-step") },
   { title: "Enrol", text: "Pay the registration fee, complete the registration form and welcome to Shekinah!", image: img("home-hero-alt") },

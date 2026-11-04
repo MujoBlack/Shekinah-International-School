@@ -6,6 +6,7 @@ import { SunBuddy } from "@/components/site/Critters";
 import { Arrows, Btn, CONTACT, Label, Marquee, Slider, vi, type SliderApi } from "@/components/site/ui";
 import { events, galleryImages, learningFeatures, parentsImage, sportsFeature } from "@/mocks/schoolLife";
 import { img } from "@/lib/img";
+import { LoopVideo } from "@/components/site/Video";
 
 const jump = [
   { label: "Learning", id: "learning" },
@@ -46,7 +47,7 @@ export default function SchoolLife() {
             {learningFeatures.map((f, i) => (
               <article className="card rv" key={f.tag} style={{ ...vi(i), padding: 0, minHeight: 0 }}>
                 <div className="ph-frame" style={{ borderRadius: 0, aspectRatio: "16 / 9" }}>
-                  <img src={f.image} alt="" loading="lazy" />
+                  {i === 0 ? <LoopVideo name="science-pointing-loop" fallback={img("science-class-02")} /> : <img src={f.image} alt="" loading="lazy" />}
                 </div>
                 <div style={{ padding: 28 }}>
                   <span className="label">{f.tag}</span>
@@ -92,6 +93,19 @@ export default function SchoolLife() {
             <figure className="card photo rv" style={vi(4)}>
               <img src={img("school-life-sports-1")} alt="Pupils playing sport" loading="lazy" />
             </figure>
+            <figure className="card photo rv" style={{ ...vi(5), minHeight: 360 }}>
+              <img src={img("swimming-02")} alt="A pupil smiling with her swimming medal" loading="lazy" style={{ objectPosition: "center 25%" }} />
+              <figcaption>Swimming</figcaption>
+            </figure>
+            <article className="card tint-blush rv" style={vi(6)}>
+              <span className="ic white"><i className="ri-drop-line" /></span>
+              <h3 className="s-h3 t">Swimming</h3>
+              <p className="body">Time in the pool builds confidence in the water, and one of our swimmers has the medal to prove it.</p>
+            </article>
+            <figure className="card photo rv" style={vi(7)}>
+              <img src={img("compound-13")} alt="See-saws in the playground" loading="lazy" />
+              <figcaption>Playground</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -103,14 +117,14 @@ export default function SchoolLife() {
       <section id="creative" className="band blush">
         <div className="wrap band-grid">
           <div className="collage rv rv-scale">
-            <div className="main"><img src={img("school-life-clubs-art-craft")} alt="Pupils doing art and craft" loading="lazy" /></div>
-            <div className="pol"><img src={img("home-life-grid-crafts")} alt="" loading="lazy" /><span>Made by us</span></div>
+            <div className="main"><img src={img("music-class-01")} alt="Pupils playing recorders with their music teacher" loading="lazy" /></div>
+            <div className="pol"><img src={img("school-life-clubs-art-craft")} alt="" loading="lazy" /><span>Made by us</span></div>
           </div>
           <div>
             <span className="chip rv">03 · Creative</span>
             <h2 className="s-h2 rv" style={vi(1)}>Music, art and making</h2>
             <p className="copy rv" style={vi(2)}>
-              Instruments, singing and rhythm. Paint, clay and making things by hand. Every child gets the chance to
+              Recorders, singing and rhythm in our music room. Paint, clay and making things by hand. Every child gets the chance to
               express themselves and discover what they love.
             </p>
             <ul className="checks rv" style={vi(3)}>

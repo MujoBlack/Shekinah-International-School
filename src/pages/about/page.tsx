@@ -32,8 +32,8 @@ export default function About() {
             ))}
           </div>
           <div className="collage rv rv-scale">
-            <div className="main"><img src={img("about-our-story-1")} alt="Pupils at Shekinah" loading="lazy" /></div>
-            <div className="pol"><img src={img("about-our-story-2")} alt="" loading="lazy" /><span>Since 2014</span></div>
+            <div className="main"><img src={img("compound-18")} alt="The green walkway with our 10 years sign" loading="lazy" style={{ objectPosition: "center 35%" }} /></div>
+            <div className="pol"><img src={img("about-our-story-2")} alt="" loading="lazy" /><span>10 years and counting</span></div>
           </div>
         </div>
       </section>
@@ -135,16 +135,42 @@ export default function About() {
         </div>
       </section>
 
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="head">
+            <div>
+              <Label n="06" className="rv">Our people</Label>
+              <h2 className="s-h2 rv" style={vi(1)}>One school family</h2>
+            </div>
+            <p className="rv" style={vi(2)}>Pupils and staff from many nations, on the painted steps at the heart of our campus.</p>
+          </div>
+          <div className="bento">
+            <figure className="card photo span-2 rv" style={{ ...vi(0), minHeight: 420 }}>
+              <img src={img("full-school-01")} alt="The whole Shekinah school and staff together" loading="lazy" />
+              <figcaption>The whole school</figcaption>
+            </figure>
+            <figure className="card photo rv" style={vi(1)}>
+              <img src={img("teachers-students-01")} alt="Senior pupils with their teacher" loading="lazy" />
+            </figure>
+            {["teachers-students-04", "teachers-students-07", "teachers-students-09"].map((n, i) => (
+              <figure className="card photo rv" key={n} style={{ ...vi(i + 2), minHeight: 240 }}>
+                <img src={img(n)} alt="A class with their teachers" loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="sec-dark on-dark">
         <div className="wrap head">
           <div>
-            <Label n="06" className="rv">Our setting</Label>
+            <Label n="07" className="rv">Our setting</Label>
             <h2 className="s-h2 rv" style={vi(1)}>Spaces made for learning</h2>
           </div>
           <Arrows api={api} />
         </div>
         <Slider arrowsTarget={setApi}>
-          {settingImages.map((s, i) => (
+          {[...settingImages, { label: "Music room", image: img("music-class-06") }, { label: "The court", image: img("compound-01") }, { label: "Playground", image: img("compound-13") }].map((s, i) => (
             <div className="act tall rv rv-right" key={s.label} style={vi(i)}>
               <div className="im"><img src={s.image} alt={s.label} loading="lazy" draggable={false} /></div>
               <div className="tx">

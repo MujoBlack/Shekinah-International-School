@@ -5,11 +5,12 @@ import Path, { faqs } from "@/components/site/Path";
 import { PencilBuddy, SproutBuddy, StarBuddy, SunBuddy } from "@/components/site/Critters";
 import { Arrows, Btn, CONTACT, Faq, Label, Marquee, Rise, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
 import { img } from "@/lib/img";
+import { FilmButton, LoopVideo } from "@/components/site/Video";
 
 function Hero() {
   return (
     <header className="hero">
-      <img src={img("home-hero")} alt="Pupils at Shekinah International School" fetchPriority="high" />
+      <LoopVideo name="science-pour-loop" fallback={img("home-hero")} />
       <div className="in">
         <span className="pill-news fade-up" style={{ ["--d" as string]: "0.1s" }}>
           <span>Est. 2014</span> Christian · Multicultural · National Curriculum of England
@@ -29,8 +30,9 @@ function Hero() {
           </Btn>
         </div>
       </div>
+      <FilmButton>Watch our science film</FilmButton>
       <Link to={`${CONTACT}#find-us`} className="find">
-        <img src={img("contact-hero-campus")} alt="" />
+        <img src={img("compound-06")} alt="" />
         FIND US
       </Link>
     </header>
@@ -139,7 +141,7 @@ function Why() {
             <div className="push"><Link to="/about" className="tlink">Our values</Link></div>
           </article>
           <figure className="wcard photo rv" style={vi(0)}>
-            <img src={img("home-why-shekinah-learning-development")} alt="A pupil concentrating in class" loading="lazy" />
+            <img src={img("compound-01")} alt="The colourful painted court at Shekinah" loading="lazy" />
           </figure>
           <article className="wcard c-sage rv" style={vi(1)}>
             <h3 className="s-h3">Something new to try every week</h3>
@@ -257,7 +259,7 @@ function Ribbon() {
   const phrase = "Equipping today · Shaping tomorrow · ";
   return (
     <section className="ribbon" ref={sec}>
-      <img ref={photo} src={img("school-life-hero")} alt="" loading="lazy" />
+      <img ref={photo} src={img("full-school-01")} alt="" loading="lazy" style={{ objectPosition: "center 30%" }} />
       <svg viewBox="0 0 1440 220" aria-hidden="true">
         <path id="ribbon-curve" d="M-200 150 C 360 20, 720 20, 1080 110 S 1440 170, 1700 120" fill="none" stroke="#FAE6B9" strokeWidth="74" strokeLinecap="round" />
         <text fontFamily="Parkinsans" fontSize="34" fontWeight="600" fill="#0D3B22" dy="12">
@@ -278,9 +280,11 @@ function Ribbon() {
   );
 }
 
-const activities = [
+const activities: { label: string; t: string; p: string; image: string; video?: string; to: string }[] = [
   { label: "Sport & play", t: "On the court and the lawn", p: "Ball games, races and free play that build teamwork and confidence.", image: img("home-life-grid-sports"), to: "/school-life#sports" },
-  { label: "Science", t: "Hands-on discovery", p: "Real experiments in our science lab, goggles and all.", image: img("academics-subject-science"), to: "/school-life#learning" },
+  { label: "Science", t: "Hands-on discovery", p: "Real experiments in our science lab, goggles and all.", image: img("science-class-02"), video: "science-lab-loop", to: "/school-life#learning" },
+  { label: "Swimming", t: "Making a splash", p: "Time in the pool that builds confidence in the water.", image: img("swimming-02"), to: "/school-life#sports" },
+  { label: "Music", t: "Finding our rhythm", p: "Recorders, singing and instruments in our own music room.", image: img("music-class-03"), to: "/school-life#creative" },
   { label: "Art & design", t: "Making and creating", p: "Design, craft and art that let every child's ideas take shape.", image: img("home-life-grid-crafts"), to: "/school-life#creative" },
   { label: "ICT", t: "Curious with computers", p: "Using technology to find, create and share information.", image: img("home-life-grid-ict"), to: "/academics#primary" },
   { label: "Events", t: "Days to remember", p: "Family fun days, cookery days and celebrations as a school family.", image: img("school-life-events-cookery-day"), to: "/school-life#events" },
@@ -300,7 +304,7 @@ function Life() {
       <Slider arrowsTarget={setApi}>
         {activities.map((a, i) => (
           <Link to={a.to} className="act rv rv-right" key={a.t} style={vi(i)}>
-            <div className="im"><img src={a.image} alt="" loading="lazy" draggable={false} /></div>
+            <div className="im">{a.video ? <LoopVideo name={a.video} fallback={a.image} /> : <img src={a.image} alt="" loading="lazy" draggable={false} />}</div>
             <div className="tx">
               <span className="label">{a.label}</span>
               <h3 className="s-h3">{a.t}</h3>

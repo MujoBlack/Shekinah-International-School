@@ -622,3 +622,25 @@ a { color: inherit; text-decoration: none; }
   .marquee .item { font-size: 28px; gap: 18px; padding-right: 18px; }
   .band-b .item { font-size: 24px; }
 }
+
+/* ---------- Video ---------- */
+.hero > video, .phero > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.film-btn { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.16); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.35); color: #fff; border-radius: 999px; padding: 6px 16px 6px 6px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: background-color 0.3s, transform 0.35s var(--ease); }
+.film-btn:hover { background: rgba(255, 255, 255, 0.28); transform: translateY(-2px); }
+.film-btn .pl, .film-play .pl { width: 34px; height: 34px; border-radius: 50%; background: #fff; color: var(--red); display: grid; place-items: center; font-size: 18px; transition: transform 0.4s var(--ease); }
+.film-btn:hover .pl, .film-play:hover .pl { transform: scale(1.12); }
+.film-btn.dark { background: var(--pine); border-color: var(--pine); }
+.hero .film-btn { position: absolute; left: 28px; bottom: 28px; z-index: 3; }
+.lightbox { position: fixed; inset: 0; z-index: 80; background: rgba(13, 30, 20, 0.88); display: grid; place-items: center; padding: 24px; animation: mnavIn 0.35s var(--ease); }
+.lb-in { position: relative; width: min(1100px, 100%); }
+.lb-in video { width: 100%; border-radius: 20px; background: #000; display: block; }
+.lb-x { position: absolute; top: -54px; right: 0; }
+.film-card { position: relative; border-radius: 32px; overflow: hidden; background: var(--pine); aspect-ratio: 16 / 9; }
+.film-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.film-card:not(.is-playing)::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13, 59, 34, 0.75)); pointer-events: none; }
+.film-play { position: absolute; left: 24px; bottom: 24px; z-index: 2; display: flex; gap: 14px; align-items: center; background: none; border: 0; color: #fff; text-align: left; cursor: pointer; font: inherit; }
+.film-play .pl { width: 60px; height: 60px; font-size: 28px; }
+.film-play b { display: block; font-size: 20px; font-weight: 600; }
+.film-play small { display: block; font-size: 14px; opacity: 0.85; }
+.card.photo video, .act .im video, .ph-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 760px) { .hero .film-btn { left: 50%; transform: translateX(-50%); bottom: 14px; font-size: 13px; } .hero .film-btn:hover { transform: translateX(-50%); } .hero .in { bottom: 76px; } .film-card { border-radius: 22px; } .film-play .pl { width: 48px; height: 48px; } }

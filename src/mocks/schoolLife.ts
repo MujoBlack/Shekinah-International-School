@@ -210,4 +210,10 @@ export const galleryImages = [
     image:
       img("about-hero"),
   },
+  { category: "Sports", label: "Swim team", image: img("swimming-01") },
+  { category: "School Life", label: "Recorder group", image: img("music-class-02") },
+  { category: "Learning", label: "Lab work", image: img("science-class-03") },
+  { category: "School Life", label: "Our court", image: img("compound-02") },
+  { category: "Sports", label: "In the pool", image: img("swimming-04") },
+  { category: "Events", label: "The whole school", image: img("full-school-02") },
 ];

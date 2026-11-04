@@ -21,7 +21,8 @@ export default function Contact() {
         crumb="Contact"
         title="We'd love to hear from you"
         text="Questions about admissions, fees, transport or anything else? Send us a message or give us a call."
-        image={img("school-life-parents-community")}
+        image={img("compound-06")}
+        position="center 55%"
       />
 
       <section className="sec-tight">
