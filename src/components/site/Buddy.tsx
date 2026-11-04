@@ -355,21 +355,25 @@ export default function Buddy({
             </g>
 
             {/* arms, behind the body so they grow out of its sides */}
-            <g className="bd-arm l">
-              <path d="M82 176 L58 212" stroke="#C9A048" strokeWidth="19" strokeLinecap="round" />
-              <path d="M82 176 L58 212" stroke={g("limb")} strokeWidth="15" strokeLinecap="round" />
-              <circle cx="57" cy="214" r="10" fill={g("limb")} stroke="#C9A048" strokeWidth="2" />
-            </g>
-            <g className="bd-arm r">
-              <path d="M218 176 L242 212" stroke="#C9A048" strokeWidth="19" strokeLinecap="round" />
-              <path d="M218 176 L242 212" stroke={g("limb")} strokeWidth="15" strokeLinecap="round" />
-              <circle cx="243" cy="214" r="10" fill={g("limb")} stroke="#C9A048" strokeWidth="2" />
-              {/* a gold star for the proud pose, held upright */}
-              <g className="bd-star" transform="rotate(104 243 214)">
-                <path d="M243 196 l5 10.5 11.5 1.6 -8.4 8 2 11.4 -10.1 -5.4 -10.1 5.4 2 -11.4 -8.4 -8 11.5 -1.6z" fill="#E2B33C" stroke="#B88A1E" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M238 207 q3 -4 6 -5" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.8" />
+            {!(still && pose === "book") && (
+              <>
+              <g className="bd-arm l">
+                <path d="M82 176 L58 212" stroke="#C9A048" strokeWidth="19" strokeLinecap="round" />
+                <path d="M82 176 L58 212" stroke={g("limb")} strokeWidth="15" strokeLinecap="round" />
+                <circle cx="57" cy="214" r="10" fill={g("limb")} stroke="#C9A048" strokeWidth="2" />
               </g>
-            </g>
+              <g className="bd-arm r">
+                <path d="M218 176 L242 212" stroke="#C9A048" strokeWidth="19" strokeLinecap="round" />
+                <path d="M218 176 L242 212" stroke={g("limb")} strokeWidth="15" strokeLinecap="round" />
+                <circle cx="243" cy="214" r="10" fill={g("limb")} stroke="#C9A048" strokeWidth="2" />
+                {/* a gold star for the proud pose, held upright */}
+                <g className="bd-star" transform="rotate(104 243 214)">
+                  <path d="M243 196 l5 10.5 11.5 1.6 -8.4 8 2 11.4 -10.1 -5.4 -10.1 5.4 2 -11.4 -8.4 -8 11.5 -1.6z" fill="#E2B33C" stroke="#B88A1E" strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M238 207 q3 -4 6 -5" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.8" />
+                </g>
+              </g>
+              </>
+            )}
 
             <g className="bd-body" onClick={onToss} style={still ? undefined : { pointerEvents: "auto", cursor: "pointer" }}>
               <circle cx="150" cy="150" r="88" fill={g("body")} stroke="#C9A048" strokeWidth="2.5" />
