@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { img } from "@/lib/img";
 import { faqs } from "./Path";
-import { SunBuddy } from "./Critters";
+import Buddy from "./Buddy";
 import { Btn, CONTACT, Faq, Label, SITE, tel, vi } from "./ui";
 
 /* Questions: heading and a friendly "ask us" card on the left, numbered accordion on the right. */
@@ -47,7 +47,7 @@ export default function FaqSection({
             <Link to={CONTACT} className="tlink">
               Or send us a message
             </Link>
-            <SunBuddy />
+            <Buddy variant="still" pose="curious" />
           </div>
         </div>
         <Faq items={items} />
