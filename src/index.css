@@ -1098,7 +1098,7 @@ a.pcard { color: inherit; }
    Mobile polish (phones, ≤760px). Everything below is scoped to small screens,
    so the desktop layout is untouched.
    ========================================================================== */
-.vswipe { display: none; }
+.vswipe, .pswipe, .pill-short { display: none; }
 @media (max-width: 760px) {
   /* rhythm: tighter vertical spacing so sections don't feel stretched */
   .sec { padding: 64px 0; }
@@ -1127,7 +1127,9 @@ a.pcard { color: inherit; }
   .hero .ctas { margin-top: 22px; }
   .hero .ctas .btn-ghost { display: none; }
   .hero .ctas .btn { min-width: 240px; }
-  .pill-news { font-size: 10.5px; line-height: 1.35; padding: 5px 12px 5px 5px; max-width: 320px; }
+  .pill-news:not(.pill-short) { display: none; }
+  .pill-short { display: inline-flex; gap: 8px; padding: 7px 16px; font-size: 12px; font-weight: 600; }
+  .pill-short b { width: 7px; height: 7px; border-radius: 50%; background: var(--butter); }
   .hero .film-btn { bottom: 24px; white-space: nowrap; padding: 5px 14px 5px 5px; }
   .hero .film-btn .pl { width: 30px; height: 30px; font-size: 16px; }
 
@@ -1176,9 +1178,16 @@ a.pcard { color: inherit; }
   .ccard { min-height: 0; }
   .ccard .val { margin-top: 14px; }
   .card.photo { height: auto; aspect-ratio: 4 / 3; }
-  .bento.people { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .bento.people .card.photo { min-height: 0 !important; aspect-ratio: 1 / 1; border-radius: 18px; }
-  .bento.people .card.photo:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .bento.people { display: none; }
+  .pswipe { display: block; margin-top: 32px; }
+  .ps-track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; scroll-padding: 0 16px; overscroll-behavior-x: contain; }
+  .ps-track::-webkit-scrollbar { display: none; }
+  .ps-track figure { position: relative; flex: 0 0 84%; aspect-ratio: 4 / 5; margin: 0; border-radius: 22px; overflow: hidden; scroll-snap-align: center; background: var(--mint); }
+  .ps-track img { width: 100%; height: 100%; object-fit: cover; }
+  .ps-track figcaption { position: absolute; left: 12px; bottom: 12px; background: #fff; border-radius: 999px; padding: 5px 12px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); }
+  .ps-dots { margin-top: 12px; }
+  .pswipe .ps-dots button::before { background: rgba(13, 59, 34, 0.22); }
+  .pswipe .ps-dots button.on::before { background: var(--pine); }
 
   /* programmes list */
   .prog > * { min-height: 0; padding: 24px 22px; }
