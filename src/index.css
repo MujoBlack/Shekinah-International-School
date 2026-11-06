@@ -1274,3 +1274,16 @@ a.pcard { color: inherit; }
   .feats { grid-template-columns: 1fr 1fr; gap: 20px 10px; }
   .btn { padding: 13px 20px; }
 }
+
+/* Section tabs on phones: a floating bottom bar within thumb reach */
+@media (max-width: 760px) {
+  .jump { position: fixed; top: auto; bottom: calc(14px + env(safe-area-inset-bottom)); left: 0; right: 0; z-index: 45; padding: 0 12px; transform: translateY(calc(100% + 30px)); opacity: 0; transition: transform 0.5s var(--ease), opacity 0.3s; }
+  .jump.is-shown { transform: none; opacity: 1; }
+  .jump-in { position: relative; margin: 0 auto; background: var(--pine); border-color: var(--pine); padding: 5px; gap: 2px; box-shadow: 0 16px 40px -14px rgba(13, 59, 34, 0.6); -webkit-mask: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 36px), transparent); mask: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 36px), transparent); scroll-padding: 0 24px; }
+  .jump-in:has(a:last-child.on) { -webkit-mask: none; mask: none; }
+  .jump a { color: #fff; font-size: 13.5px; padding: 9px 14px; }
+  .jump a:hover { background: rgba(255, 255, 255, 0.1); }
+  .jump a.on { background: var(--butter); color: var(--pine); }
+  [id] { scroll-margin-top: 96px; }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) { .jump { transition: opacity 0.2s; transform: none; } .jump:not(.is-shown) { visibility: hidden; } }
