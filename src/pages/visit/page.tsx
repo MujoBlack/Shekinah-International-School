@@ -21,6 +21,7 @@ export default function Visit() {
         text="The best way to know if a school is right is to walk through the gate. Choose a day that suits you and we'll do the rest."
         image={img("compound-18")}
         position="center 40%"
+        mobilePosition="22% 40%"
       />
 
       <section className="sec-tight">

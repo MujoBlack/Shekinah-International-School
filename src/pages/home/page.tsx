@@ -18,6 +18,9 @@ function Hero() {
         <span className="pill-news fade-up" style={{ ["--d" as string]: "0.1s" }}>
           <span>Est. 2014</span> Christian · Multicultural · National Curriculum of England
         </span>
+        <span className="pill-news pill-short fade-up" style={{ ["--d" as string]: "0.1s" }}>
+          <b aria-hidden="true" /> Since 2014 · Christian · Multicultural
+        </span>
         <h1 className="s-h1">
           <Rise text="A place to learn, grow and belong" />
         </h1>

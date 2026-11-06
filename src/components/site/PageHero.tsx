@@ -9,13 +9,15 @@ interface Props {
   text?: string;
   image: string;
   position?: string;
+  /* where the photo is anchored on phones, where the frame is tall and narrow */
+  mobilePosition?: string;
   children?: ReactNode;
 }
 
-export default function PageHero({ crumb, parent, title, text, image, position = "center 45%", children }: Props) {
+export default function PageHero({ crumb, parent, title, text, image, position = "center 45%", mobilePosition, children }: Props) {
   return (
     <header className="phero">
-      <img src={image} alt="" style={{ objectPosition: position }} fetchPriority="high" />
+      <img src={image} alt="" style={{ objectPosition: position, ["--mpos" as string]: mobilePosition ?? position }} fetchPriority="high" />
       <div className="in">
         <div className="wrap">
           <span className="crumbs fade-up" style={{ ["--d" as string]: "0.1s" }}>

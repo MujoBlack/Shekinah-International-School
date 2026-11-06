@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode, type TouchEvent } from "react";
 import { Link } from "react-router-dom";
 import { Btn, Label, VISIT, vi } from "./ui";
 
@@ -174,6 +174,24 @@ export function Moments({ id, n, label = "A day in the life", title, text, items
   const [k, setK] = useState(0);
   const cur = items[k];
   const go = (d: number) => setK((k + d + items.length) % items.length);
+  /* phones: keep the active tab in view inside the scrolling tab row, and let the card be swiped */
+  const ticks = useRef<HTMLDivElement>(null);
+  const touchX = useRef<number | null>(null);
+  useEffect(() => {
+    const el = ticks.current;
+    const b = el?.children[k] as HTMLElement | undefined;
+    if (!el || !b || el.scrollWidth <= el.clientWidth) return;
+    el.scrollTo({ left: b.offsetLeft - (el.clientWidth - b.offsetWidth) / 2, behavior: "smooth" });
+  }, [k]);
+  const onTouchStart = (e: TouchEvent) => {
+    touchX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: TouchEvent) => {
+    if (touchX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    touchX.current = null;
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+  };
   return (
     <section id={id} className="pg-moments">
       <div className="wrap center">
@@ -181,7 +199,7 @@ export function Moments({ id, n, label = "A day in the life", title, text, items
         <h2 className="s-h2 rv" style={vi(1)}>{title}</h2>
         <div className="rv s-muted" style={{ ...vi(2), maxWidth: 640, margin: "18px auto 0" }}>{text}</div>
       </div>
-      <div className="pg-ticks rv" role="tablist" aria-label={title}>
+      <div className="pg-ticks rv" role="tablist" aria-label={title} ref={ticks}>
         {items.map((it, i) => (
           <button type="button" role="tab" aria-selected={i === k} key={it.tag} className={i === k ? "on" : ""} onClick={() => setK(i)}>
             <span className="dot" aria-hidden="true" />
@@ -192,7 +210,7 @@ export function Moments({ id, n, label = "A day in the life", title, text, items
       <div className="pg-stage">
         <span className="pg-ghost" aria-hidden="true">{cur.tag}</span>
         <button type="button" className="icon-btn pg-arrow l" aria-label="Previous" onClick={() => go(-1)}><i className="ri-arrow-left-line" /></button>
-        <article className="pg-moment" key={k}>
+        <article className="pg-moment" key={k} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
           <div>
             <span className="label">{String(k + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span>
             <h3 className="s-h3">{cur.t}</h3>

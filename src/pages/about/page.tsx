@@ -5,6 +5,7 @@ import { SunBuddy, StarBuddy, SproutBuddy } from "@/components/site/Critters";
 import { Arrows, Btn, Label, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
 import { approachPoints, settingImages, storyParagraphs, values } from "@/mocks/about";
 import { img } from "@/lib/img";
+import PeopleSwipe from "@/components/site/PeopleSwipe";
 
 const buddies = [SunBuddy, StarBuddy, SproutBuddy];
 const tints = ["c-mint", "c-blush", "c-butter"];
@@ -144,7 +145,7 @@ export default function About() {
             </div>
             <p className="rv" style={vi(2)}>Pupils and staff from many nations, on the painted steps at the heart of our campus.</p>
           </div>
-          <div className="bento">
+          <div className="bento people">
             <figure className="card photo span-2 rv" style={{ ...vi(0), minHeight: 420 }}>
               <img src={img("full-school-01")} alt="The whole Shekinah school and staff together" loading="lazy" />
               <figcaption>The whole school</figcaption>
@@ -158,6 +159,13 @@ export default function About() {
               </figure>
             ))}
           </div>
+          <PeopleSwipe
+            photos={[
+              { src: img("full-school-01"), alt: "The whole Shekinah school and staff together", caption: "The whole school" },
+              { src: img("teachers-students-01"), alt: "Senior pupils with their teacher", caption: "Our seniors" },
+              ...["teachers-students-04", "teachers-students-07", "teachers-students-09"].map((n) => ({ src: img(n), alt: "A class with their teachers" })),
+            ]}
+          />
         </div>
       </section>
 
