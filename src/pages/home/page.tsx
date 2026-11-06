@@ -9,11 +9,12 @@ import { Arrows, Btn, CONTACT, Label, Marquee, Rise, Slider, VISIT, vi, type Sli
 import { img } from "@/lib/img";
 import { FilmButton, LoopVideo } from "@/components/site/Video";
 import Buddy from "@/components/site/Buddy";
+import HeroReel from "@/components/site/HeroReel";
 
 function Hero() {
   return (
     <header className="hero">
-      <LoopVideo name="hero-pour-loop" eager />
+      <HeroReel name="hero-pour-loop" photos={[img("home-hero"), img("full-school-02"), img("home-why-shekinah-supportive-environment")]} />
       <div className="in">
         <span className="pill-news fade-up" style={{ ["--d" as string]: "0.1s" }}>
           <span>Est. 2014</span> Christian · Multicultural · National Curriculum of England
