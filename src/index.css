@@ -1093,3 +1093,175 @@ a.pcard { color: inherit; }
   .buddy .blink, .buddy.is-open .bd-hat, .bd-hop, .bd-shadow, .bd-arm, .bd-leg, .buddy-z span, .bd-q { animation: none !important; }
   .buddy-hero { display: none; }
 }
+
+/* ==========================================================================
+   Mobile polish (phones, ≤760px). Everything below is scoped to small screens,
+   so the desktop layout is untouched.
+   ========================================================================== */
+.vswipe { display: none; }
+@media (max-width: 760px) {
+  /* rhythm: tighter vertical spacing so sections don't feel stretched */
+  .sec { padding: 64px 0; }
+  .sec-tight { padding: 48px 0; }
+  .intro { padding: 64px 0 56px; }
+  .band { padding: 64px 0; }
+  .sec-dark { padding: 64px 0 72px; }
+  .voices { padding: 64px 0 56px; }
+  .pg-moments { padding: 64px 0; }
+  .marquee-wrap { padding: 32px 0; }
+
+  /* type scales with the screen, from 360 to 430 */
+  .s-h2, .band .s-h2, .why-head .s-h2 { font-size: clamp(31px, 8.6vw, 38px); line-height: 1.06; }
+  .s-h3 { font-size: 23px; }
+  .intro .s-serif { font-size: clamp(22px, 6.2vw, 26px); line-height: 1.3; }
+  .voices .s-serif { font-size: clamp(30px, 8.6vw, 36px); }
+  .s-lead, .band p.copy, .pg-copy { font-size: 16px; }
+  .head > p { font-size: 15px; }
+
+  /* home hero: fills the phone screen, CTA and film button never collide */
+  .hero { height: 100svh; min-height: 600px; max-height: 740px; }
+  .hero::after { background: linear-gradient(180deg, rgba(13, 59, 34, 0.3) 0%, rgba(13, 59, 34, 0.18) 30%, rgba(13, 59, 34, 0.6) 58%, rgba(13, 59, 34, 0.9) 100%); }
+  .hero .in { bottom: 88px; padding: 0 20px; }
+  .hero h1 { font-size: clamp(40px, 11.6vw, 50px); line-height: 1; margin-top: 18px; }
+  .hero p { font-size: 15.5px; max-width: 330px; margin-top: 14px; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.25); }
+  .hero .ctas { margin-top: 22px; }
+  .hero .ctas .btn-ghost { display: none; }
+  .hero .ctas .btn { min-width: 240px; }
+  .pill-news { font-size: 10.5px; line-height: 1.35; padding: 5px 12px 5px 5px; max-width: 320px; }
+  .hero .film-btn { bottom: 24px; white-space: nowrap; padding: 5px 14px 5px 5px; }
+  .hero .film-btn .pl { width: 30px; height: 30px; font-size: 16px; }
+
+  /* inner page heroes: readable text on every photo, subject stays visible */
+  .phero { height: min(620px, 86svh); min-height: 540px; }
+  .phero > img { object-position: var(--mpos, center) !important; }
+  .phero::after { background: linear-gradient(180deg, rgba(13, 59, 34, 0.35) 0%, rgba(13, 59, 34, 0.1) 26%, rgba(13, 59, 34, 0.55) 52%, rgba(13, 59, 34, 0.92) 100%); }
+  .phero .in { bottom: 32px; }
+  .phero h1 { font-size: clamp(36px, 10.4vw, 44px); line-height: 1.02; margin-top: 14px; }
+  .phero p { font-size: 15.5px; margin-top: 12px; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.25); }
+  .phero .ctas { margin-top: 20px; align-items: center; }
+  .crumbs { font-size: 10.5px; padding: 5px 12px; gap: 6px; }
+  .pghero .s-h1, .hub-hero .s-h1 { font-size: clamp(36px, 10.4vw, 42px); line-height: 1.04; }
+  .pghero { padding-top: 108px; }
+  .hub-hero { padding: 108px 0 48px; }
+
+  /* intro features: icon + text side by side, easier to scan */
+  .feats { gap: 24px 14px; margin-top: 40px; }
+  .feat h4 { font-size: 12.5px; }
+  .feat p { font-size: 14px; }
+
+  /* collage: polaroid tucked in so it never touches the edge */
+  .collage { height: 340px; }
+  .collage .pol { width: 46%; height: 48%; right: 4px; }
+
+  /* Why cards: icons move to the top corner, mascots to the bottom corner, nothing covers the text */
+  .why { gap: 14px; margin-top: 36px; }
+  .wcard { padding: 26px 22px 24px; border-radius: 18px; }
+  .wcard .s-h3 { font-size: 24px; max-width: calc(100% - 56px); }
+  .wcard .q { font-size: 17px; margin-top: 12px; max-width: none; }
+  .wcard p.body { font-size: 15px; margin-top: 12px; max-width: none; opacity: 1; }
+  .wcard .push { padding-top: 20px; }
+  .wcard .badge { width: 44px; height: 44px; font-size: 19px; }
+  .wcard .badge.tr, .wcard .badge.br { top: 22px; right: 18px; bottom: auto; }
+  .wcard .critter.edge-r, .wcard .critter.edge-l, .wcard .critter.edge-b { top: auto; left: auto; right: 16px; bottom: -2px; width: 52px; }
+  .wcard .critter.edge-r { width: 46px; }
+  .wcard .buddy-still { width: 84px; right: 12px; }
+  .wcard.photo { height: auto; aspect-ratio: 4 / 3; }
+  .why.two .wcard { padding: 24px 22px 60px; }
+
+  /* bento + contact cards: no tall empty boxes */
+  .card { min-height: 0; padding: 24px 22px; border-radius: 20px; }
+  .card .t { margin-top: 24px; }
+  .card .q { margin-top: 28px; }
+  .card .ic { top: 18px; right: 18px; width: 40px; height: 40px; font-size: 18px; }
+  .ccard { min-height: 0; }
+  .ccard .val { margin-top: 14px; }
+  .card.photo { height: auto; aspect-ratio: 4 / 3; }
+  .bento.people { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bento.people .card.photo { min-height: 0 !important; aspect-ratio: 1 / 1; border-radius: 18px; }
+  .bento.people .card.photo:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+
+  /* programmes list */
+  .prog > * { min-height: 0; padding: 24px 22px; }
+  .prog > * .age { margin-top: 16px; }
+  .prog .ph { height: auto; aspect-ratio: 16 / 10; }
+  .prog .s-h3 { font-size: 23px; }
+
+  /* sliders: a peek of the next card says "swipe" */
+  .act, .act.tall { flex-basis: 82%; grid-template-rows: 190px auto; border-radius: 22px; }
+  .act .tx { padding: 20px; }
+  .slider { margin-top: 32px; gap: 12px; }
+
+  /* stats ribbon */
+  .ribbon { height: 560px; }
+  .stats { bottom: 40px; }
+  .stats b { font-size: 38px; }
+  .stats span { font-size: 14px; line-height: 1.35; display: block; margin-top: 4px; }
+
+  /* parent voices: user-controlled swipe on phones */
+  .voices-head { align-items: flex-start; }
+  .voices .vrows { display: none; }
+  .vswipe { display: block; margin-top: 28px; }
+  .vs-track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 26px 16px 18px; scroll-padding: 0 16px; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+  .vs-track::-webkit-scrollbar { display: none; }
+  .vs-track .vq { width: 84%; max-width: 340px; min-height: 250px; scroll-snap-align: center; transform: none; }
+  .vs-track .vq:nth-child(even) { transform: none; }
+  .vs-track .vq:hover { transform: none; box-shadow: none; }
+  .vs-track .vq blockquote { font-size: 18px; }
+  .vs-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .vs-dots { display: flex; gap: 2px; }
+  .vs-dots button { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+  .vs-dots button::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.35); transition: width 0.35s var(--ease), background-color 0.3s; }
+  .vs-dots button.on::before { width: 20px; background: var(--butter); }
+  .vs-ctrl .arrows button { width: 44px; height: 44px; }
+  .voices-foot { margin-top: 28px; }
+  .voices-foot > span { display: none; }
+  .voices-foot .btn { width: 100%; }
+
+  /* footer CTA panel: text sits on a solid-enough gradient, equal-width buttons */
+  .cta { height: auto; min-height: 480px; display: flex; align-items: flex-end; }
+  .cta img { position: absolute; inset: 0; }
+  .cta::after { background: linear-gradient(180deg, rgba(13, 59, 34, 0) 0%, rgba(13, 59, 34, 0.25) 32%, rgba(13, 59, 34, 0.9) 74%); }
+  .cta .in { position: relative; left: auto; right: auto; bottom: auto; padding: 200px 20px 24px; max-width: none; }
+  .cta .s-h2 { font-size: clamp(31px, 8.6vw, 38px); }
+  .cta .in p { font-size: 15.5px; }
+  .cta .ctas { flex-direction: column; align-items: stretch; margin-top: 22px; }
+  .cta .ctas .btn { width: 100%; }
+  .foot { gap: 28px 16px; }
+
+  /* FAQ */
+  .faq-item button { font-size: 15.5px; }
+
+  /* programme pages */
+  .pg-two { gap: 32px; }
+  .pg-card { min-height: 0; padding: 22px; }
+  .pg-card.big { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .pg-card .pg-ic.xl { width: 52px; height: 52px; font-size: 24px; margin: 0; order: -1; }
+  .pg-card.big > :not(.pg-ic) { flex-basis: 100%; }
+  .pg-card.big > h4, .pg-card.big > .s-h4, .pg-card.big > b { flex: 1; flex-basis: auto; }
+  .pg-cards { gap: 12px; margin-top: 32px; }
+  .pg-list li { gap: 14px; padding: 16px 0; }
+  .pg-list li:hover { transform: none; }
+  .pg-quote blockquote p { font-size: 20px; }
+  .pg-quote img { min-height: 0; aspect-ratio: 4 / 3; height: auto; }
+  .pg-photo { aspect-ratio: 4 / 3.4; }
+  .pg-strip { margin-top: 36px; }
+  .pg-ticks { margin-top: 32px; }
+  .pg-chain { font-size: 15px; }
+  .price { padding: 18px 20px; gap: 14px; }
+  .price b { font-size: 26px; }
+  .price span { font-size: 10px; letter-spacing: 0.06em; }
+
+  /* about: principal card portrait smaller */
+  .quote-card .portrait { max-width: 200px; }
+  .quote-card blockquote { font-size: 20px; }
+
+  /* touch: no hover lifts that stick after a tap */
+  .card:hover, .pcard.rv.is-in:hover, .pg-card:hover, .faq-item:hover, .price:hover { transform: none; }
+}
+@media (max-width: 380px) {
+  .wrap, .wrap-narrow { padding: 0 14px; }
+  .nav { width: calc(100% - 28px); }
+  .hero h1 { font-size: 38px; }
+  .feats { grid-template-columns: 1fr 1fr; gap: 20px 10px; }
+  .btn { padding: 13px 20px; }
+}

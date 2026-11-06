@@ -1,8 +1,66 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Label, VISIT, vi } from "./ui";
 
-/* Parent voices: two counter-scrolling rows of quote cards. */
+/* Phones: one swipeable row the reader drives (snap, arrows, dots), no auto-scroll. */
+function VoicesSwipe({ quotes, tones }: { quotes: { q: string; who: string; i: string }[]; tones: string[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [at, setAt] = useState(0);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const onScroll = () => {
+      const cards = Array.from(el.children) as HTMLElement[];
+      const mid = el.scrollLeft + el.clientWidth / 2;
+      let best = 0;
+      cards.forEach((c, k) => {
+        if (Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid) < Math.abs(cards[best].offsetLeft + cards[best].offsetWidth / 2 - mid)) best = k;
+      });
+      setAt(best);
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, []);
+  const go = (k: number) => {
+    const el = ref.current;
+    const c = el?.children[Math.max(0, Math.min(quotes.length - 1, k))] as HTMLElement | undefined;
+    if (el && c) el.scrollTo({ left: c.offsetLeft - (el.clientWidth - c.offsetWidth) / 2, behavior: "smooth" });
+  };
+  return (
+    <div className="vswipe" role="region" aria-roledescription="carousel" aria-label="Parent voices">
+      <div className="vs-track" ref={ref}>
+        {quotes.map((v, k) => (
+          <figure className={`vq ${tones[k % 4]}`} key={v.i} aria-label={`${k + 1} of ${quotes.length}`}>
+            <span className="mark" aria-hidden="true">“</span>
+            <span className="st" aria-label="5 stars">★★★★★</span>
+            <blockquote>{v.q}</blockquote>
+            <figcaption>
+              <span className="av" aria-hidden="true">{v.i}</span>
+              {v.who}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="wrap vs-ctrl">
+        <div className="vs-dots">
+          {quotes.map((v, k) => (
+            <button type="button" key={v.i} className={k === at ? "on" : ""} aria-label={`Show quote ${k + 1}`} aria-current={k === at} onClick={() => go(k)} />
+          ))}
+        </div>
+        <div className="arrows">
+          <button type="button" aria-label="Previous quote" onClick={() => go(at - 1)} disabled={at === 0}>
+            <i className="ri-arrow-left-line" />
+          </button>
+          <button type="button" aria-label="Next quote" onClick={() => go(at + 1)} disabled={at === quotes.length - 1}>
+            <i className="ri-arrow-right-line" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* Parent voices: two counter-scrolling rows of quote cards (desktop); a swipeable row on phones. */
 export default function Voices({ n = "06", title }: { n?: string; title?: ReactNode }) {
   const quotes = [
     { q: "Within one term Shekinah felt like home. Our daughter is known, encouraged and happy to go to school each morning.", who: "Parent · Year 2", i: "A" },
@@ -50,6 +108,7 @@ export default function Voices({ n = "06", title }: { n?: string; title?: ReactN
         <div className="vrow"><div className="vtrack">{row(quotes.slice(0, 3), 0)}</div></div>
         <div className="vrow rev"><div className="vtrack">{row(quotes.slice(3), 2)}</div></div>
       </div>
+      <VoicesSwipe quotes={quotes} tones={tones} />
       <div className="wrap voices-foot">
         {/* TODO before launch: these quotes are placeholders. Replace with real parent testimonials (with permission). */}
         <span />

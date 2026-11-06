@@ -144,7 +144,7 @@ export default function About() {
             </div>
             <p className="rv" style={vi(2)}>Pupils and staff from many nations, on the painted steps at the heart of our campus.</p>
           </div>
-          <div className="bento">
+          <div className="bento people">
             <figure className="card photo span-2 rv" style={{ ...vi(0), minHeight: 420 }}>
               <img src={img("full-school-01")} alt="The whole Shekinah school and staff together" loading="lazy" />
               <figcaption>The whole school</figcaption>

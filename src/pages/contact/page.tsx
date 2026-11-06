@@ -23,6 +23,7 @@ export default function Contact() {
         text="Questions about admissions, fees, transport or anything else? Send us a message or give us a call."
         image={img("compound-06")}
         position="center 55%"
+        mobilePosition="8% 55%"
       />
 
       <section className="sec-tight">
