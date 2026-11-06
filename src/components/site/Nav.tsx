@@ -127,6 +127,9 @@ export default function Nav() {
         <Btn to={VISIT} variant="red">
           Book a School Visit
         </Btn>
+        <Btn to={VISIT} variant="red" className="m-cta">
+          Book a visit <i className="ri-arrow-right-line" aria-hidden="true" />
+        </Btn>
         <button type="button" className="icon-btn menu" aria-label="Open menu" onClick={() => setOpen(true)}>
           <i className="ri-menu-3-line" />
         </button>

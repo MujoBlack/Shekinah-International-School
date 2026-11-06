@@ -1270,6 +1270,7 @@ a.pcard { color: inherit; }
 @media (max-width: 380px) {
   .wrap, .wrap-narrow { padding: 0 14px; }
   .nav { width: calc(100% - 28px); }
+  .ps-track { margin: 0 -14px; padding: 0 14px; scroll-padding: 0 14px; }
   .hero h1 { font-size: 38px; }
   .feats { grid-template-columns: 1fr 1fr; gap: 20px 10px; }
   .btn { padding: 13px 20px; }
@@ -1295,3 +1296,19 @@ a.pcard { color: inherit; }
 .hero .reel img.on { opacity: 1; animation: reelZoom 5.5s linear forwards; }
 @keyframes reelZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) { .hero .reel img { display: none; } }
+
+/* Mobile nav: short "Book a visit" pill + outlined round menu button (phones only) */
+.nav > .m-cta { display: none; }
+@media (max-width: 760px) {
+  .nav > .btn.m-cta { display: inline-flex; margin-left: auto; padding: 11px 16px 11px 18px; gap: 8px; font-size: 14.5px; }
+  .nav > .m-cta i { font-size: 17px; transition: transform 0.3s var(--ease); }
+  .nav > .m-cta:active i { transform: translateX(3px); }
+  .nav > .m-cta + .menu { margin-left: 0 !important; }
+  .nav .menu { width: 44px; height: 44px; background: #fff; box-shadow: inset 0 0 0 1.5px #c9c3bb; font-size: 21px; }
+  .nav .menu:hover { background: var(--cream); }
+  .nav.is-scrolled > .btn.m-cta { padding: 9px 14px 9px 16px; }
+  .nav.is-scrolled .menu { width: 40px; height: 40px; }
+}
+@media (max-width: 340px) {
+  .nav > .btn.m-cta { padding: 10px 12px; font-size: 13.5px; }
+}
