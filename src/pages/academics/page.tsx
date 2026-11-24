@@ -6,7 +6,7 @@ import Voices from "@/components/site/Voices";
 import { Moments } from "@/components/site/Program";
 import { SproutBuddy, StarBuddy, SunBuddy, PencilBuddy } from "@/components/site/Critters";
 import { Arrows, Btn, Label, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
-import { values } from "@/mocks/about";
+import { pillars } from "@/mocks/about";
 import { img } from "@/lib/img";
 
 const jump = [
@@ -31,7 +31,7 @@ const grid: Cell[] = [
   { t: "Primary", p: "Ten subjects in small classes, from literacy and numeracy to science, French and music.", to: "/academics/primary", cta: "Explore Primary", age: "Year 1 onward", tag: "", tint: "t-mint" },
   { photo: img("science-class-02"), alt: "Primary pupils at the science bench" },
   { t: "Our Curriculum", p: "The National Curriculum of England, and how we teach it the Shekinah way.", to: "/academics/curriculum", cta: "Read about our curriculum", age: "All ages", tag: "y", tint: "t-butter" },
-  { t: "Beyond the classroom", p: "Learning weeks, sport, swimming, music and family days that bring learning to life.", to: "/school-life", cta: "Discover School Life", age: "School Life", tag: "r", tint: "t-blush" },
+  { t: "Beyond the classroom", p: "Swimming, basketball, roller skating, dance, chess, robotics, home economics and design and technology.", to: "/school-life", cta: "Discover School Life", age: "School Life", tag: "r", tint: "t-blush" },
 ];
 
 const beyond = [
@@ -44,7 +44,7 @@ const beyond = [
 ];
 
 const principles = [
-  ...values.map((v) => ({ t: v.title, p: v.text })),
+  ...[pillars[0], pillars[1], pillars[4]].map((v) => ({ t: v.title, p: v.text })),
   { t: "Small, caring classes", p: "Teachers know every child personally, so nobody drifts quietly at the back and nobody is held back from their next step." },
 ];
 const tones = ["c-mint", "c-butter", "c-blush", "c-sage"];

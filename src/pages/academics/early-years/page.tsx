@@ -15,7 +15,7 @@ const jump = [
   { label: "Questions", id: "questions" },
 ];
 
-const VISION = "To be a centre of excellence in education throughout Uganda, allowing children to participate, excel and develop a passion for God and life.";
+const VISION = "We are a centre of excellence in education service provision, allowing children to participate, excel and develop a passion for Christ and life.";
 
 const faqs = [
   { q: "What age can my child start?", a: "Children can join from age 2 in Kindergarten 1, then move through Kindergarten 2 and Reception before starting Primary in Year 1." },

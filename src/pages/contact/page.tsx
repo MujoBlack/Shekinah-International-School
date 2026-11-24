@@ -4,14 +4,14 @@ import { ContactForm } from "@/components/site/forms";
 import { Btn, Label, SITE, VISIT, tel, vi } from "@/components/site/ui";
 import { img } from "@/lib/img";
 
-const mapEmbedUrl = "https://www.google.com/maps?q=Plot%201%20Alex%20Ojera%20Road%2C%20Bugonga%2C%20Entebbe%2C%20Uganda&z=15&hl=en&output=embed";
-const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Plot%201%20Alex%20Ojera%20Road%2C%20Bugonga%2C%20Entebbe%2C%20Uganda";
+const mapEmbedUrl = "https://www.google.com/maps?q=Shekinah%20International%20School%2C%20Plot%203%20Tamale%20Ssali%20Road%2C%20Kiwafu%20West%2C%20Entebbe%2C%20Uganda&z=15&hl=en&output=embed";
+const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Shekinah%20International%20School%2C%20Plot%203%20Tamale%20Ssali%20Road%2C%20Kiwafu%20West%2C%20Entebbe%2C%20Uganda";
 
 const cards = [
   { i: "ri-phone-line", t: "Call us", v: SITE.phones.join(" · "), href: tel(SITE.phones[0]), tint: "" },
   { i: "ri-mail-line", t: "Email", v: SITE.email, href: `mailto:${SITE.email}`, tint: "blush" },
   { i: "ri-whatsapp-line", t: "WhatsApp", v: "Message us on WhatsApp", href: SITE.whatsapp, tint: "butter" },
-  { i: "ri-map-pin-2-line", t: "Visit us", v: "Off Bugonga Road, Entebbe", href: "#find-us", tint: "" },
+  { i: "ri-map-pin-2-line", t: "Visit us", v: "Kiwafu West, just below State House", href: "#find-us", tint: "" },
 ];
 
 export default function Contact() {
@@ -68,7 +68,7 @@ export default function Contact() {
           <div className="head">
             <div>
               <Label n="02" className="rv">Find us</Label>
-              <h2 className="s-h2 rv" style={vi(1)}>In Bugonga, Entebbe</h2>
+              <h2 className="s-h2 rv" style={vi(1)}>In Kiwafu West, Entebbe</h2>
             </div>
             <div className="rv" style={vi(2)}>
               <p className="s-muted" style={{ maxWidth: 380 }}>{SITE.address}</p>

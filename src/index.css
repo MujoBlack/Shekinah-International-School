@@ -453,6 +453,14 @@ a { color: inherit; text-decoration: none; }
 .portrait { aspect-ratio: 4 / 5; border-radius: 26px; background: var(--mint); display: grid; place-items: center; text-align: center; color: var(--green); position: relative; overflow: hidden; }
 .portrait b { font-family: var(--serif); font-size: 72px; font-weight: 400; display: block; line-height: 1; }
 .portrait span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+/* about: 5 pillars + discipline */
+.prog.pillars > * { min-height: 340px; }
+.prog.pillars .s-h3 { font-size: 22px; }
+.prog.pillars p { font-size: 14px; }
+.prog.discipline .s-h3 { font-size: 24px; }
+.prog.discipline .checks li { font-size: 15px; }
+.prog.discipline .checks li i { background: var(--mint); }
 .quote-card blockquote { font-family: var(--serif); font-size: 28px; line-height: 1.35; color: var(--pine); }
 
 /* ---------- Forms ---------- */

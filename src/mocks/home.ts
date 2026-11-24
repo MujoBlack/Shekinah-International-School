@@ -124,7 +124,7 @@ export const testimonials = [
   },
   {
     quote:
-      "It is a school with real warmth but still high expectations. The Christian values are lived out gently, and our children have made friends from six different countries.",
+      "It is a school with real warmth but still high expectations. The Christian values are lived out boldly, and our children have made friends from six different countries.",
     name: "Marie-Claire B.",
     role: "Parent of Léa, Reception",
   },

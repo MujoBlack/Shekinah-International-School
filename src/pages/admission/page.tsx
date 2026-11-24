@@ -53,7 +53,7 @@ export default function Admission() {
               <Label n="02" className="rv">The process</Label>
               <h2 className="s-h2 rv" style={vi(1)}>Your path to Shekinah</h2>
             </div>
-            <p className="rv" style={vi(2)}>Ages 2 to 11, with places from Kindergarten 1 through Primary. Every step starts with a conversation.</p>
+            <p className="rv" style={vi(2)}>Ages 2 to 19, with places from Kindergarten 1 through Secondary School. Every step starts with a conversation.</p>
           </div>
           <Path />
           <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginTop: 56 }}>

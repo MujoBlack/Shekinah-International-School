@@ -71,10 +71,10 @@ export default function SchoolLife() {
           </div>
           <div className="play">
             {[
-              { t: "Sports Day", p: sportsFeature.text, img: sportsFeature.image, alt: "Pupils racing on Sports Day", icon: "ri-trophy-line", tint: "t-butter" },
-              { t: "Team games", p: "Team games and sport that build fitness, friendship and team spirit.", img: img("school-life-sports-1"), alt: "Pupils playing sport", icon: "ri-football-line", tint: "t-mint" },
-              { t: "Swimming", p: "Time in the pool builds confidence in the water, and one of our swimmers has the medal to prove it.", img: img("swimming-02"), alt: "A pupil smiling with her swimming medal", icon: "ri-drop-line", tint: "t-blush", pos: "center 22%" },
-              { t: "Playtime", p: "Room to run, climb, see-saw and simply be a child between lessons.", img: img("compound-13"), alt: "See-saws in the playground", icon: "ri-run-line", tint: "t-sage" },
+              { t: "Sports activities", p: sportsFeature.text, img: sportsFeature.image, alt: "A pupil roller skating on the court", icon: "ri-trophy-line", tint: "t-butter", pos: "center 40%" },
+              { t: "Team games", p: "Team games and sport that build fitness, friendship and team spirit.", img: img("team-girls-ball"), alt: "Two pupils smiling with a basketball", icon: "ri-basketball-line", tint: "t-mint", pos: "center 30%" },
+              { t: "Swimming", p: "Time in the pool builds confidence and skill in the water, with expert coaching every step of the way.", img: img("swimming-stroke"), alt: "A pupil swimming front crawl in the pool", icon: "ri-drop-line", tint: "t-blush" },
+              { t: "Playtime", p: "Room to run, climb, see-saw and simply be a child between lessons.", img: img("school-life-hero"), alt: "Pupils running and playing on the lawn", icon: "ri-run-line", tint: "t-sage" },
             ].map((c, i) => (
               <article className={`pcard rv ${c.tint}`} key={c.t} style={vi(i)}>
                 <div className="pph">
@@ -124,7 +124,7 @@ export default function SchoolLife() {
             <Label n="04" className="rv">Events</Label>
             <h2 className="s-h2 rv" style={vi(1)}>Days the whole family remembers</h2>
           </div>
-          <Arrows api={api} />
+          {events.length > 1 && <Arrows api={api} />}
         </div>
         <Slider arrowsTarget={setApi}>
           {events.map((e, i) => (

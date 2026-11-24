@@ -26,7 +26,7 @@ function Hero() {
           <Rise text="A place to learn, grow and belong" />
         </h1>
         <p className="fade-up" style={{ ["--d" as string]: "0.7s" }}>
-          A friendly, safe school in Bugonga, Entebbe, where every child can learn, develop and thrive.
+          A friendly, safe school in Kiwafu West, Entebbe, where every child can learn, develop and thrive.
         </p>
         <div className="ctas fade-up" style={{ ["--d" as string]: "0.9s" }}>
           <Btn to={VISIT} variant="white" arrow>
@@ -49,10 +49,10 @@ function Hero() {
 
 function Intro() {
   const feats = [
-    { i: "ri-seedling-line", h: "Ages 2 – 11", p: "Early Years and Primary on one campus" },
-    { i: "ri-book-open-line", h: "English curriculum", p: "The National Curriculum of England" },
+    { i: "ri-seedling-line", h: "Ages 2 – 19", p: "Early Years, Primary and Secondary School on one campus" },
+    { i: "ri-book-open-line", h: "English curriculum", p: "The National Curriculum of England, examined by Pearson Edexcel" },
     { i: "ri-earth-line", h: "15 nationalities", p: "A genuinely multicultural family" },
-    { i: "ri-heart-3-line", h: "Christian values", p: "Faith lived out gently, every day" },
+    { i: "ri-heart-3-line", h: "Christian values", p: "Bold, strong and courageously living for Christ" },
   ];
   return (
     <section className="intro">
@@ -143,8 +143,8 @@ function Why() {
             <span className="badge tr" aria-hidden="true"><i className="ri-hand-heart-line" /></span>
             <p className="q">“The first time they share without being asked, you'll know it's working.”</p>
             <p className="body">
-              Christian values are lived out gently in how we speak, care for each other and care for the world, so
-              kindness and responsibility become habits.
+              Christian values are lived out boldly, with strength and courage, as we speak, care for each other and
+              the community, so kindness and responsibility become a habit.
             </p>
             <div className="push"><Link to="/about" className="tlink">Our values</Link></div>
             <Buddy variant="still" pose="book" />
@@ -185,7 +185,7 @@ function Break() {
     <div className="marquee-wrap" aria-label="Equipping today, shaping tomorrow">
       <Marquee
         className="band-a"
-        items={["Equipping today", "Shaping tomorrow", "Ages 2 – 11", "15 nationalities", "Christian values", "Since 2014"]}
+        items={["Equipping today", "Shaping tomorrow", "Ages 2 – 19", "15 nationalities", "Christian values", "Since 2014"]}
         icon="ri-sparkling-2-fill"
       />
       <Marquee
@@ -203,10 +203,10 @@ const programmes = [
   { t: "Kindergarten 2", p: "Growing independence, early language and number through hands-on discovery.", age: "Ages 3 – 4", tag: "y", tint: "t-butter", to: "/academics#early-years" },
   { photo: img("academics-early-years-2"), alt: "Early Years pupils building together" },
   { t: "Reception", p: "Confident early readers and thinkers, ready for the step up to Year 1.", age: "Ages 4 – 5", tag: "r", tint: "t-blush", to: "/academics#early-years" },
-  { photo: img("academics-primary-1"), alt: "Primary pupils in class" },
+  { photo: img("primary-girl-writing"), alt: "A Year 1 pupil writing at her table" },
   { t: "Lower Primary", p: "Years 1 – 3. Strong foundations in reading, writing and maths.", age: "Year 1 – 3", tag: "", tint: "t-mint", to: "/academics#primary" },
   { t: "Upper Primary", p: "Years 4 – 6. Enquiry, responsibility and confidence for the next school.", age: "Year 4 – 6", tag: "y", tint: "t-butter", to: "/academics#primary" },
-  { t: "Beyond the classroom", p: "Sport, ICT, science, art and music woven through the week.", age: "All ages", tag: "r", tint: "t-blush", to: "/academics#beyond" },
+  { t: "Beyond the classroom", p: "Swimming, basketball, roller skating, dance, chess, robotics, home economics and design and technology.", age: "All ages", tag: "r", tint: "t-blush", to: "/academics#beyond" },
 ];
 
 function Programmes() {
