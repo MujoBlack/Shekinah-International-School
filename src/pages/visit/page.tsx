@@ -8,7 +8,7 @@ import { FilmCard } from "@/components/site/Video";
 
 const expect = [
   { i: "ri-walk-line", t: "A tour of the campus", p: "Classrooms, library, science lab, ICT room and the outdoor spaces where children play." },
-  { i: "ri-user-smile-line", t: "Meet the Principal", p: "Share your hopes for your child and ask anything about how we teach and care." },
+  { i: "ri-user-smile-line", t: "Meet the Head Teacher", p: "Share your hopes for your child and ask anything about how we teach and care." },
   { i: "ri-presentation-line", t: "See a class in session", p: "Watch real lessons and get a feel for the warmth and the learning." },
 ];
 

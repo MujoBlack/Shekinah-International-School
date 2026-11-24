@@ -89,7 +89,7 @@ function Done({ title, text, onAgain }: { title: string; text: string; onAgain: 
   );
 }
 
-const years = ["Kindergarten 1 (2–3)", "Kindergarten 2 (3–4)", "Reception (4–5)", "Year 1", "Year 2 and up", "Not sure yet"];
+const years = ["Kindergarten 1 (2–3)", "Kindergarten 2 (3–4)", "Reception (4–5)", "Year 1 – 6 (Primary)", "Year 7 – 11 (Secondary)", "Year 12 – 13", "Not sure yet"];
 
 /* "Book a School Visit": a request for a tour on a preferred day */
 export function VisitForm() {

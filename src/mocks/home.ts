@@ -19,7 +19,7 @@ export const facts = [
   {
     icon: "ri-graduation-cap-line",
     title: "Early Years & Primary",
-    caption: "Kindergarten to Primary on one campus",
+    caption: "Kindergarten to Secondary on one campus",
   },
 ];
 

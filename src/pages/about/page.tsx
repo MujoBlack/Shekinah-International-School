@@ -117,7 +117,7 @@ export default function About() {
             <span className="chip rv">05 · Discipline</span>
             <h2 className="s-h2 rv" style={vi(1)}>Disciplined in community, thought and action</h2>
           </div>
-          <div className="prog cols-3 discipline">
+          <div className="prog cols-3 lists">
             {discipline.map((d, i) => (
               <div className={`cell rv ${["t-mint", "t-butter", "t-blush"][i]}`} key={d.title} style={vi(i)}>
                 <i className={`ico ${d.icon}`} aria-hidden="true" />
