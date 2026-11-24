@@ -203,5 +203,5 @@ export const galleryImages = [
   { category: "Early Years", label: "Garden games", image: img("ey-garden-play") },
   { category: "Early Years", label: "Circle time outside", image: img("ey-garden-circle") },
   { category: "Early Years", label: "Off we go", image: img("ey-garden-run") },
-  { category: "Sports", label: "Roller skating", image: img("skating-02") },
+  { category: "Sports", label: "Roller skating", image: img("skating-01") },
 ];
