@@ -205,7 +205,7 @@ const programmes = [
   { t: "Reception", p: "Confident early readers and thinkers, ready for the step up to Year 1.", age: "Ages 4 – 5", tag: "r", tint: "t-blush", to: "/academics#early-years" },
   { photo: img("primary-girl-writing"), alt: "A Year 1 pupil writing at her table" },
   { t: "Lower Primary", p: "Years 1 – 3. Strong foundations in reading, writing and maths.", age: "Year 1 – 3", tag: "", tint: "t-mint", to: "/academics#primary" },
-  { t: "Upper Primary", p: "Years 4 – 6. Enquiry, responsibility and confidence for the next school.", age: "Year 4 – 6", tag: "y", tint: "t-butter", to: "/academics#primary" },
+  { t: "Upper Primary", p: "Years 4 – 6. Enquiry, responsibility and confidence, ready for Secondary.", age: "Year 4 – 6", tag: "y", tint: "t-butter", to: "/academics#primary" },
   { t: "Beyond the classroom", p: "Swimming, basketball, roller skating, dance, chess, robotics, home economics and design and technology.", age: "All ages", tag: "r", tint: "t-blush", to: "/academics#beyond" },
 ];
 

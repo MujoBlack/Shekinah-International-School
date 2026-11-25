@@ -44,6 +44,7 @@ export function MoreAcademics({ current }: { current: string }) {
     { to: "/academics/curriculum", label: "Our Curriculum" },
     { to: "/academics/early-years", label: "Early Years" },
     { to: "/academics/primary", label: "Primary" },
+    { to: "/academics/secondary", label: "Secondary" },
   ].filter((l) => l.to !== current);
   return (
     <nav className="more-acad rv" aria-label="More about academics">
