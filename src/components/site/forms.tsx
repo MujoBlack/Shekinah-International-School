@@ -2,9 +2,10 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { Btn, CONTACT, SITE, VISIT } from "./ui";
 import { Link } from "react-router-dom";
 
-/* TODO before launch: this is the form endpoint inherited from the Readdy export.
-   Swap it for the school's own (Formspree, Netlify Forms or similar) so requests reach the office inbox. */
-const FORM_ENDPOINT = "https://readdy.ai/api/form/dbku16db5pdo4itvs2ug";
+/* Form messages are delivered by FormSubmit (formsubmit.co) to the school's inbox.
+   Works on any static host (Vercel or cPanel). The very first submission sends an
+   activation email to this address; someone at the school must click "Activate" once. */
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${SITE.email}`;
 
 type Status = "idle" | "sending" | "done" | "error";
 
@@ -20,17 +21,22 @@ function useSubmit(kind: string) {
       return;
     }
     data.delete("company_alt");
-    data.append("form_type", kind);
-    const body = new URLSearchParams();
-    data.forEach((v, k) => body.append(k, String(v)));
+    const payload: Record<string, string> = { form_type: kind };
+    data.forEach((v, k) => (payload[k] = String(v)));
+    const who = payload.name || payload.parent_name;
+    payload._subject = `Website: ${kind}${who ? ` from ${who}` : ""}`;
+    payload._template = "table";
+    payload._captcha = "false";
+    if (payload.email) payload._replyto = payload.email;
     setStatus("sending");
     setError("");
     try {
-      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() });
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) });
       const txt = await res.text();
       let ok = res.ok;
       try {
-        ok = ok && JSON.parse(txt)?.code === "OK";
+        const j = JSON.parse(txt);
+        ok = ok && (j?.success === true || j?.success === "true");
       } catch {
         /* non-JSON reply */
       }
