@@ -27,7 +27,7 @@ const approach = [
 ];
 
 const faqs = [
-  { q: "Is the National Curriculum of England the same as the British curriculum?", a: "Yes. When people talk about a British curriculum school, they usually mean a school following the National Curriculum of England, as we do from Kindergarten 1 through Primary." },
+  { q: "Is the National Curriculum of England the same as the British curriculum?", a: "Yes. When people talk about a British curriculum school, they usually mean a school following the National Curriculum of England, as we do from Kindergarten 1 through Secondary." },
   { q: "What does the curriculum cover in Early Years?", a: "Seven areas of learning: personal, social and emotional development; communication and language; physical development; mathematics; literacy; understanding the world; and expressive arts and design." },
   { q: "Which subjects are taught in Primary?", a: "Literacy, numeracy, science, humanities (history, geography and Christian Religious Education), PSHE, design and technology, art and craft, ICT, French and music." },
   { q: "How do you track my child's progress?", a: "A strong, ongoing assessment system shows exactly where each child stands, and we build support around any area that needs strengthening." },
