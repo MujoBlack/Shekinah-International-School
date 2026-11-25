@@ -3,7 +3,7 @@ import PageHero from "@/components/site/PageHero";
 import Path from "@/components/site/Path";
 import FaqSection from "@/components/site/FaqSection";
 import { Btn, CONTACT, Label, SITE, VISIT, tel, vi } from "@/components/site/ui";
-import { admissionWhyImage, transportDetails, whyPoints } from "@/mocks/admission";
+import { admissionWhyImage, enrolmentDetails, transportDetails, whyPoints } from "@/mocks/admission";
 import { img } from "@/lib/img";
 
 export default function Admission() {
@@ -12,7 +12,7 @@ export default function Admission() {
       <PageHero
         crumb="Admission"
         title="Joining Shekinah is simple"
-        text="Five friendly steps from your first question to your child's first day. We're with you at every one."
+        text="Six clear steps from your first question to your child's first day. We're with you at every one."
         image={img("admission-hero")}
       >
         <Btn to={VISIT} variant="white" arrow>Book a School Visit</Btn>
@@ -53,9 +53,25 @@ export default function Admission() {
               <Label n="02" className="rv">The process</Label>
               <h2 className="s-h2 rv" style={vi(1)}>Your path to Shekinah</h2>
             </div>
-            <p className="rv" style={vi(2)}>Ages 2 to 11, with places from Kindergarten 1 through Primary. Every step starts with a conversation.</p>
+            <p className="rv" style={vi(2)}>Ages 2 to 19, with places from Kindergarten 1 through Secondary School. Every step starts with a conversation.</p>
           </div>
           <Path />
+          <div className="prog lists enrol">
+            {enrolmentDetails.map((d, i) => (
+              <div className={`cell rv ${["t-mint", "t-butter", "t-blush", "t-mint"][i]}`} key={d.title} style={vi(i)}>
+                <i className={`ico ${d.icon}`} aria-hidden="true" />
+                <h3 className="s-h3" style={{ marginTop: 18 }}>{d.title}</h3>
+                <p>{d.intro}</p>
+                <ul className="checks" style={{ marginTop: 14 }}>
+                  {d.points.map((pt) => (
+                    <li key={pt}><i className="ri-check-line" aria-hidden="true" />{pt}</li>
+                  ))}
+                </ul>
+                {d.note && <p style={{ marginTop: 16 }}>{d.note}</p>}
+              </div>
+            ))}
+          </div>
+          <p className="s-muted rv" style={{ textAlign: "center", marginTop: 20, fontSize: 14 }}>The application fee is non-refundable.</p>
           <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginTop: 56 }}>
             <Btn to={VISIT} variant="red" arrow>Book a School Visit</Btn>
             <Btn href={tel(SITE.phones[0])} variant="line">Call {SITE.phones[0]}</Btn>

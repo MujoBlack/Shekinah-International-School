@@ -6,7 +6,7 @@ export const VISIT = "/visit";
 export const CONTACT = "/contact";
 
 export const SITE = {
-  address: "Plot 1 Alex Ojera Road, Off Bugonga Road, Bugonga, Entebbe, Uganda",
+  address: "Plot 3 Tamale Ssali Road, Kiwafu West, just below State House, Entebbe, Uganda",
   phones: ["0755 469134", "0772 469134", "0312 112421"],
   email: "info@shekinahinternational.ac.ug",
   whatsapp: "https://wa.me/256755469134",

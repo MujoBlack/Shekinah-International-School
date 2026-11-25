@@ -17,7 +17,8 @@ export const links = [
 export const academicsMenu = [
   { label: "Our Curriculum", to: "/academics/curriculum", text: "National Curriculum of England" },
   { label: "Early Years", to: "/academics/early-years", text: "Ages 2 – 5" },
-  { label: "Primary", to: "/academics/primary", text: "Year 1 onward" },
+  { label: "Primary", to: "/academics/primary", text: "Ages 5 – 11" },
+  { label: "Secondary", to: "/academics/secondary", text: "Ages 11 – 19" },
 ];
 
 /* Desktop mega menu, laid out in columns like the Ivy Kids programmes menu. */
@@ -28,7 +29,8 @@ const megaMenu: { label: string; to: string; text: string; say: string; prop: Bu
   { label: "Kindergarten 1", to: "/academics/early-years#kg1", text: "Ages 2 – 3", say: "Hello, little explorer!", prop: "sprout" },
   { label: "Kindergarten 2", to: "/academics/early-years#kg2", text: "Ages 3 – 4", say: "Stories, songs and big questions!", prop: "sprout" },
   { label: "Reception", to: "/academics/early-years#reception", text: "Ages 4 – 5", say: "Getting ready for Year 1!", prop: "sprout" },
-  { label: "Primary", to: "/academics/primary", text: "Year 1 onward", say: "Big school, here we come!", prop: "pencil" },
+  { label: "Primary", to: "/academics/primary", text: "Ages 5 – 11", say: "Big school, here we come!", prop: "pencil" },
+  { label: "Secondary", to: "/academics/secondary", text: "Ages 11 – 19", say: "Bold, strong and ready to lead!", prop: "book" },
   { label: "Beyond the classroom", to: "/school-life", text: "Sport, music and more", say: "Ready, set, play!", prop: null },
 ];
 
@@ -116,7 +118,7 @@ export default function Nav() {
                       prop={hot ? megaMenu[hot.i].prop : null}
                       cheer={cheer}
                       quiet={!hot}
-                      goggles={hot ? /primary|curriculum/.test(megaMenu[hot.i].to) : /^\/academics\/(primary|curriculum)/.test(pathname)}
+                      goggles={hot ? /primary|secondary|curriculum/.test(megaMenu[hot.i].to) : /^\/academics\/(primary|secondary|curriculum)/.test(pathname)}
                     />
                   </div>
                 </div>

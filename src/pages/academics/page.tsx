@@ -6,7 +6,7 @@ import Voices from "@/components/site/Voices";
 import { Moments } from "@/components/site/Program";
 import { SproutBuddy, StarBuddy, SunBuddy, PencilBuddy } from "@/components/site/Critters";
 import { Arrows, Btn, Label, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
-import { values } from "@/mocks/about";
+import { pillars } from "@/mocks/about";
 import { img } from "@/lib/img";
 
 const jump = [
@@ -28,10 +28,11 @@ const grid: Cell[] = [
   { t: "Kindergarten 2", p: "Growing independence, spoken language and early mark-making through hands-on play.", to: "/academics/early-years#kg2", cta: "Discover Kindergarten 2", age: "Ages 3 – 4", tag: "y", tint: "t-butter" },
   { photo: img("home-why-shekinah-learning-development"), alt: "Two Early Years girls building with blocks" },
   { t: "Reception", p: "Early reading, writing and number, built on play, ready for the step into Year 1.", to: "/academics/early-years#reception", cta: "See Reception", age: "Ages 4 – 5", tag: "r", tint: "t-blush" },
-  { t: "Primary", p: "Ten subjects in small classes, from literacy and numeracy to science, French and music.", to: "/academics/primary", cta: "Explore Primary", age: "Year 1 onward", tag: "", tint: "t-mint" },
+  { t: "Primary", p: "Ten subjects in small classes, from literacy and numeracy to science, French and music.", to: "/academics/primary", cta: "Explore Primary", age: "Ages 5 – 11", tag: "", tint: "t-mint" },
   { photo: img("science-class-02"), alt: "Primary pupils at the science bench" },
+  { t: "Secondary", p: "Key Stage 3 and Years 12 – 13, across a broad range of subjects examined by Pearson Edexcel.", to: "/academics/secondary", cta: "Explore Secondary", age: "Ages 11 – 19", tag: "", tint: "t-mint" },
   { t: "Our Curriculum", p: "The National Curriculum of England, and how we teach it the Shekinah way.", to: "/academics/curriculum", cta: "Read about our curriculum", age: "All ages", tag: "y", tint: "t-butter" },
-  { t: "Beyond the classroom", p: "Learning weeks, sport, swimming, music and family days that bring learning to life.", to: "/school-life", cta: "Discover School Life", age: "School Life", tag: "r", tint: "t-blush" },
+  { t: "Beyond the classroom", p: "Swimming, basketball, roller skating, dance, chess, robotics, home economics and design and technology.", to: "/school-life", cta: "Discover School Life", age: "School Life", tag: "r", tint: "t-blush" },
 ];
 
 const beyond = [
@@ -44,7 +45,7 @@ const beyond = [
 ];
 
 const principles = [
-  ...values.map((v) => ({ t: v.title, p: v.text })),
+  ...[pillars[0], pillars[1], pillars[4]].map((v) => ({ t: v.title, p: v.text })),
   { t: "Small, caring classes", p: "Teachers know every child personally, so nobody drifts quietly at the back and nobody is held back from their next step." },
 ];
 const tones = ["c-mint", "c-butter", "c-blush", "c-sage"];
@@ -80,7 +81,7 @@ export default function Academics() {
             </span>
             <h1 className="s-h1 fade-up" style={{ ["--d" as string]: "0.2s" }}>A journey as unique as your child</h1>
             <p className="fade-up" style={{ ["--d" as string]: "0.35s" }}>
-              From Kindergarten 1 through Primary, we follow the National Curriculum of England in small classes. Each stage builds the confidence, skills and character your child needs for the next.
+              From Kindergarten 1 through Secondary, we follow the National Curriculum of England in small classes. Each stage builds the confidence, skills and character your child needs for the next.
             </p>
             <div className="ctas fade-up" style={{ ["--d" as string]: "0.5s" }}>
               <Btn to={VISIT} variant="red" arrow>Book a School Visit</Btn>

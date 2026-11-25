@@ -45,9 +45,9 @@ export default function FooterPanel({
         <div>
           <h5>Contact</h5>
           <p>
-            Plot 1 Alex Ojera Road, Off Bugonga Road,
+            Plot 3 Tamale Ssali Road, Kiwafu West,
             <br />
-            Bugonga, Entebbe, Uganda
+            just below State House, Entebbe, Uganda
           </p>
           <p style={{ marginTop: 10 }}>
             <a className="ln" href={tel(SITE.phones[0])}>{SITE.phones[0]}</a> ·{" "}

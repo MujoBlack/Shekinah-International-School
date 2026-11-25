@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { img } from "@/lib/img";
 import { MoreAcademics, StageCards } from "../shared";
 
-const VISION = "To be a centre of excellence in education throughout Uganda, allowing children to participate, excel and develop a passion for God and life.";
+const VISION = "We are a centre of excellence in education service provision, allowing children to participate, excel and develop a passion for Christ and life.";
 
 const how = [
   { t: "Broad and balanced", p: "Ten Primary subjects and seven Early Years areas, so every child discovers what they love and builds every skill they need.", tint: "c-mint", Buddy: SunBuddy },
@@ -19,7 +19,7 @@ const how = [
 ];
 
 const approach = [
-  { icon: "ri-hearts-line", t: "Character and faith", p: "Christian values are lived out gently in how we speak, care for each other and care for the world, so kindness and responsibility become habits. Christian Religious Education is part of Humanities." },
+  { icon: "ri-hearts-line", t: "Character and faith", p: "Christian values are lived out boldly, with strength and courage, as we speak, care for each other and the community, so kindness and responsibility become a habit. Christian Religious Education is part of Humanities." },
   { icon: "ri-emotion-happy-line", t: "Social and emotional growth", p: "PSHE helps children understand their feelings, build friendships and look after their health, in a community of many cultures." },
   { icon: "ri-translate-2", t: "More than one language", p: "French is part of the Primary curriculum, so children grow up speaking more than one international language." },
   { icon: "ri-flask-line", t: "Science by doing", p: "Lab coats and goggles on. Children learn science in our own lab, by asking questions and testing ideas." },
@@ -27,7 +27,7 @@ const approach = [
 ];
 
 const faqs = [
-  { q: "Is the National Curriculum of England the same as the British curriculum?", a: "Yes. When people talk about a British curriculum school, they usually mean a school following the National Curriculum of England, as we do from Kindergarten 1 through Primary." },
+  { q: "Is the National Curriculum of England the same as the British curriculum?", a: "Yes. When people talk about a British curriculum school, they usually mean a school following the National Curriculum of England, as we do from Kindergarten 1 through Secondary." },
   { q: "What does the curriculum cover in Early Years?", a: "Seven areas of learning: personal, social and emotional development; communication and language; physical development; mathematics; literacy; understanding the world; and expressive arts and design." },
   { q: "Which subjects are taught in Primary?", a: "Literacy, numeracy, science, humanities (history, geography and Christian Religious Education), PSHE, design and technology, art and craft, ICT, French and music." },
   { q: "How do you track my child's progress?", a: "A strong, ongoing assessment system shows exactly where each child stands, and we build support around any area that needs strengthening." },
@@ -148,8 +148,10 @@ export default function Curriculum() {
         note="Primary year groups currently offered: to confirm with the school"
         items={[
           { tag: "Early Years", t: "Early Years · ages 2 to 5", p: "Kindergarten 1, Kindergarten 2 and Reception follow the Early Years stage, with seven areas of learning explored through purposeful play.", img: img("home-why-shekinah-learning-development") },
-          { tag: "Key Stage 1", t: "Key Stage 1 · Years 1 and 2", p: "Children build secure reading, writing and number skills, and begin science, humanities, French, music and more as separate subjects.", img: img("home-learning-journey-primary") },
-          { tag: "Key Stage 2", t: "Key Stage 2 · Years 3 to 6", p: "Deeper knowledge across ten subjects, with growing independence, reasoning and responsibility for their own learning.", img: img("science-class-03") },
+          { tag: "Key Stage 1", t: "Key Stage 1 · Years 1 and 2", p: "Ages 5 to 7. Children build secure reading, writing and number skills, and begin science, humanities, French, music and more as separate subjects.", img: img("home-learning-journey-primary") },
+          { tag: "Key Stage 2", t: "Key Stage 2 · Years 3 to 6", p: "Ages 7 to 11. Deeper knowledge across ten subjects, with growing independence, reasoning and responsibility for their own learning.", img: img("science-class-03") },
+          { tag: "Key Stage 3", t: "Key Stage 3 · Years 7 to 11", p: "Ages 11 to 16. Secondary School across a broad range of subjects, examined by Pearson Edexcel.", img: img("academics-primary-1") },
+          { tag: "Years 12 – 13", t: "Key Stage · Years 12 and 13", p: "Ages 17 to 19. The final years of school, preparing students for university and the world beyond.", img: img("teachers-students-01") },
         ]}
       />
 
@@ -163,7 +165,7 @@ export default function Curriculum() {
             items={[
               { t: "Early Years", meta: "KG1 · KG2 · Reception", p: "Ages 2 to 5. Learning through play across the seven areas of learning.", to: "/academics/early-years", img: img("academics-early-years-1"), alt: "An Early Years pupil drawing", icon: "ri-seedling-line", tint: "t-mint" },
               { t: "Primary", meta: "From Year 1", p: "Ten subjects taught in small classes, from literacy and numeracy to science, French and music.", to: "/academics/primary", img: img("science-class-04"), alt: "A Primary pupil in the science lab", icon: "ri-pencil-ruler-2-line", tint: "t-butter" },
-              { t: "Beyond the classroom", meta: "School Life", p: "Learning weeks, sport, swimming, music and family days that make Shekinah feel like home.", to: "/school-life", img: img("music-class-03"), alt: "Pupils playing recorders", icon: "ri-sparkling-2-line", tint: "t-blush" },
+              { t: "Beyond the classroom", meta: "School Life", p: "Swimming, basketball, roller skating, dance, chess, robotics, home economics and design and technology.", to: "/school-life", img: img("music-class-03"), alt: "Pupils playing recorders", icon: "ri-sparkling-2-line", tint: "t-blush" },
             ]}
           />
         </div>

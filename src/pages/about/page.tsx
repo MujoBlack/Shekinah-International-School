@@ -3,12 +3,12 @@ import Layout from "@/components/site/Layout";
 import PageHero from "@/components/site/PageHero";
 import { SunBuddy, StarBuddy, SproutBuddy } from "@/components/site/Critters";
 import { Arrows, Btn, Label, Slider, VISIT, vi, type SliderApi } from "@/components/site/ui";
-import { approachPoints, settingImages, storyParagraphs, values } from "@/mocks/about";
+import { discipline, pillars, settingImages, storyParagraphs, values } from "@/mocks/about";
 import { img } from "@/lib/img";
 import PeopleSwipe from "@/components/site/PeopleSwipe";
 
 const buddies = [SunBuddy, StarBuddy, SproutBuddy];
-const tints = ["c-mint", "c-blush", "c-butter"];
+const tints = ["c-mint", "c-blush", "c-butter", "c-sage", "c-peach", "c-mint"];
 
 export default function About() {
   const [api, setApi] = useState<SliderApi | null>(null);
@@ -50,14 +50,16 @@ export default function About() {
               <span className="ic"><i className="ri-eye-line" /></span>
               <span className="label">Our vision</span>
               <p className="s-serif" style={{ fontSize: 28, marginTop: 28 }}>
-                To be a centre of excellence in education throughout Uganda, allowing children to participate, excel and develop a passion for God and life.
+                We are a centre of excellence in education service provision, allowing children to participate, excel and develop a passion for <em>Christ and life.</em>
               </p>
             </div>
             <div className="card rv" style={{ ...vi(1), minHeight: 280 }}>
               <span className="ic blush"><i className="ri-compass-3-line" /></span>
               <span className="label">Our mission</span>
-              <p className="s-serif" style={{ fontSize: 28, marginTop: 28 }}>
-                To provide an education that will <em>equip today's children for tomorrow.</em>
+              <p className="s-serif" style={{ fontSize: 22, marginTop: 28 }}>
+                We provide an education system that recognises the unique calling of every child, celebrates talents and
+                abilities, and provides opportunities for investigation, experimentation, invention and innovation, allowing
+                every child to attain their full potential in Christ <em>spiritually, mentally and physically.</em>
               </p>
             </div>
           </div>
@@ -91,16 +93,17 @@ export default function About() {
         <div className="wrap">
           <div className="head">
             <div>
-              <Label n="04" className="rv">Our approach</Label>
-              <h2 className="s-h2 rv" style={vi(1)}>How every child is helped to grow</h2>
+              <Label n="04" className="rv">Our 5 pillars</Label>
+              <h2 className="s-h2 rv" style={vi(1)}>What every child is built on</h2>
             </div>
-            <p className="rv" style={vi(2)}>Three things shape every classroom at Shekinah, from Kindergarten 1 to the top of Primary.</p>
+            <p className="rv" style={vi(2)}>Five pillars shape everything we do, from Early Years through to Secondary School.</p>
           </div>
-          <div className="prog cols-3">
-            {approachPoints.map((a, i) => (
-              <div className={`cell rv ${["t-mint", "t-butter", "t-blush"][i]}`} key={a.title} style={vi(i)}>
-                <i className={`ico ${a.icon}`} aria-hidden="true" />
-                <h3 className="s-h3" style={{ marginTop: 18 }}>{a.title}</h3>
+          <div className="prog cols-5 pillars">
+            {pillars.map((a, i) => (
+              <div className={`cell rv ${["t-mint", "t-butter", "t-blush", "t-mint", "t-butter"][i]}`} key={a.title} style={vi(i)}>
+                <span className="label">{String(i + 1).padStart(2, "0")}</span>
+                <i className={`ico ${a.icon}`} aria-hidden="true" style={{ marginTop: 14 }} />
+                <h3 className="s-h3" style={{ marginTop: 14 }}>{a.title}</h3>
                 <p>{a.text}</p>
               </div>
             ))}
@@ -108,28 +111,50 @@ export default function About() {
         </div>
       </section>
 
-      <section className="sec" style={{ paddingTop: 0 }}>
+      <section className="band">
         <div className="wrap">
-          <Label n="05" className="rv">From the Principal</Label>
-          <div className="quote-card rv" style={{ ...vi(1), marginTop: 24 }}>
-            <div className="portrait">
-              <div>
-                <b>JL</b>
-                <span>Portrait coming soon</span>
+          <div className="center">
+            <span className="chip rv">05 · Discipline</span>
+            <h2 className="s-h2 rv" style={vi(1)}>Disciplined in community, thought and action</h2>
+          </div>
+          <div className="prog cols-3 lists">
+            {discipline.map((d, i) => (
+              <div className={`cell rv ${["t-mint", "t-butter", "t-blush"][i]}`} key={d.title} style={vi(i)}>
+                <i className={`ico ${d.icon}`} aria-hidden="true" />
+                <h3 className="s-h3" style={{ marginTop: 18 }}>{d.title}</h3>
+                <ul className="checks">
+                  {d.points.map((pt) => (
+                    <li key={pt}><i className="ri-check-line" aria-hidden="true" />{pt}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            <div>
-              <blockquote>
-                “We raise children to have a passion for God and for life, in a safe, secure and stimulating environment
-                that gives them the opportunity to explore, grow and become useful citizens, nationally and globally.”
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sec director">
+        <div className="wrap">
+          <div className="director-grid">
+            <figure className="director-photo rv">
+              <img src={img("director-jackie-lwande")} alt="Ms. Jackie Lwande, Director of Shekinah International School" loading="lazy" />
+              <figcaption>
+                <b>Ms. Jackie Lwande</b>
+                <span>Director</span>
+              </figcaption>
+            </figure>
+            <div className="director-body">
+              <Label n="06" className="rv">From the Director</Label>
+              <h2 className="s-h2 rv" style={vi(1)}>A word from our Director</h2>
+              <blockquote className="rv" style={vi(2)}>
+                <i className="ri-double-quotes-l" aria-hidden="true" />
+                We raise children to have a passion for God and for life, in a safe, secure and stimulating environment
+                that gives them the opportunity to explore, grow and become useful citizens, nationally and globally.
               </blockquote>
-              <p className="s-muted" style={{ marginTop: 18 }}>
+              <p className="s-muted rv" style={vi(3)}>
                 Through our strong assessment system, we track every child's progress and create programmes tailored to
                 strengthen any area where they need support. When you entrust your child to us, we commit to their
                 progress, growth, security and wellbeing, and to making them feel accepted and loved.
-              </p>
-              <p style={{ marginTop: 18, fontWeight: 600, color: "var(--pine)" }}>
-                Ms. Jackie Lwande <span className="label" style={{ marginLeft: 8 }}>Principal</span>
               </p>
             </div>
           </div>
@@ -140,7 +165,7 @@ export default function About() {
         <div className="wrap">
           <div className="head">
             <div>
-              <Label n="06" className="rv">Our people</Label>
+              <Label n="07" className="rv">Our people</Label>
               <h2 className="s-h2 rv" style={vi(1)}>One school family</h2>
             </div>
             <p className="rv" style={vi(2)}>Pupils and staff from many nations, on the painted steps at the heart of our campus.</p>
@@ -172,7 +197,7 @@ export default function About() {
       <section className="sec-dark on-dark">
         <div className="wrap head">
           <div>
-            <Label n="07" className="rv">Our setting</Label>
+            <Label n="08" className="rv">Our setting</Label>
             <h2 className="s-h2 rv" style={vi(1)}>Spaces made for learning</h2>
           </div>
           <Arrows api={api} />

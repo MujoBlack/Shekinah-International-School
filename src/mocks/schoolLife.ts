@@ -60,11 +60,11 @@ export const sportsCards = [
 ];
 
 export const sportsFeature = {
-  tag: "Sports Day",
-  title: "Sports Day",
-  text: "Pupils show the skills they have learned all year, building team spirit and cooperation.",
+  tag: "Sports activities",
+  title: "Sports activities",
+  text: "Basketball, roller skating, swimming and dance, with expert coaching that builds skill, discipline and teamwork.",
   image:
-    img("school-life-hero"),
+    img("skating-01"),
 };
 
 export const clubs = [
@@ -108,22 +108,6 @@ export const holidayCamp = {
 export const events = [
   {
     number: "01",
-    title: "Family Fun Days",
-    text: "Movie nights, cookery days and more, with whole families joining in.",
-    icon: "ri-heart-3-line",
-    image:
-      img("school-life-parents-community"),
-  },
-  {
-    number: "02",
-    title: "Water Splash Days",
-    text: "One of the most anticipated days of the year, with buckets, hoses and laughter.",
-    icon: "ri-drop-line",
-    image:
-      img("home-hero"),
-  },
-  {
-    number: "03",
     title: "Celebrations & Special Occasions",
     text: "Assemblies, cultural days and Christian celebrations shared as a school family.",
     icon: "ri-star-line",
@@ -133,22 +117,22 @@ export const events = [
 ];
 
 export const parentsImage =
-  img("home-why-shekinah-community");
+  img("school-life-parents-week");
 
 export const galleryFilters = ["All", "Early Years", "Learning", "Sports", "Trips", "Events", "School Life"];
 
 export const galleryImages = [
   {
     category: "Early Years",
-    label: "Building together",
+    label: "Counting on our fingers",
     image:
-      img("academics-early-years-2"),
+      img("ey-class-counting"),
   },
   {
     category: "Learning",
-    label: "Reading corner",
+    label: "In class",
     image:
-      img("about-setting-library"),
+      img("class-teacher-01"),
   },
   {
     category: "Sports",
@@ -176,15 +160,15 @@ export const galleryImages = [
   },
   {
     category: "Early Years",
-    label: "Painting hands",
+    label: "Story time on the carpet",
     image:
-      img("academics-early-years-1"),
+      img("ey-class-story"),
   },
   {
     category: "Learning",
-    label: "Science table",
+    label: "With our teacher",
     image:
-      img("home-life-grid-science"),
+      img("class-teacher-02"),
   },
   {
     category: "Sports",
@@ -200,15 +184,15 @@ export const galleryImages = [
   },
   {
     category: "School Life",
-    label: "Morning assembly",
+    label: "Lunch time",
     image:
       img("school-life-events-cookery-day"),
   },
   {
     category: "Learning",
-    label: "Learning outdoors",
+    label: "Learning together",
     image:
-      img("about-hero"),
+      img("class-teacher-03"),
   },
   { category: "Sports", label: "Swim team", image: img("swimming-01") },
   { category: "School Life", label: "Recorder group", image: img("music-class-02") },
@@ -216,4 +200,8 @@ export const galleryImages = [
   { category: "School Life", label: "Our court", image: img("compound-02") },
   { category: "Sports", label: "In the pool", image: img("swimming-04") },
   { category: "Events", label: "The whole school", image: img("full-school-02") },
+  { category: "Early Years", label: "Garden games", image: img("ey-garden-play") },
+  { category: "Early Years", label: "Circle time outside", image: img("ey-garden-circle") },
+  { category: "Early Years", label: "Off we go", image: img("ey-garden-run") },
+  { category: "Sports", label: "Roller skating", image: img("skating-01") },
 ];

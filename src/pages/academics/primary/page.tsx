@@ -16,7 +16,7 @@ const jump = [
   { label: "Questions", id: "questions" },
 ];
 
-const VISION = "To be a centre of excellence in education throughout Uganda, allowing children to participate, excel and develop a passion for God and life.";
+const VISION = "We are a centre of excellence in education service provision, allowing children to participate, excel and develop a passion for Christ and life.";
 
 const faqs = [
   { q: "Which curriculum do you follow in Primary?", a: "The National Curriculum of England, taught through a broad, balanced and stimulating programme of ten subjects, from literacy and numeracy to science, French and music." },

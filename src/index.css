@@ -339,7 +339,7 @@ a { color: inherit; text-decoration: none; }
 .path { position: relative; margin-top: 60px; }
 .path .line { position: absolute; left: 0; right: 0; top: 216px; height: 1px; background: var(--line); transform-origin: left; transform: scaleX(0); transition: transform 1.6s var(--ease-io) 0.2s; }
 .path.is-in .line { transform: scaleX(1); }
-.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; position: relative; }
+.steps { display: grid; grid-template-columns: repeat(var(--steps, 5), 1fr); gap: 24px; position: relative; }
 .step .th { width: 112px; height: 112px; border-radius: 20px; overflow: hidden; transition: border-radius 0.4s var(--ease), transform 0.4s var(--ease); }
 .step .th img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
 .step:hover .th { border-radius: 56px; transform: rotate(-3deg); }
@@ -453,6 +453,32 @@ a { color: inherit; text-decoration: none; }
 .portrait { aspect-ratio: 4 / 5; border-radius: 26px; background: var(--mint); display: grid; place-items: center; text-align: center; color: var(--green); position: relative; overflow: hidden; }
 .portrait b { font-family: var(--serif); font-size: 72px; font-weight: 400; display: block; line-height: 1; }
 .portrait span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+/* about: From the Director */
+.director-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: center; }
+.director-photo { position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: 36px; overflow: hidden; background: var(--mint); box-shadow: 0 30px 60px -30px rgba(13, 59, 34, 0.35); }
+.director-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.director-photo figcaption { position: absolute; left: 18px; right: 18px; bottom: 18px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 20px; border-radius: 20px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(6px); }
+.director-photo figcaption b { font-family: var(--sans); font-weight: 600; font-size: 17px; color: var(--pine); }
+.director-photo figcaption span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.director-body .s-h2 { margin-top: 18px; }
+.director-body blockquote { position: relative; margin: 32px 0 0; padding-left: 28px; border-left: 3px solid var(--red); font-family: var(--serif); font-size: 28px; line-height: 1.38; color: var(--pine); }
+.director-body blockquote i { display: block; font-size: 34px; line-height: 1; color: var(--red); margin-bottom: 10px; }
+.director-body > p.s-muted { margin-top: 24px; font-size: 17px; line-height: 1.7; max-width: 600px; }
+.director-sign { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
+.director-sign .sign-line { width: 48px; height: 2px; background: var(--green); border-radius: 2px; }
+.director-sign b { display: block; font-weight: 600; color: var(--pine); }
+.director-sign span { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+@media (max-width: 1000px) { .director-grid { grid-template-columns: 1fr; gap: 40px; } .director-photo { max-width: 460px; } }
+/* about: 5 pillars + discipline */
+.prog.pillars > * { min-height: 340px; }
+.prog.pillars .s-h3 { font-size: 22px; }
+.prog.pillars p { font-size: 14px; }
+.prog.lists .s-h3 { font-size: 24px; }
+.prog.lists .checks li { font-size: 15px; }
+.prog.lists .checks li i { background: var(--mint); }
+.prog.lists.enrol .s-h3 { font-size: 22px; }
+.prog.lists.enrol .checks li { font-size: 14px; }
 .quote-card blockquote { font-family: var(--serif); font-size: 28px; line-height: 1.35; color: var(--pine); }
 
 /* ---------- Forms ---------- */
@@ -1311,4 +1337,9 @@ a.pcard { color: inherit; }
 }
 @media (max-width: 340px) {
   .nav > .btn.m-cta { padding: 10px 12px; font-size: 13.5px; }
+}
+@media (max-width: 760px) {
+  .director-photo { aspect-ratio: 4 / 4.4; border-radius: 28px; }
+  .director-body blockquote { font-size: 21px; padding-left: 18px; }
+  .director-body > p.s-muted { font-size: 15px; }
 }

@@ -15,7 +15,7 @@ export const whyPoints = [
   {
     icon: "ri-book-open-line",
     title: "The National Curriculum of England",
-    text: "A broad, balanced and stimulating programme from Kindergarten to Primary.",
+    text: "A broad, balanced and stimulating programme from Kindergarten to Secondary School.",
   },
   {
     icon: "ri-user-heart-line",
@@ -34,7 +34,7 @@ export const admissionsSteps = [
   {
     number: "02",
     title: "Visit",
-    text: "Tour the school and meet the Principal to share your expectations and learn what we offer.",
+    text: "Tour the school and meet the Head Teacher to share your expectations and learn what we offer.",
     icon: "ri-walk-line",
   },
   {
@@ -66,3 +66,9 @@ export const transportDetails = {
   note: "Transport around Entebbe is UGX 350,000 per month (to and from).",
   outOfTown: "For areas outside Entebbe, please contact us for rates.",
 };
+export const enrolmentDetails = [
+  { title: "Parent interview", icon: "ri-chat-smile-2-line", intro: "A meeting with parents to discuss:", points: ["Family expectations", "Your child's strengths", "Areas requiring support", "School values and culture", "Parent-school partnership"] },
+  { title: "What to submit", icon: "ri-folder-open-line", intro: "With the completed application form:", points: ["Child's birth certificate or passport", "Passport-size photographs", "Previous school reports", "Transfer or recommendation letter", "Any learning support reports"] },
+  { title: "Assessment", icon: "ri-edit-2-line", intro: "Depending on the year group:", points: ["Literacy assessment", "Numeracy assessment", "Developmental, play-based assessment (Early Years)", "Interview with the student (Upper Primary and Secondary)"], note: "To determine readiness, identify support needs and ensure the right class placement." },
+  { title: "Admission decision", icon: "ri-mail-check-line", intro: "The school communicates one of:", points: ["Acceptance", "Conditional acceptance", "Waitlist", "Regret letter, if we are unable to offer a place"], note: "Successful applicants receive an offer letter, fee invoice and start date." },
+];
