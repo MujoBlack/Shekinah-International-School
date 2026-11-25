@@ -184,7 +184,7 @@ export const galleryImages = [
   },
   {
     category: "School Life",
-    label: "Morning assembly",
+    label: "Lunch time",
     image:
       img("school-life-events-cookery-day"),
   },
