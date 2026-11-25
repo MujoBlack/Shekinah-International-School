@@ -117,16 +117,16 @@ export const events = [
 ];
 
 export const parentsImage =
-  img("parents-teachers-meeting");
+  img("school-life-parents-week");
 
 export const galleryFilters = ["All", "Early Years", "Learning", "Sports", "Trips", "Events", "School Life"];
 
 export const galleryImages = [
   {
     category: "Early Years",
-    label: "Building together",
+    label: "Counting on our fingers",
     image:
-      img("academics-early-years-2"),
+      img("ey-class-counting"),
   },
   {
     category: "Learning",
@@ -160,9 +160,9 @@ export const galleryImages = [
   },
   {
     category: "Early Years",
-    label: "Painting hands",
+    label: "Story time on the carpet",
     image:
-      img("academics-early-years-1"),
+      img("ey-class-story"),
   },
   {
     category: "Learning",

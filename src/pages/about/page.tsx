@@ -133,25 +133,28 @@ export default function About() {
         </div>
       </section>
 
-      <section className="sec" style={{ paddingTop: 0 }}>
+      <section className="sec director">
         <div className="wrap">
-          <Label n="06" className="rv">From the Director</Label>
-          <div className="quote-card rv" style={{ ...vi(1), marginTop: 24 }}>
-            <div className="portrait">
+          <div className="director-grid">
+            <figure className="director-photo rv">
               <img src={img("director-jackie-lwande")} alt="Ms. Jackie Lwande, Director of Shekinah International School" loading="lazy" />
-            </div>
-            <div>
-              <blockquote>
-                “We raise children to have a passion for God and for life, in a safe, secure and stimulating environment
-                that gives them the opportunity to explore, grow and become useful citizens, nationally and globally.”
+              <figcaption>
+                <b>Ms. Jackie Lwande</b>
+                <span>Director</span>
+              </figcaption>
+            </figure>
+            <div className="director-body">
+              <Label n="06" className="rv">From the Director</Label>
+              <h2 className="s-h2 rv" style={vi(1)}>A word from our Director</h2>
+              <blockquote className="rv" style={vi(2)}>
+                <i className="ri-double-quotes-l" aria-hidden="true" />
+                We raise children to have a passion for God and for life, in a safe, secure and stimulating environment
+                that gives them the opportunity to explore, grow and become useful citizens, nationally and globally.
               </blockquote>
-              <p className="s-muted" style={{ marginTop: 18 }}>
+              <p className="s-muted rv" style={vi(3)}>
                 Through our strong assessment system, we track every child's progress and create programmes tailored to
                 strengthen any area where they need support. When you entrust your child to us, we commit to their
                 progress, growth, security and wellbeing, and to making them feel accepted and loved.
-              </p>
-              <p style={{ marginTop: 18, fontWeight: 600, color: "var(--pine)" }}>
-                Ms. Jackie Lwande <span className="label" style={{ marginLeft: 8 }}>Director</span>
               </p>
             </div>
           </div>
