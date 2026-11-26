@@ -135,16 +135,16 @@ export const galleryImages = [
       img("class-teacher-01"),
   },
   {
-    category: "Sports",
-    label: "Relay race",
+    category: "School Life",
+    label: "Art class",
     image:
-      img("home-life-grid-sports"),
+      img("gallery-art-class"),
   },
   {
-    category: "School Life",
-    label: "Outdoor learning",
+    category: "Sports",
+    label: "Dance practice",
     image:
-      img("school-life-gallery-outdoor"),
+      img("gallery-dance"),
   },
   {
     category: "Learning",
