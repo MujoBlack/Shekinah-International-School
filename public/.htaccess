@@ -7,6 +7,68 @@ RewriteBase /
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# One address for the site: no "www"
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# ---- Old WordPress links (Google still lists some of them) ----
+# Old WordPress "?p=123" / "?page_id=12" style links on the home page
+RewriteCond %{QUERY_STRING} (^|&)(p|page_id|cat|tag|s|feed|attachment_id|author|m|post_type|edd-api|edd_action)= [NC]
+RewriteRule ^(index\.php)?$ /? [R=301,L]
+
+# WordPress system paths, feeds, archives and plugin endpoints go home
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(wp-admin|wp-content|wp-includes|wp-json|wp-[^/]*\.php|xmlrpc\.php|edd-api|feed|comments|author|category|tag|page/[0-9]+|[0-9]{4}(/[0-9]{2})?|.+/feed|.+/amp|cart|checkout|downloads?|shop|product|purchase-[^/]*|sample-page|hello-world)(/.*)?$ /? [NC,R=301,L]
+
+# Old page names that match a page on the new site
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (early[-_]?years|nursery|kindergarten|kg[0-9]?|reception|pre[-_]?school|toddler) /academics/early-years? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (secondary|high[-_]?school|igcse|a[-_]?level|key[-_]?stage[-_]?[345]|ks[345]) /academics/secondary? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (primary|key[-_]?stage[-_]?[12]|ks[12]|lower[-_]school|upper[-_]school) /academics/primary? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (curriculum|syllabus|british|cambridge|national[-_]curriculum) /academics/curriculum? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (academic|programme|program|classes|learning|subjects|departments?) /academics? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (admission|admissions|enrol|enroll|apply|application|fees|tuition|join|registration|register) /admission? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (visit|tour|open[-_]?day) /visit? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (contact|location|find[-_]us|directions|map|enquir|inquir) /contact? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (about|who[-_]we[-_]are|our[-_]story|history|vision|mission|values|ethos|director|principal|head[-_]?teacher|staff|team|leadership|faith|welcome) /about? [NC,R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteRule (school[-_]life|gallery|photos?|events?|news|blog|activities|clubs?|sports?|swimming|music|ballet|chess|robotics|co[-_]?curricular|extra[-_]?curricular|parents?|community|calendar|lunch|transport) /school-life? [NC,R=301,L]
+
+# Anything else that isn't a page on the new site goes to the home page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(about|academics(/(early-years|primary|secondary|curriculum))?|admission|school-life|contact|visit)/?$ [NC]
+RewriteCond %{REQUEST_URI} !^/(index\.html)?$
+RewriteRule ^ /? [R=301,L]
+
 # Single-page app: send any path that isn't a real file or folder to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -22,6 +84,8 @@ RewriteRule ^ index.html [L]
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType text/plain "access plus 1 day"
 </IfModule>
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/json
