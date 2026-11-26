@@ -123,10 +123,10 @@ export const galleryFilters = ["All", "Early Years", "Learning", "Sports", "Trip
 
 export const galleryImages = [
   {
-    category: "Early Years",
-    label: "Counting on our fingers",
+    category: "School Life",
+    label: "Chess club",
     image:
-      img("ey-class-counting"),
+      img("gallery-chess-club"),
   },
   {
     category: "Learning",
@@ -147,10 +147,10 @@ export const galleryImages = [
       img("school-life-gallery-outdoor"),
   },
   {
-    category: "Events",
-    label: "Together",
+    category: "Learning",
+    label: "iLEAD leadership",
     image:
-      img("home-why-shekinah-community"),
+      img("gallery-ilead"),
   },
   {
     category: "School Life",
@@ -201,7 +201,7 @@ export const galleryImages = [
   { category: "Sports", label: "In the pool", image: img("swimming-04") },
   { category: "Events", label: "The whole school", image: img("full-school-02") },
   { category: "Early Years", label: "Garden games", image: img("ey-garden-play") },
-  { category: "Early Years", label: "Circle time outside", image: img("ey-garden-circle") },
+  { category: "Learning", label: "Home economics", image: img("gallery-home-economics") },
   { category: "Early Years", label: "Off we go", image: img("ey-garden-run") },
   { category: "Sports", label: "Roller skating", image: img("skating-01") },
 ];
