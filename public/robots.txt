@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shekinahinternational.ac.ug/sitemap.xml
